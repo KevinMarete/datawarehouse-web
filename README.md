@@ -1,6 +1,6 @@
-# PHARMACY-WEB
+# DATAWAREHOUSE-WEB
 
-DATAWAREHOUSE-WEB is the core web application for the MGIC KenyaEMR DataWarehouse.
+Datawarehouse-web is the core web application for the MGIC KenyaEMR DataWarehouse.
 
 ---
 
