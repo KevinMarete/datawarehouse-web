@@ -25,16 +25,8 @@ class CreateRoleTable extends Migration
         //Add default data
         DB::table('tbl_role')->insert(
             array(
-                [
-                    'name' => 'admin',
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ],
-                [
-                    'name' => 'user',
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ],
+                ['name' => 'admin', 'created_at' => now()],
+                ['name' => 'user', 'created_at' => now()],
             )
         );
     }
