@@ -10,14 +10,16 @@ class DashboardController extends BaseController
 {
   public function displayHomeView(Request $request)
   {
-    $token = session()->get('token');
-
     $view_data = [];
+
+    $token = session()->get('token');
+    $role_id = session()->get('role_id');
 
     $data = [
       'page_title' => 'Home',
       'main_menu' => 'dashboard',
       'sub_menu' => 'care-and-treatment',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('dashboard.home', $view_data),
     ];
 

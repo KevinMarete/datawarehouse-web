@@ -11,14 +11,16 @@ class UserController extends BaseController
   public function displayUserTableView(Request $request)
   {
     $token = session()->get('token');
+    $role_id = session()->get('role_id');
 
     $view_data = [
       'table_data' => $this->manageResourceData($token, 'GET', 'user', [])
     ];
     $data = [
       'page_title' => 'User',
-      'main_menu' => 'user',
+      'main_menu' => 'settings',
       'sub_menu' => 'user',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('user.listing', $view_data),
     ];
 
@@ -28,6 +30,7 @@ class UserController extends BaseController
   public function displayNewUserView(Request $request)
   {
     $token = session()->get('token');
+    $role_id = session()->get('role_id');
 
     $view_data = [
       'roles' => $this->manageResourceData($token, 'GET', 'role', [])
@@ -35,8 +38,9 @@ class UserController extends BaseController
 
     $data = [
       'page_title' => 'Add User',
-      'main_menu' => 'user',
+      'main_menu' => 'settings',
       'sub_menu' => 'user',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('user.new', $view_data)
     ];
 
@@ -70,7 +74,9 @@ class UserController extends BaseController
   public function displayUserView(Request $request)
   {
     $user_id = $request->id;
+
     $token = session()->get('token');
+    $role_id = session()->get('role_id');
 
     $view_data = [
       'edit' => $this->manageResourceData($token, 'GET', 'user/' . $user_id, []),
@@ -79,8 +85,9 @@ class UserController extends BaseController
 
     $data = [
       'page_title' => 'View User',
-      'main_menu' => 'user',
+      'main_menu' => 'settings',
       'sub_menu' => 'user',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('user.view', $view_data)
     ];
 

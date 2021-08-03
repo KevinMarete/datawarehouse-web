@@ -12,6 +12,7 @@ class AccountController extends BaseController
   public function displayProfileView()
   {
     $token = session()->get('token');
+    $role_id = session()->get('role_id');
 
     $view_data = [
       'profile' => $this->manageResourceData($token, 'GET', 'me'),
@@ -19,8 +20,9 @@ class AccountController extends BaseController
     ];
     $data = [
       'page_title' => 'Profile',
-      'main_menu' => 'user',
+      'main_menu' => 'settings',
       'sub_menu' => 'user',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('auth.profile', $view_data),
     ];
 

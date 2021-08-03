@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Web\BaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\DB;
 
 class QueryController extends BaseController
 {
@@ -13,6 +12,7 @@ class QueryController extends BaseController
   public function displayQueryTableView(Request $request)
   {
     $token = session()->get('token');
+    $role_id = session()->get('role_id');
 
     $view_data = [
       'table_data' => $this->manageResourceData($token, 'GET', 'query', [])
@@ -22,6 +22,7 @@ class QueryController extends BaseController
       'page_title' => 'Query',
       'main_menu' => 'data',
       'sub_menu' => 'query',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('query.listing', $view_data),
     ];
 
@@ -31,6 +32,7 @@ class QueryController extends BaseController
   public function displayNewQueryView(Request $request)
   {
     $token = session()->get('token');
+    $role_id = session()->get('role_id');
 
     $view_data = [
       'querycategories' => $this->manageResourceData($token, 'GET', 'querycategory', [])
@@ -40,6 +42,7 @@ class QueryController extends BaseController
       'page_title' => 'Add Query',
       'main_menu' => 'data',
       'sub_menu' => 'query',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('query.new', $view_data)
     ];
 
@@ -70,7 +73,9 @@ class QueryController extends BaseController
   public function displayQueryView(Request $request)
   {
     $query_id = $request->id;
+
     $token = session()->get('token');
+    $role_id = session()->get('role_id');
 
     $view_data = [
       'edit' => $this->manageResourceData($token, 'GET', 'query/' . $query_id, []),
@@ -81,6 +86,7 @@ class QueryController extends BaseController
       'page_title' => 'View Query',
       'main_menu' => 'data',
       'sub_menu' => 'query',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('query.view', $view_data)
     ];
 
@@ -131,6 +137,7 @@ class QueryController extends BaseController
   public function displayQueryExecutorView(Request $request)
   {
     $token = session()->get('token');
+    $role_id = session()->get('role_id');
 
     $view_data = [
       'querycategories' => $this->manageResourceData($token, 'GET', 'querycategory', [])
@@ -139,7 +146,8 @@ class QueryController extends BaseController
     $data = [
       'page_title' => 'Query Executor',
       'main_menu' => 'data',
-      'sub_menu' => 'queryexecutor',
+      'sub_menu' => 'query-executor',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('query.executor', $view_data),
     ];
 
@@ -149,32 +157,30 @@ class QueryController extends BaseController
   public function runQuery(Request $request)
   {
     $response = [];
-    try {
-      $query = $request->query_description;
-      $results = DB::connection('mysql_read')->select($query);
+    $token = session()->get('token');
 
-      // Get columns
-      $keys = $this->getKeysFromObjectArray($results);
-      $response['columns'] =  array_map(function ($a) {
-        return ['title' => $a];
-      }, $keys);
+    $results = $this->manageResourceData($token, 'POST', 'query/run', ['query_statement' => $request->query_description]);
 
-      // Get data values
-      $response['data'] = $this->getValuesFromObjectArray($results);
+    // Get columns
+    $keys = $this->getKeysFromObjectArray($results);
+    $response['columns'] =  array_map(function ($a) {
+      return ['title' => $a];
+    }, $keys);
 
-      // Additional options
-      $response['destroy'] = true;
-      $response['dom'] = "Bfrtip";
-      $response['buttons'] = ["copy", "csv", "excel", "pdf", "print"];
-      $response['lengthMenu'] = [
-        [10, 25, 50, -1],
-        [10, 25, 50, "All"],
-      ];
-      $response["pagingType"] = "full_numbers";
-      $response["scrollX"] = true;
-    } catch (\Illuminate\Database\QueryException $ex) {
-      dd($ex->getMessage());
-    }
+    // Get data values
+    $response['data'] = $this->getValuesFromObjectArray($results);
+
+    // Additional options
+    $response['destroy'] = true;
+    $response['dom'] = "Bfrtip";
+    $response['buttons'] = ["copy", "csv", "excel", "pdf", "print"];
+    $response['lengthMenu'] = [
+      [10, 25, 50, -1],
+      [10, 25, 50, "All"],
+    ];
+    $response["pagingType"] = "full_numbers";
+    $response["scrollX"] = true;
+
     echo json_encode($response, JSON_PRETTY_PRINT);
   }
 

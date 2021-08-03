@@ -11,13 +11,16 @@ class QueryCategoryController extends BaseController
   public function displayQueryCategoryTableView(Request $request)
   {
     $token = session()->get('token');
+    $role_id = session()->get('role_id');
+
     $view_data = [
       'table_data' => $this->manageResourceData($token, 'GET', 'querycategory', [])
     ];
     $data = [
       'page_title' => 'Query Category',
       'main_menu' => 'data',
-      'sub_menu' => 'querycategory',
+      'sub_menu' => 'query-category',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('querycategory.listing', $view_data),
     ];
 
@@ -27,6 +30,7 @@ class QueryCategoryController extends BaseController
   public function displayNewQueryCategoryView(Request $request)
   {
     $token = session()->get('token');
+    $role_id = session()->get('role_id');
 
     $view_data = [
       'roles' => $this->manageResourceData($token, 'GET', 'role', [])
@@ -35,7 +39,8 @@ class QueryCategoryController extends BaseController
     $data = [
       'page_title' => 'Add Query Category',
       'main_menu' => 'data',
-      'sub_menu' => 'querycategory',
+      'sub_menu' => 'query-category',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('querycategory.new', $view_data)
     ];
 
@@ -64,7 +69,9 @@ class QueryCategoryController extends BaseController
   public function displayQueryCategoryView(Request $request)
   {
     $querycategory_id = $request->id;
+
     $token = session()->get('token');
+    $role_id = session()->get('role_id');
 
     $view_data = [
       'edit' => $this->manageResourceData($token, 'GET', 'querycategory/' . $querycategory_id, [])
@@ -73,7 +80,8 @@ class QueryCategoryController extends BaseController
     $data = [
       'page_title' => 'View Query Category',
       'main_menu' => 'data',
-      'sub_menu' => 'querycategory',
+      'sub_menu' => 'query-category',
+      'menugroups' => $this->getRoleMenus($token, $role_id),
       'content_view' => View::make('querycategory.view', $view_data)
     ];
 

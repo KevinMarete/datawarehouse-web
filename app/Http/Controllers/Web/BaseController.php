@@ -24,14 +24,8 @@ class BaseController extends Controller
   public function getRoleMenus($token = null, $role_id = null)
   {
     $menus = [];
-    if ($token !== null) {
-      $request = $this->client->get('role/' . $role_id . '/menus', [
-        'headers' => [
-          'Authorization' => 'Bearer ' . $token
-        ]
-      ]);
-      $response = $request->getBody();
-      $menus = json_decode($response, true);
+    if ($token !== null && $role_id !== null) {
+      $menus = $this->manageResourceData($token, 'GET', 'role/' . $role_id . '/menus');
     }
     return $menus;
   }
