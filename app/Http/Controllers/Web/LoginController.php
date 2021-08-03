@@ -47,7 +47,7 @@ class LoginController extends BaseController
       $flash_msg = $this->getAlertMessage('success', '<strong>Success!</strong> Welcome ' . $fullname . ' to DataWarehouse');
       $request->session()->flash('pharmacy_msg', $flash_msg);
 
-      return redirect('dashboard');
+      return redirect('dashboard/care-and-treatment');
     }
   }
 

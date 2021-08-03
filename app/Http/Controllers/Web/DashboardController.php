@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\View;
 
 class DashboardController extends BaseController
 {
-  public function displayHomeView(Request $request)
+  public function displayDashboardView(Request $request)
   {
     $view_data = [];
+    $category = $request->category;
 
     $token = session()->get('token');
     $role_id = session()->get('role_id');
@@ -18,9 +19,9 @@ class DashboardController extends BaseController
     $data = [
       'page_title' => 'Home',
       'main_menu' => 'dashboard',
-      'sub_menu' => 'care-and-treatment',
+      'sub_menu' => $category,
       'menugroups' => $this->getRoleMenus($token, $role_id),
-      'content_view' => View::make('dashboard.home', $view_data),
+      'content_view' => View::make('dashboard.main', $view_data),
     ];
 
     return view('template.main', $data);
