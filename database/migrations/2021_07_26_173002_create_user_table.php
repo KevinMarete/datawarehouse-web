@@ -34,16 +34,25 @@ class CreateUserTable extends Migration
         DB::table('tbl_user')->insert(
             array(
                 [
-                    'firstname' => 'Super',
+                    'firstname' => 'Default',
                     'lastname' => 'Admin',
                     'phone' => '0722123456',
-                    'email' => 'superadmin@gmail.com',
-                    'password' => '$2y$10$Pm9//JP64ObJ9Eqj82u07uDZpXEFCNqDvkPqCFJ.P8IdDiZMUEys.',
+                    'email' => 'admin@gmail.com',
+                    'password' => '$2y$10$BKIe0aKlFPNfIQoaaJbTx.LjugLBBKPNVk6dPUvwC/2y4r2ewXlii',
                     'role_id' => 1,
                     'email_verified_at' => now(),
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ]
+                    'created_at' => now()
+                ],
+                [
+                    'firstname' => 'Default',
+                    'lastname' => 'User',
+                    'phone' => '0711444555',
+                    'email' => 'user@gmail.com',
+                    'password' => '$2y$10$CMUgYSo66s3WuQWOQVicf.uEgFrhRudCxX9p3gvropHho/fH54fQC',
+                    'role_id' => 2,
+                    'email_verified_at' => now(),
+                    'created_at' => now()
+                ],
             )
         );
     }
