@@ -7,6 +7,10 @@ use App\Http\Controllers\Web\DashboardController;
 use App\Http\Controllers\Web\QueryCategoryController;
 use App\Http\Controllers\Web\QueryController;
 use App\Http\Controllers\Web\UserController;
+use App\Http\Controllers\Web\RoleController;
+use App\Http\Controllers\Web\MenuGroupController;
+use App\Http\Controllers\Web\MenuController;
+use App\Http\Controllers\Web\MenuRoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,7 +70,44 @@ Route::group(['middleware' => ['usersession']], function () {
     Route::post('/user/update/{id}', [UserController::class, 'updateUser']);
     Route::get('/user/delete/{id}', [UserController::class, 'deleteUser']);
 
+    /*Role Routes*/
+
+    Route::get('/role', [RoleController::class, 'displayRoleTableView']);
+    Route::get('/role/new', [RoleController::class, 'displayNewRoleView']);
+    Route::post('/role/save', [RoleController::class, 'saveRole']);
+    Route::get('/role/view/{id}', [RoleController::class, 'displayRoleView']);
+    Route::post('/role/update/{id}', [RoleController::class, 'updateRole']);
+    Route::get('/role/delete/{id}', [RoleController::class, 'deleteRole']);
+
+
+    /*MenuGroup Routes*/
+
+    Route::get('/menugroup', [MenuGroupController::class, 'displayMenuGroupTableView']);
+    Route::get('/menugroup/new', [MenuGroupController::class, 'displayNewMenuGroupView']);
+    Route::post('/menugroup/save', [MenuGroupController::class, 'saveMenuGroup']);
+    Route::get('/menugroup/view/{id}', [MenuGroupController::class, 'displayMenuGroupView']);
+    Route::post('/menugroup/update/{id}', [MenuGroupController::class, 'updateMenuGroup']);
+    Route::get('/menugroup/delete/{id}', [MenuGroupController::class, 'deleteMenuGroup']);
+
+    /*Menu Routes*/
+
+    Route::get('/menu', [MenuController::class, 'displayMenuTableView']);
+    Route::get('/menu/new', [MenuController::class, 'displayNewMenuView']);
+    Route::post('/menu/save', [MenuController::class, 'saveMenu']);
+    Route::get('/menu/view/{id}', [MenuController::class, 'displayMenuView']);
+    Route::post('/menu/update/{id}', [MenuController::class, 'updateMenu']);
+    Route::get('/menu/delete/{id}', [MenuController::class, 'deleteMenu']);
+
+    /*MenuRole Routes*/
+
+    Route::get('/menurole', [MenuRoleController::class, 'displayMenuRoleTableView']);
+    Route::get('/menurole/new', [MenuRoleController::class, 'displayNewMenuRoleView']);
+    Route::post('/menurole/save', [MenuRoleController::class, 'saveMenuRole']);
+    Route::get('/menurole/view/{id}', [MenuRoleController::class, 'displayMenuRoleView']);
+    Route::post('/menurole/update/{id}', [MenuRoleController::class, 'updateMenuRole']);
+    Route::get('/menurole/delete/{id}', [MenuRoleController::class, 'deleteMenuRole']);
+
     /*Dashboard Routes*/
 
-    Route::get('/dashboard', [DashboardController::class, 'displayHomeView']);
+    Route::get('/dashboard/{category}', [DashboardController::class, 'displayDashboardView']);
 });
