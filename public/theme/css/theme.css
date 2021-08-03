@@ -4526,7 +4526,7 @@ section {
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-
+/* Marete Changes
 .role {
     display: inline-block;
     line-height: 30px;
@@ -4537,7 +4537,7 @@ section {
     -moz-border-radius: 3px;
     border-radius: 3px;
     text-transform: capitalize;
-}
+}*/
 
 .role.admin {
     background: #fa4251;
