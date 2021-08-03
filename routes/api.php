@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\MenuController;
+use App\Http\Controllers\Api\MenuGroupController;
+use App\Http\Controllers\Api\MenuRoleController;
 use App\Http\Controllers\Api\QueryCategoryController;
 use App\Http\Controllers\Api\QueryController;
 use App\Http\Controllers\Api\RoleController;
@@ -37,10 +40,15 @@ Route::group(['middleware' => ['json.response', 'cors']], function () {
         Route::post('/activate', [AuthController::class, 'activate'])->name('activate');
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
         Route::resources([
+            'menu' => MenuController::class,
+            'menugroup' => MenuGroupController::class,
+            'menurole' => MenuRoleController::class,
             'query' => QueryController::class,
             'querycategory' => QueryCategoryController::class,
-            'user' => UserController::class,
             'role' => RoleController::class,
+            'user' => UserController::class,
         ]);
+        Route::get('/role/{id}/menus', [RoleController::class, 'getRoleMenus'])->name('getrolemenus');
+        Route::post('/query/run', [QueryController::class, 'runQuery'])->name('runquery');
     });
 });
