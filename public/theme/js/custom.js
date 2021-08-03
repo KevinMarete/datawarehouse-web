@@ -15,7 +15,7 @@ jQuery(function ($) {
     $("#dataTable").DataTable();
 
     // Show confirm on .delete
-    $(".delete").click(function () {
+    $(document).on("click", ".delete", () => {
         var r = confirm("Are you sure?");
         if (r == true) {
             $(this).attr("disabled", "disabled");
@@ -41,6 +41,7 @@ jQuery(function ($) {
                 resultTable.DataTable($.parseJSON(responseData));
             } catch (error) {
                 alert("Error! Your query could not be executed");
+                location.reload();
             }
             $(":submit").prop("disabled", false);
         });
