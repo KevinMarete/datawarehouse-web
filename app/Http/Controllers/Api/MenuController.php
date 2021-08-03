@@ -15,7 +15,7 @@ class MenuController extends Controller
    */
   public function index()
   {
-    $menus = Menu::all();
+    $menus = Menu::with('menu_group')->get();
     return response()->json($menus);
   }
 
@@ -54,7 +54,7 @@ class MenuController extends Controller
    */
   public function show($id)
   {
-    $menu = Menu::find($id);
+    $menu = Menu::with('menu_group')->find($id);
     if (is_null($menu)) {
       return response()->json(['error' => 'not_found']);
     }
