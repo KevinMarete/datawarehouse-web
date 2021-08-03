@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\MenuGroup;
 use App\Models\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -99,5 +100,19 @@ class RoleController extends Controller
         }
         $role->delete();
         return response()->json(['msg' => 'Removed successfully']);
+    }
+
+    /**
+     * Display the specified Role's menus.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getRoleMenus($id)
+    {
+        $menuroles = MenuGroup::with(['menus'])->whereHas('menus.menu_roles', function ($query) use ($id) {
+            $query->where('role_id', $id);
+        })->get();
+        return response()->json($menuroles);
     }
 }
