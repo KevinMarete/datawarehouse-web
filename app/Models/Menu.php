@@ -5,21 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Role extends Model
+class Menu extends Model
 {
   use SoftDeletes;
 
-  protected $table = 'tbl_role';
+  protected $table = 'tbl_menu';
 
-  protected $fillable = ['name'];
+  protected $fillable = ['name', 'link', 'menu_group_id'];
 
   public static $rules = [
     "name" => "required",
+    "link" => "required",
+    "menu_group_id" => "required|numeric",
   ];
 
-  public function users()
+  public function menu_group()
   {
-    return $this->hasMany('App\Models\User');
+    return $this->belongsTo('App\Models\MenuGroup');
   }
 
   public function menu_roles()
