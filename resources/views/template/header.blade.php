@@ -11,41 +11,21 @@
             <input type="hidden" class="main-menu" value="{{ $main_menu }}" />
             <input type="hidden" class="sub-menu" value="{{ $sub_menu }}" />
             <ul class="list-unstyled font-weight-bold">
-              <li class="has-sub dashboard">
+              @foreach($menugroups as $menugroup)
+              <li class="has-sub {{ str_ireplace(' ', '-', strtolower($menugroup['name'])) }}">
                 <a href="#">
-                  <i class="fas fa-tachometer-alt"></i>Dashboard
+                  <i class="{{ $menugroup['icon'] }}"></i>{{ ucwords($menugroup['name']) }}
                   <span class="bot-line"></span>
                 </a>
                 <ul class="header3-sub-list list-unstyled">
-                  <li class="care-and-treatment">
-                    <a href="/dashboard">Care and Treatment</a>
+                  @foreach($menugroup['menus'] as $menu)
+                  <li class="{{ str_ireplace(' ', '-', strtolower($menu['name'])) }}">
+                    <a href="{{ $menu['link'] }}">{{ ucwords($menu['name']) }}</a>
                   </li>
-                  <li class="screening-and-testing">
-                    <a href="/dashboard">Screening and Testing</a>
-                  </li>
+                  @endforeach
                 </ul>
               </li>
-              <li class="user">
-                <a href="/user">
-                  <i class="fas fa-user"></i>
-                  <span class="bot-line"></span>Users</a>
-              </li>
-              <li class="has-sub data">
-                <a href="#">
-                  <i class="fas fa-database"></i>
-                  <span class="bot-line"></span>Data</a>
-                <ul class="header3-sub-list list-unstyled">
-                  <li class="query">
-                    <a href="/query">Query</a>
-                  </li>
-                  <li class="querycategory">
-                    <a href="/querycategory">Query Category</a>
-                  </li>
-                  <li class="queryexecutor">
-                    <a href="/query/executor">Query Executor</a>
-                  </li>
-                </ul>
-              </li>
+              @endforeach
             </ul>
           </div>
           <div class="header__tool">
@@ -109,37 +89,20 @@
       <nav class="navbar-mobile">
         <div class="container-fluid">
           <ul class="navbar-mobile__list list-unstyled">
-            <li class="has-sub">
+            @foreach($menugroups as $menugroup)
+            <li class="has-sub {{ str_ireplace(' ', '-', strtolower($menugroup['name'])) }}">
               <a class="js-arrow" href="#">
-                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                <i class="{{ $menugroup['icon'] }}"></i>{{ ucwords($menugroup['name']) }}
+              </a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="/dashboard">Care and Treatment</a>
+                @foreach($menugroup['menus'] as $menu)
+                <li class="{{ str_ireplace(' ', '-', strtolower($menu['name'])) }}">
+                  <a href="{{ $menu['link'] }}">{{ ucwords($menu['name']) }}</a>
                 </li>
-                <li>
-                  <a href="/dashboard">Screening and Testing</a>
-                </li>
+                @endforeach
               </ul>
             </li>
-            <li>
-              <a href="/user">
-                <i class="fas fa-user"></i>User</a>
-            </li>
-            <li class="has-sub">
-              <a class="js-arrow" href="#">
-                <i class="fas fa-database"></i>Data</a>
-              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="/query">Query</a>
-                </li>
-                <li>
-                  <a href="/query-category">Query Category</a>
-                </li>
-                <li>
-                  <a href="/query-export">Query Run Tool</a>
-                </li>
-              </ul>
-            </li>
+            @endforeach
           </ul>
         </div>
       </nav>
