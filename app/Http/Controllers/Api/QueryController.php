@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Query;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class QueryController extends Controller
 {
@@ -101,5 +102,22 @@ class QueryController extends Controller
         }
         $query->delete();
         return response()->json(['msg' => 'Removed successfully']);
+    }
+
+    /**
+     * Run query.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function runQuery(Request $request)
+    {
+        $results = [];
+        try {
+            $results = DB::connection('mysql_read')->select($request->query_statement);
+        } catch (\Illuminate\Database\QueryException $ex) {
+            dd($ex->getMessage());
+        }
+        return response()->json($results);
     }
 }
