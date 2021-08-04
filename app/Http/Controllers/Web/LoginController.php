@@ -9,8 +9,12 @@ class LoginController extends BaseController
 {
   protected $client;
 
-  public function displayLoginView()
+  public function displayLoginView(Request $request)
   {
+    // Redirect if user has session
+    if ($request->session()->exists('id')) {
+      return redirect('/dashboard/care-and-treatment');
+    }
     $data = [
       'page_title' => 'Login'
     ];
