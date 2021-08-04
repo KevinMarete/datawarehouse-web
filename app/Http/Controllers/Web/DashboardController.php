@@ -21,7 +21,7 @@ class DashboardController extends BaseController
       'main_menu' => 'dashboard',
       'sub_menu' => $category,
       'menugroups' => $this->getRoleMenus($token, $role_id),
-      'content_view' => View::make('dashboard.main', $view_data),
+      'content_view' => View::make('dashboard.'.$category, $view_data),
     ];
 
     return view('template.main', $data);
