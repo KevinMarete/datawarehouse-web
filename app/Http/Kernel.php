@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'json.response' => \App\Http\Middleware\ForceJsonResponse::class,
         'cors' => \App\Http\Middleware\Cors::class,
         'usersession' => \App\Http\Middleware\CheckUserSession::class,
+        'useraccess' => \App\Http\Middleware\CheckUserAccess::class,
     ];
 }

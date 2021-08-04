@@ -32,7 +32,7 @@ Route::get('/forgot-password', [LoginController::class, 'displayForgotPasswordVi
 Route::post('/reset-account', [LoginController::class, 'resetAccount']);
 
 //Private routes
-Route::group(['middleware' => ['usersession']], function () {
+Route::group(['middleware' => ['usersession', 'useraccess']], function () {
 
     /*Account Routes*/
 
