@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\QueryCategoryController;
 use App\Http\Controllers\Api\QueryController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\DataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,5 +51,7 @@ Route::group(['middleware' => ['json.response', 'cors']], function () {
         ]);
         Route::get('/role/{id}/menus', [RoleController::class, 'getRoleMenus'])->name('getrolemenus');
         Route::post('/query/run', [QueryController::class, 'runQuery'])->name('runquery');
+        Route::get('/data/on-art/{category}/{from}/{to}', [DataController::class, 'getOnART'])->name('getonart');
+        Route::get('/data/on-care/{category}/{from}/{to}', [DataController::class, 'getOnCare'])->name('getoncare');
     });
 });
