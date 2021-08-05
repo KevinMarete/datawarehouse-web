@@ -46,4 +46,44 @@ jQuery(function ($) {
             $(":submit").prop("disabled", false);
         });
     });
+
+    // Load Charts
+    $(document).ready(() => {
+        $.each($(".dashboard-chart"), (i, v) => {
+            const chartId = v.id;
+            const chartConfig = $(v).data("api-resource");
+            buildChart(chartId, chartConfig);
+        });
+    });
 });
+
+function buildChart(chartId, chartConfig) {
+    const data = {
+        labels: chartConfig.labels,
+        datasets: chartConfig.datasets,
+    };
+    const config = {
+        type: chartConfig.type,
+        data: data,
+        options: {
+            maintainAspectRatio: true,
+            legend: {
+                display: true,
+            },
+            title: {
+                display: true,
+                text: chartConfig.title,
+            },
+            scales: {
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true,
+                        },
+                    },
+                ],
+            },
+        },
+    };
+    return new Chart(chartId, config);
+}
