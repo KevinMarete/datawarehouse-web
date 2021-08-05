@@ -12,7 +12,7 @@
           <div class="statistic-chart-1">
             <h3 class="title-3 m-b-30">chart</h3>
             <div class="chart-wrap">
-              <canvas id="widgetChart5"></canvas>
+              <canvas id="currentChart" class="dashboard-chart" data-api-resource="{{ $chart_data }}"></canvas>
             </div>
             <div class="statistic-chart-1-note">
               <span class="big">10,368</span>
@@ -26,7 +26,7 @@
           <div class="top-campaign">
             <h3 class="title-3 m-b-30">top campaigns</h3>
             <div class="table-responsive">
-              <table class="table table-top-campaign">
+              <table id="top-campaign" class="table table-top-campaign dashboard-table" data-api-resource="{{ $chart_data }}">
                 <tbody>
                   <tr>
                     <td>1. Australia</td>
@@ -59,7 +59,7 @@
           <div class="chart-percent-2">
             <h3 class="title-3 m-b-30">chart by %</h3>
             <div class="chart-wrap">
-              <canvas id="percent-chart2"></canvas>
+              <canvas id="percent-chart2-test" class="dashboard-chart" data-api-resource="{{ $chart_data }}"></canvas>
               <div id="chartjs-tooltip">
                 <table></table>
               </div>
