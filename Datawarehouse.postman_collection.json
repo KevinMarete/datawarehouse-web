@@ -1708,12 +1708,12 @@
 			]
 		},
 		{
-			"name": "Data",
+			"name": "Patient",
 			"item": [
 				{
-					"name": "Get Current on ART",
+					"name": "Get Current OnArt Patient Totals By AgeGroup",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -1726,18 +1726,21 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/data/on-art/current/2021-02-01/2021-03-01",
+							"raw": "{{host}}{{port}}/api/patient/on-art/current/agegroup",
 							"host": [
 								"{{host}}{{port}}"
 							],
 							"path": [
 								"api",
-								"data",
+								"patient",
 								"on-art",
 								"current",
-								"2021-02-01",
-								"2021-03-01"
+								"agegroup"
 							],
 							"query": [
 								{
@@ -1751,9 +1754,9 @@
 					"response": []
 				},
 				{
-					"name": "Get New on ART",
+					"name": "Get Current OnArt Patient Totals By AgeGroup and Gender",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -1766,18 +1769,107 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/data/on-art/new/2020-02-01/2021-03-01",
+							"raw": "{{host}}{{port}}/api/patient/on-art/current/agegroup-gender",
 							"host": [
 								"{{host}}{{port}}"
 							],
 							"path": [
 								"api",
-								"data",
+								"patient",
+								"on-art",
+								"current",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current OnArt Patient Proportions By AgeGroup and Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/patient/on-art/current/prop",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"on-art",
+								"current",
+								"prop"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get New OnArt Patient Totals By AgeGroup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/patient/on-art/new/agegroup",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"patient",
 								"on-art",
 								"new",
-								"2020-02-01",
-								"2021-03-01"
+								"agegroup"
 							],
 							"query": [
 								{
@@ -1791,9 +1883,9 @@
 					"response": []
 				},
 				{
-					"name": "Get Current on Care",
+					"name": "Get New OnArt Patient Totals By AgeGroup and Gender",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -1806,18 +1898,64 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/data/on-care/current/2021-02-01/2021-03-01",
+							"raw": "{{host}}{{port}}/api/patient/on-art/new/agegroup-gender",
 							"host": [
 								"{{host}}{{port}}"
 							],
 							"path": [
 								"api",
-								"data",
+								"patient",
+								"on-art",
+								"new",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current OnCare Patient Totals By AgeGroup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/patient/on-care/current/agegroup",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"patient",
 								"on-care",
 								"current",
-								"2021-02-01",
-								"2021-03-01"
+								"agegroup"
 							],
 							"query": [
 								{
@@ -1831,9 +1969,9 @@
 					"response": []
 				},
 				{
-					"name": "Get New on Care",
+					"name": "Get Current OnCare Patient Totals By AgeGroup and Gender",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -1846,18 +1984,64 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/data/on-care/new/2021-02-01/2021-03-01",
+							"raw": "{{host}}{{port}}/api/patient/on-care/current/agegroup-gender",
 							"host": [
 								"{{host}}{{port}}"
 							],
 							"path": [
 								"api",
-								"data",
+								"patient",
+								"on-care",
+								"current",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get New OnCare Patient Totals By AgeGroup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/patient/on-care/new/agegroup",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"patient",
 								"on-care",
 								"new",
-								"2021-02-01",
-								"2021-03-01"
+								"agegroup"
 							],
 							"query": [
 								{
@@ -1871,9 +2055,9 @@
 					"response": []
 				},
 				{
-					"name": "Get Current Age Gender on ART",
+					"name": "Get New OnCare Patient Totals By AgeGroup and Gender",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -1886,138 +2070,21 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/data/on-art/current-age-gender/2021-02-01/2021-03-01",
+							"raw": "{{host}}{{port}}/api/patient/on-care/new/agegroup-gender",
 							"host": [
 								"{{host}}{{port}}"
 							],
 							"path": [
 								"api",
-								"data",
-								"on-art",
-								"current-age-gender",
-								"2021-02-01",
-								"2021-03-01"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get New Age Gender on ART",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{host}}{{port}}/api/data/on-art/new-age-gender/2020-02-01/2021-03-01",
-							"host": [
-								"{{host}}{{port}}"
-							],
-							"path": [
-								"api",
-								"data",
-								"on-art",
-								"new-age-gender",
-								"2020-02-01",
-								"2021-03-01"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Current Prop on ART",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{host}}{{port}}/api/data/on-art/current-prop/2021-02-01/2021-03-01",
-							"host": [
-								"{{host}}{{port}}"
-							],
-							"path": [
-								"api",
-								"data",
-								"on-art",
-								"current-prop",
-								"2021-02-01",
-								"2021-03-01"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Current Age Gender on Care",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{host}}{{port}}/api/data/on-care/current-age-gender/2021-02-01/2021-03-01",
-							"host": [
-								"{{host}}{{port}}"
-							],
-							"path": [
-								"api",
-								"data",
+								"patient",
 								"on-care",
-								"current-age-gender",
-								"2021-02-01",
-								"2021-03-01"
+								"new",
+								"agegroup-gender"
 							],
 							"query": [
 								{
@@ -2031,9 +2098,9 @@
 					"response": []
 				},
 				{
-					"name": "Get New Age Gender on Care",
+					"name": "Get Tested Postive Patient Totals By Gender",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -2046,18 +2113,64 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/data/on-care/new-age-gender/2021-02-01/2021-03-01",
+							"raw": "{{host}}{{port}}/api/patient/tested/positive/gender",
 							"host": [
 								"{{host}}{{port}}"
 							],
 							"path": [
 								"api",
-								"data",
-								"on-care",
-								"new-age-gender",
-								"2021-02-01",
-								"2021-03-01"
+								"patient",
+								"tested",
+								"positive",
+								"gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tested Postive Patient Totals By AgeGroup and Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/patient/tested/positive/agegroup-gender",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"tested",
+								"positive",
+								"agegroup-gender"
 							],
 							"query": [
 								{
