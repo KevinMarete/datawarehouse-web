@@ -16,9 +16,9 @@ class Patient extends Model
     'Start_regimen_date' => 'start_regimen_date'
   ];
 
-  protected $appends = ['age', 'age_group', 'gender', 'enrollment_date', 'start_regimen', 'start_regimen_date'];
+  protected $appends = ['age', 'age_group', 'age_group_gender', 'gender', 'enrollment_date', 'start_regimen', 'start_regimen_date'];
 
-  protected $visible = ['age', 'age_group', 'gender', 'enrollment_date', 'start_regimen', 'start_regimen_date', 'current_regimen', 'current_regimen_date'];
+  protected $visible = ['age', 'age_group', 'age_group_gender', 'gender', 'enrollment_date', 'start_regimen', 'start_regimen_date', 'current_regimen', 'current_regimen_date'];
 
   protected $hidden = array('Gender', 'Enrollment_Date', 'Enrollment_Date', 'Start_regimen', 'Start_regimen_date');
 
@@ -39,6 +39,44 @@ class Patient extends Model
     return $age_group;
   }
 
+  public function getAgeGroupGenderAttribute()
+  {
+    $age = $this->age;
+    $gender = $this->gender;
+
+    if ($age < 1) {
+      $age_group_gender = "<1 " . $gender;
+    } elseif ($age >= 1 && $age < 5) {
+      $age_group_gender = "1-4 " . $gender;
+    } elseif ($age >= 5 && $age < 10) {
+      $age_group_gender = "5-9 " . $gender;
+    } elseif ($age >= 10 && $age < 15) {
+      $age_group_gender = "10-14 " . $gender;
+    } elseif ($age >= 15 && $age < 20) {
+      $age_group_gender = "15-19 " . $gender;
+    } elseif ($age >= 20 && $age < 25) {
+      $age_group_gender = "20-24 " . $gender;
+    } elseif ($age >= 25 && $age < 30) {
+      $age_group_gender = "25-29 " . $gender;
+    } elseif ($age >= 30 && $age < 35) {
+      $age_group_gender = "30-34 " . $gender;
+    } elseif ($age >= 35 && $age < 40) {
+      $age_group_gender = "35-39 " . $gender;
+    } elseif ($age >= 40 && $age < 45) {
+      $age_group_gender = "40-44 " . $gender;
+    } elseif ($age >= 45 && $age < 50) {
+      $age_group_gender = "45-49 " . $gender;
+    } else {
+      $age_group_gender = "50+ " . $gender;
+    }
+    return $age_group_gender;
+  }
+
+  public function getEnrollmentDateAttribute()
+  {
+    return $this->attributes['Enrollment_Date'];
+  }
+
   public function getGenderAttribute()
   {
     return $this->attributes['Gender'];
@@ -52,10 +90,5 @@ class Patient extends Model
   public function getStartRegimenAttribute()
   {
     return $this->attributes['Start_regimen'];
-  }
-
-  public function getEnrollmentDateAttribute()
-  {
-    return $this->attributes['Enrollment_Date'];
   }
 }
