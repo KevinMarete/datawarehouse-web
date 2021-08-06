@@ -110,4 +110,5 @@ Route::group(['middleware' => ['usersession', 'useraccess']], function () {
     /*Dashboard Routes*/
 
     Route::get('/dashboard/{category}', [DashboardController::class, 'displayDashboardView']);
+    Route::post('/dashboard/filter', [DashboardController::class, 'displayDashboardFilterView']);
 });
