@@ -1869,6 +1869,206 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get Current Age Gender on ART",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}{{port}}/api/data/on-art/current-age-gender/2021-02-01/2021-03-01",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"data",
+								"on-art",
+								"current-age-gender",
+								"2021-02-01",
+								"2021-03-01"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get New Age Gender on ART",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}{{port}}/api/data/on-art/new-age-gender/2020-02-01/2021-03-01",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"data",
+								"on-art",
+								"new-age-gender",
+								"2020-02-01",
+								"2021-03-01"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current Prop on ART",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}{{port}}/api/data/on-art/current-prop/2021-02-01/2021-03-01",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"data",
+								"on-art",
+								"current-prop",
+								"2021-02-01",
+								"2021-03-01"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current Age Gender on Care",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}{{port}}/api/data/on-care/current-age-gender/2021-02-01/2021-03-01",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"data",
+								"on-care",
+								"current-age-gender",
+								"2021-02-01",
+								"2021-03-01"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get New Age Gender on Care",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}{{port}}/api/data/on-care/new-age-gender/2021-02-01/2021-03-01",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"data",
+								"on-care",
+								"new-age-gender",
+								"2021-02-01",
+								"2021-03-01"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
