@@ -21,6 +21,8 @@
   <script src="/theme/vendor/dataTables-1.10.25/JSZip-2.5.0/jszip.min.js"></script>
   <script src="/theme/vendor/dataTables-1.10.25/pdfmake-0.1.36/pdfmake.min.js"></script>
   <script src="/theme/vendor/dataTables-1.10.25/pdfmake-0.1.36/vfs_fonts.js"></script>
+  <script src="/theme/vendor/daterangepicker/js/moment.min.js"></script>
+  <script src="/theme/vendor/daterangepicker/js/daterangepicker.js"></script>
 
   <!-- Main JS-->
   <script src="/theme/js/main.js"></script>

@@ -27,6 +27,7 @@
 <link href="/theme/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 <link href="/theme/vendor/dataTables-1.10.25/datatables.min.css" rel="stylesheet" />
 <link href="/theme/vendor/dataTables-1.10.25/Buttons-1.7.1/css/buttons.dataTables.min.css" rel="stylesheet" />
+<link href="/theme/vendor/daterangepicker/css/daterangepicker.css" rel="stylesheet" crossorigin="anonymous" />
 
 <!-- Main CSS-->
 <link href="/theme/css/theme.css" rel="stylesheet" media="all">
