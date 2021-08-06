@@ -55,35 +55,94 @@ jQuery(function ($) {
             buildChart(chartId, chartConfig);
         });
     });
-});
 
-function buildChart(chartId, chartConfig) {
-    const data = {
-        labels: chartConfig.labels,
-        datasets: chartConfig.datasets,
-    };
-    const config = {
-        type: chartConfig.type,
-        data: data,
-        options: {
-            maintainAspectRatio: true,
-            legend: {
-                display: true,
-            },
-            title: {
-                display: true,
-                text: chartConfig.title,
-            },
-            scales: {
-                yAxes: [
-                    {
-                        ticks: {
-                            beginAtZero: true,
+    function buildChart(chartId, chartConfig) {
+        const data = {
+            labels: chartConfig.labels,
+            datasets: chartConfig.datasets,
+        };
+        const config = {
+            type: chartConfig.type,
+            data: data,
+            options: {
+                maintainAspectRatio: true,
+                legend: {
+                    display: true,
+                },
+                title: {
+                    display: true,
+                    text: chartConfig.title,
+                    fontSize: 18,
+                },
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true,
+                            },
                         },
-                    },
-                ],
+                    ],
+                },
             },
-        },
-    };
-    return new Chart(chartId, config);
-}
+        };
+        return new Chart(chartId, config);
+    }
+
+    //Adding Report Filter
+    addReportFilter();
+
+    function addReportFilter() {
+        var start = moment($("#report_start").val());
+        var end = moment($("#report_end").val());
+
+        function cb(start, end) {
+            $("#periodrange span").html(
+                start.format("MMMM D, YYYY") +
+                    " - " +
+                    end.format("MMMM D, YYYY")
+            );
+        }
+
+        $("#periodrange").daterangepicker(
+            {
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    Today: [moment(), moment()],
+                    Yesterday: [
+                        moment().subtract(1, "days"),
+                        moment().subtract(1, "days"),
+                    ],
+                    "Last 7 Days": [moment().subtract(7, "days"), moment()],
+                    "Last 30 Days": [moment().subtract(30, "days"), moment()],
+                    "This Month": [
+                        moment().startOf("month"),
+                        moment().endOf("month"),
+                    ],
+                    "Last Month": [
+                        moment().subtract(1, "month").startOf("month"),
+                        moment().subtract(1, "month").endOf("month"),
+                    ],
+                },
+            },
+            cb
+        );
+
+        cb(start, end);
+    }
+
+    $("#reportrange").on("apply.daterangepicker", function (ev, picker) {
+        var startDate = picker.startDate.format("YYYY-MM-DD");
+        var endDate = picker.endDate.format("YYYY-MM-DD");
+
+        $("#report_start").val(startDate);
+        $("#report_end").val(endDate);
+    });
+
+    $("#report_name").on("change", function () {
+        var selected_report_group = $("#report_name :selected")
+            .parent()
+            .attr("data-id");
+        $("#report_group").val(selected_report_group);
+    });
+});
