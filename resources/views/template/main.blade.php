@@ -6,7 +6,7 @@
 </head>
 
 <body class="animsition">
-  <div class="page-wrapper">
+  <div class="page-wrapper bg-white">
 
     @include('template.header')
 
