@@ -10,17 +10,53 @@ class Patient extends Model
   protected $table = 'etl_art_master_list';
 
   protected $maps = [
-    'Gender' => 'gender',
     'Enrollment_Date' => 'enrollment_date',
+    'Facility' => 'facility',
+    'Gender' => 'gender',
+    'location' => 'county',
     'Start_regimen' => 'start_regimen',
-    'Start_regimen_date' => 'start_regimen_date'
+    'Start_regimen_date' => 'start_regimen_date',
+    'sub_location' => 'sub_county'
   ];
 
-  protected $appends = ['age', 'age_group', 'age_group_gender', 'gender', 'enrollment_date', 'start_regimen', 'start_regimen_date'];
+  protected $appends = [
+    'age',
+    'age_group',
+    'age_group_gender',
+    'county',
+    'enrollment_date',
+    'facility',
+    'gender',
+    'start_regimen',
+    'start_regimen_date',
+    'sub_county'
+  ];
 
-  protected $visible = ['age', 'age_group', 'age_group_gender', 'gender', 'enrollment_date', 'start_regimen', 'start_regimen_date', 'current_regimen', 'current_regimen_date'];
+  protected $visible = [
+    'age',
+    'age_group',
+    'age_group_gender',
+    'county',
+    'current_regimen',
+    'current_regimen_date',
+    'enrollment_date',
+    'facility',
+    'gender',
+    'hiv_test_date',
+    'start_regimen',
+    'start_regimen_date',
+    'sub_county'
+  ];
 
-  protected $hidden = array('Gender', 'Enrollment_Date', 'Enrollment_Date', 'Start_regimen', 'Start_regimen_date');
+  protected $hidden = [
+    'Gender',
+    'Enrollment_Date',
+    'Facility',
+    'location',
+    'Start_regimen',
+    'Start_regimen_date',
+    'sub_location'
+  ];
 
   public function getAgeAttribute()
   {
@@ -72,9 +108,19 @@ class Patient extends Model
     return $age_group_gender;
   }
 
+  public function getCountyAttribute()
+  {
+    return strtoupper($this->attributes['location']);
+  }
+
   public function getEnrollmentDateAttribute()
   {
     return $this->attributes['Enrollment_Date'];
+  }
+
+  public function getFacilityAttribute()
+  {
+    return strtoupper($this->attributes['Facility']);
   }
 
   public function getGenderAttribute()
@@ -90,5 +136,10 @@ class Patient extends Model
   public function getStartRegimenAttribute()
   {
     return $this->attributes['Start_regimen'];
+  }
+
+  public function getSubCountyAttribute()
+  {
+    return strtoupper($this->attributes['sub_location']);
   }
 }
