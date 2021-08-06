@@ -1,4 +1,4 @@
-<div class="page-content bg-white">
+<div class="page-content">
   <section class="statistic-chart">
     <div class="container">
       @include('dashboard.filter')
