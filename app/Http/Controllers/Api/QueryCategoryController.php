@@ -31,7 +31,7 @@ class QueryCategoryController extends Controller
             $this->validate($request, QueryCategory::$rules);
             $query_category = QueryCategory::firstOrCreate($request->all(), $request->all());
             return response()->json($query_category);
-        } catch (\Illuminate\Database\QueryCategoryException $e) {
+        } catch (\Illuminate\Database\QueryException $e) {
             $errorCode = $e->errorInfo[1];
             if ($errorCode == '7') {
                 QueryCategory::withTrashed()->where([
@@ -74,7 +74,7 @@ class QueryCategoryController extends Controller
             }
             $query_category->update($request->all());
             return response()->json($query_category);
-        } catch (\Illuminate\Database\QueryCategoryException $e) {
+        } catch (\Illuminate\Database\QueryException $e) {
             $errorCode = $e->errorInfo[1];
             if ($errorCode == '7') {
                 QueryCategory::withTrashed()->where([

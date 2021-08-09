@@ -32,7 +32,7 @@ class RoleController extends Controller
             $this->validate($request, Role::$rules);
             $role = Role::firstOrCreate($request->all(), $request->all());
             return response()->json($role);
-        } catch (\Illuminate\Database\RoleException $e) {
+        } catch (\Illuminate\Database\QueryException $e) {
             $errorCode = $e->errorInfo[1];
             if ($errorCode == '7') {
                 Role::withTrashed()->where([
@@ -75,7 +75,7 @@ class RoleController extends Controller
             }
             $role->update($request->all());
             return response()->json($role);
-        } catch (\Illuminate\Database\RoleException $e) {
+        } catch (\Illuminate\Database\QueryException $e) {
             $errorCode = $e->errorInfo[1];
             if ($errorCode == '7') {
                 Role::withTrashed()->where([
