@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\LoginController;
 use App\Http\Controllers\Web\AccountController;
+use App\Http\Controllers\Web\CountyController;
 use App\Http\Controllers\Web\DashboardController;
+use App\Http\Controllers\Web\FacilityController;
 use App\Http\Controllers\Web\QueryCategoryController;
 use App\Http\Controllers\Web\QueryController;
 use App\Http\Controllers\Web\UserController;
@@ -11,6 +13,7 @@ use App\Http\Controllers\Web\RoleController;
 use App\Http\Controllers\Web\MenuGroupController;
 use App\Http\Controllers\Web\MenuController;
 use App\Http\Controllers\Web\MenuRoleController;
+use App\Http\Controllers\Web\SubCountyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +43,33 @@ Route::group(['middleware' => ['usersession', 'useraccess']], function () {
     Route::post('/update-profile', [AccountController::class, 'updateProfile']);
     Route::post('/change-password', [AccountController::class, 'changePassword']);
     Route::get('/logout', [AccountController::class, 'logout']);
+
+    /*County Routes*/
+
+    Route::get('/county', [CountyController::class, 'displayCountyTableView']);
+    Route::get('/county/new', [CountyController::class, 'displayNewCountyView']);
+    Route::post('/county/save', [CountyController::class, 'saveCounty']);
+    Route::get('/county/view/{id}', [CountyController::class, 'displayCountyView']);
+    Route::post('/county/update/{id}', [CountyController::class, 'updateCounty']);
+    Route::get('/county/delete/{id}', [CountyController::class, 'deleteCounty']);
+
+    /*SubCounty Routes*/
+
+    Route::get('/subcounty', [SubCountyController::class, 'displaySubCountyTableView']);
+    Route::get('/subcounty/new', [SubCountyController::class, 'displayNewSubCountyView']);
+    Route::post('/subcounty/save', [SubCountyController::class, 'saveSubCounty']);
+    Route::get('/subcounty/view/{id}', [SubCountyController::class, 'displaySubCountyView']);
+    Route::post('/subcounty/update/{id}', [SubCountyController::class, 'updateSubCounty']);
+    Route::get('/subcounty/delete/{id}', [SubCountyController::class, 'deleteSubCounty']);
+
+    /*Facility Routes*/
+
+    Route::get('/facility', [FacilityController::class, 'displayFacilityTableView']);
+    Route::get('/facility/new', [FacilityController::class, 'displayNewFacilityView']);
+    Route::post('/facility/save', [FacilityController::class, 'saveFacility']);
+    Route::get('/facility/view/{id}', [FacilityController::class, 'displayFacilityView']);
+    Route::post('/facility/update/{id}', [FacilityController::class, 'updateFacility']);
+    Route::get('/facility/delete/{id}', [FacilityController::class, 'deleteFacility']);
 
     /*QueryCategory Routes*/
 
