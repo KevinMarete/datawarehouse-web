@@ -31,1609 +31,1599 @@ class CreateFacilityTable extends Migration
         DB::table('tbl_facility')->insert(
             [
                 [
-                    "mfl_code" => 13023,
-                    "facility_name" => "KENYATTA NATIONAL HOSPITAL",
+                    "mflcode" => 13023,
+                    "name" => "KENYATTA NATIONAL HOSPITAL",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13080,
-                    "facility_name" => "MBAGATHI DISTRICT HOSPITAL",
+                    "mflcode" => 13080,
+                    "name" => "MBAGATHI DISTRICT HOSPITAL",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13105,
-                    "facility_name" => "MUTUINI SUB-DISTRICT HOSPITAL",
+                    "mflcode" => 13105,
+                    "name" => "MUTUINI SUB-DISTRICT HOSPITAL",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13086,
-                    "facility_name" => "MELCHIZEDEK HOSPITAL",
+                    "mflcode" => 13086,
+                    "name" => "MELCHIZEDEK HOSPITAL",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13091,
-                    "facility_name" => "MIDHILL HOSPITAL",
+                    "mflcode" => 13091,
+                    "name" => "MIDHILL HOSPITAL",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13165,
-                    "facility_name" => "RIRUTA HEALTH CENTRE",
+                    "mflcode" => 13165,
+                    "name" => "RIRUTA HEALTH CENTRE",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13249,
-                    "facility_name" => "WAITHAKA HEALTH CENTRE",
+                    "mflcode" => 13249,
+                    "name" => "WAITHAKA HEALTH CENTRE",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13036,
-                    "facility_name" => "KIVULI DISPENSARY(CATHOLIC)",
+                    "mflcode" => 13036,
+                    "name" => "KIVULI DISPENSARY(CATHOLIC)",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13135,
-                    "facility_name" => "ORTHODOX DISPENSARY(ORTHODOX CHURCH)",
+                    "mflcode" => 13135,
+                    "name" => "ORTHODOX DISPENSARY(ORTHODOX CHURCH)",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13103,
-                    "facility_name" => "MUTEITHANIA NURSING HOME",
+                    "mflcode" => 13103,
+                    "name" => "MUTEITHANIA NURSING HOME",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13089,
-                    "facility_name" => "MERCY MISSION NURSING HOME",
+                    "mflcode" => 13089,
+                    "name" => "MERCY MISSION NURSING HOME",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 12893,
-                    "facility_name" => "CHANDARIA DISPENSARY",
+                    "mflcode" => 12893,
+                    "name" => "CHANDARIA DISPENSARY",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13213,
-                    "facility_name" => "ST LUKES NURSING HOME",
+                    "mflcode" => 13213,
+                    "name" => "ST LUKES NURSING HOME",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13129,
-                    "facility_name" => "NYINA WA MUMBI CLINIC(CATHOLIC)",
+                    "mflcode" => 13129,
+                    "name" => "NYINA WA MUMBI CLINIC(CATHOLIC)",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13212,
-                    "facility_name" => "ST JUDES NURSING HOME",
+                    "mflcode" => 13212,
+                    "name" => "ST JUDES NURSING HOME",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13159,
-                    "facility_name" => "RAY OF HOPE NURSING HOME",
+                    "mflcode" => 13159,
+                    "name" => "RAY OF HOPE NURSING HOME",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13200,
-                    "facility_name" => "ST CATHERINE NURSING HOME",
+                    "mflcode" => 13200,
+                    "name" => "ST CATHERINE NURSING HOME",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13123,
-                    "facility_name" => "NGONG ROAD DISPENSARY",
+                    "mflcode" => 13123,
+                    "name" => "NGONG ROAD DISPENSARY",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13119,
-                    "facility_name" => "NASCOP VCT",
+                    "mflcode" => 13119,
+                    "name" => "NASCOP VCT",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13019,
-                    "facility_name" => "KEMRI DISPENSARY",
+                    "mflcode" => 13019,
+                    "name" => "KEMRI DISPENSARY",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 16803,
-                    "facility_name" => "GATINA DISPENSARY",
+                    "mflcode" => 16803,
+                    "name" => "GATINA DISPENSARY",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 12995,
-                    "facility_name" => "KABIRO MEDICAL CENTER",
+                    "mflcode" => 12995,
+                    "name" => "KABIRO MEDICAL CENTER",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13238,
-                    "facility_name" => "TRINITY MEDICAL CARE",
+                    "mflcode" => 13238,
+                    "name" => "TRINITY MEDICAL CARE",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13152,
-                    "facility_name" => "PROVIDENCE VCT",
+                    "mflcode" => 13152,
+                    "name" => "PROVIDENCE VCT",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 12909,
-                    "facility_name" => "DAGORETTI APPROVED DISPENSARY",
+                    "mflcode" => 12909,
+                    "name" => "DAGORETTI APPROVED DISPENSARY",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13259,
-                    "facility_name" => "WOODLEY CLINIC",
+                    "mflcode" => 13259,
+                    "name" => "WOODLEY CLINIC",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 12864,
-                    "facility_name" => "ABANDONED CHILD DISPENSARY",
+                    "mflcode" => 12864,
+                    "name" => "ABANDONED CHILD DISPENSARY",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13188,
-                    "facility_name" => "SOKONI ARCADE VCT",
+                    "mflcode" => 13188,
+                    "name" => "SOKONI ARCADE VCT",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 16801,
-                    "facility_name" => "AL QADIR DISPENSARY(ISLAMIC)",
+                    "mflcode" => 16801,
+                    "name" => "AL QADIR DISPENSARY(ISLAMIC)",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13210,
-                    "facility_name" => "ST JOSEPH DISPENSARY",
+                    "mflcode" => 13210,
+                    "name" => "ST JOSEPH DISPENSARY",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13025,
-                    "facility_name" => "KESHA VCT",
+                    "mflcode" => 13025,
+                    "name" => "KESHA VCT",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 16802,
-                    "facility_name" => "JONALIFA MEDICAL CARE",
+                    "mflcode" => 16802,
+                    "name" => "JONALIFA MEDICAL CARE",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13087,
-                    "facility_name" => "FORCES MEMMORIAL HOSPITAL",
+                    "mflcode" => 13087,
+                    "name" => "FORCES MEMMORIAL HOSPITAL",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13046,
-                    "facility_name" => "LEA TOTO CLINIC(CATHOLIC)",
+                    "mflcode" => 13046,
+                    "name" => "LEA TOTO CLINIC(CATHOLIC)",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13235,
-                    "facility_name" => "TEACHERS SERVICE COMMISION VCT",
+                    "mflcode" => 13235,
+                    "name" => "TEACHERS SERVICE COMMISION VCT",
                     "subcounty_id" => 36
                 ],
                 [
-                    "mfl_code" => 13056,
-                    "facility_name" => "MAKADARA HEALTH CENTRE",
+                    "mflcode" => 13056,
+                    "name" => "MAKADARA HEALTH CENTRE",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12988,
-                    "facility_name" => "JERICHO DISPENSARY",
+                    "mflcode" => 12988,
+                    "name" => "JERICHO DISPENSARY",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12969,
-                    "facility_name" => "HONO CLINC",
+                    "mflcode" => 12969,
+                    "name" => "HONO CLINC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13069,
-                    "facility_name" => "MARINGO CLINIC",
+                    "mflcode" => 13069,
+                    "name" => "MARINGO CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13132,
-                    "facility_name" => "OFAFA 1 CLINIC",
+                    "mflcode" => 13132,
+                    "name" => "OFAFA 1 CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12998,
-                    "facility_name" => "KALOLENI DISPENSRY",
+                    "mflcode" => 12998,
+                    "name" => "KALOLENI DISPENSRY",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13051,
-                    "facility_name" => "LOCO DISPENSARY",
+                    "mflcode" => 13051,
+                    "name" => "LOCO DISPENSARY",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13161,
-                    "facility_name" => "NAIROBI REMAND PRISON DISPENSARY",
+                    "mflcode" => 13161,
+                    "name" => "NAIROBI REMAND PRISON DISPENSARY",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13081,
-                    "facility_name" => "MBOTEA CINIC",
+                    "mflcode" => 13081,
+                    "name" => "MBOTEA CINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13059,
-                    "facility_name" => "LUNGALUNGA DISPENSARY",
+                    "mflcode" => 13059,
+                    "name" => "LUNGALUNGA DISPENSARY",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13168,
-                    "facility_name" => "RAILWAY TRAINING INSTITUTE CLINIC",
+                    "mflcode" => 13168,
+                    "name" => "RAILWAY TRAINING INSTITUTE CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13097,
-                    "facility_name" => "MINSTRY OF PUBLIC WORKS CLINIC",
+                    "mflcode" => 13097,
+                    "name" => "MINSTRY OF PUBLIC WORKS CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13144,
-                    "facility_name" => "SOUTH B POLICE BAND DISPENSARY",
+                    "mflcode" => 13144,
+                    "name" => "SOUTH B POLICE BAND DISPENSARY",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12999,
-                    "facility_name" => "KALOLENI HEALTH SERVICES CLINIC",
+                    "mflcode" => 12999,
+                    "name" => "KALOLENI HEALTH SERVICES CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13040,
-                    "facility_name" => "LAND MAWECLINIC",
+                    "mflcode" => 13040,
+                    "name" => "LAND MAWECLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12889,
-                    "facility_name" => "CANA FAMILY LIFE CLINIC",
+                    "mflcode" => 12889,
+                    "name" => "CANA FAMILY LIFE CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12904,
-                    "facility_name" => "COPTIC CLINIC",
+                    "mflcode" => 12904,
+                    "name" => "COPTIC CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13100,
-                    "facility_name" => "CRESCENT MEDICAL MUKURU CLINIC",
+                    "mflcode" => 13100,
+                    "name" => "CRESCENT MEDICAL MUKURU CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13074,
-                    "facility_name" => "THE MATER HOSPITAL",
+                    "mflcode" => 13074,
+                    "name" => "THE MATER HOSPITAL",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12982,
-                    "facility_name" => "MARY IMMACULATE SISTERS CLINIC",
+                    "mflcode" => 12982,
+                    "name" => "MARY IMMACULATE SISTERS CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12943,
-                    "facility_name" => "FLACK CLINIC",
+                    "mflcode" => 12943,
+                    "name" => "FLACK CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13064,
-                    "facility_name" => "MARIAKANI LCOTTAGE HOSPITAL",
+                    "mflcode" => 13064,
+                    "name" => "MARIAKANI LCOTTAGE HOSPITAL",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13064,
-                    "facility_name" => "SOUTH B HOSPITAL",
+                    "mflcode" => 18005,
+                    "name" => "SOUTH B HOSPITAL",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12984,
-                    "facility_name" => "JAMAA MISSION HOSPITAL",
+                    "mflcode" => 12984,
+                    "name" => "JAMAA MISSION HOSPITAL",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13090,
-                    "facility_name" => "METROPOLITAN HOSPITAL",
+                    "mflcode" => 13090,
+                    "name" => "METROPOLITAN HOSPITAL",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12868,
-                    "facility_name" => "AGA KHAN MEDICAL CLINIC BURUBURU",
+                    "mflcode" => 12868,
+                    "name" => "AGA KHAN MEDICAL CLINIC BURUBURU",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13185,
-                    "facility_name" => "SHEPHERDS CLINIC",
+                    "mflcode" => 13185,
+                    "name" => "SHEPHERDS CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12925,
-                    "facility_name" => "DR. MOHAMOUD CLINIC",
+                    "mflcode" => 12925,
+                    "name" => "DR. MOHAMOUD CLINIC",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 13057,
-                    "facility_name" => "MAKADARA MERCY SISTERS DISPENSARY",
+                    "mflcode" => 13057,
+                    "name" => "MAKADARA MERCY SISTERS DISPENSARY",
                     "subcounty_id" => 167
                 ],
                 [
-                    "mfl_code" => 12871,
-                    "facility_name" => "APTC HEALTH CENTRE",
+                    "mflcode" => 12871,
+                    "name" => "APTC HEALTH CENTRE",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12869,
-                    "facility_name" => "ALICE NURSING HOME",
+                    "mflcode" => 12869,
+                    "name" => "ALICE NURSING HOME",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12873,
-                    "facility_name" => "ASKI MEDICAL CLINIC",
+                    "mflcode" => 12873,
+                    "name" => "ASKI MEDICAL CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12888,
-                    "facility_name" => "BURUBURU FRIENDS CLINIC",
+                    "mflcode" => 12888,
+                    "name" => "BURUBURU FRIENDS CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12958,
-                    "facility_name" => "CONE HEALTH SERVICES CLINIC",
+                    "mflcode" => 12958,
+                    "name" => "CONE HEALTH SERVICES CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12896,
-                    "facility_name" => "CIDI  KAYOLE CLINIC",
+                    "mflcode" => 12896,
+                    "name" => "CIDI  KAYOLE CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12897,
-                    "facility_name" => "CIDI MUKURU CLINIC",
+                    "mflcode" => 12897,
+                    "name" => "CIDI MUKURU CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12908,
-                    "facility_name" => "DEBLIU CLINIC",
+                    "mflcode" => 12908,
+                    "name" => "DEBLIU CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12917,
-                    "facility_name" => "DIWOPA HEALTH CENTRE",
+                    "mflcode" => 12917,
+                    "name" => "DIWOPA HEALTH CENTRE",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12920,
-                    "facility_name" => "EDARP DONHOLM CLINIC",
+                    "mflcode" => 12920,
+                    "name" => "EDARP DONHOLM CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12935,
-                    "facility_name" => "EMBAKASI HEALTH CENTRE",
+                    "mflcode" => 12935,
+                    "name" => "EMBAKASI HEALTH CENTRE",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12962,
-                    "facility_name" => "GSU HEALTH CENTRE",
+                    "mflcode" => 12962,
+                    "name" => "GSU HEALTH CENTRE",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12949,
-                    "facility_name" => "GENESARET MEDICAL CLINIC",
+                    "mflcode" => 12949,
+                    "name" => "GENESARET MEDICAL CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12952,
-                    "facility_name" => "GERTRUDES DONHOLM CLINIC",
+                    "mflcode" => 12952,
+                    "name" => "GERTRUDES DONHOLM CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12952,
-                    "facility_name" => "GERTRUDE KOMAROCK CLINIC",
+                    "mflcode" => 18395,
+                    "name" => "GERTRUDE KOMAROCK CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12967,
-                    "facility_name" => "HAKATI MEDICAL CLINIC",
+                    "mflcode" => 12967,
+                    "name" => "HAKATI MEDICAL CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12971,
-                    "facility_name" => "HOPE  WORLD WIDE MUKURU CLINIC",
+                    "mflcode" => 17684,
+                    "name" => "HOPE  WORLD WIDE MUKURU CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12978,
-                    "facility_name" => "HURUMA PIPELINE NURSING HOME",
+                    "mflcode" => 12978,
+                    "name" => "HURUMA PIPELINE NURSING HOME",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12981,
-                    "facility_name" => "IMARA HEALTH CARE CLINIC",
+                    "mflcode" => 17685,
+                    "name" => "IMARA HEALTH CARE CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12981,
-                    "facility_name" => "IMARA MEDICAL CLINIC",
+                    "mflcode" => 12981,
+                    "name" => "IMARA MEDICAL CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12991,
-                    "facility_name" => "JKIA DISPENSARY",
+                    "mflcode" => 12991,
+                    "name" => "JKIA DISPENSARY",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13014,
-                    "facility_name" => "KAYOLE HOSPITAL",
+                    "mflcode" => 13014,
+                    "name" => "KAYOLE HOSPITAL",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13015,
-                    "facility_name" => "KAYOLE I HEALTH CENTRE",
+                    "mflcode" => 13015,
+                    "name" => "KAYOLE I HEALTH CENTRE",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13191,
-                    "facility_name" => "KAYOLE SOWETO EDARP CLINIC",
+                    "mflcode" => 13191,
+                    "name" => "KAYOLE SOWETO EDARP CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13026,
-                    "facility_name" => "KAYOLE II SUB DISTRICT HOSPITAL",
+                    "mflcode" => 13026,
+                    "name" => "KAYOLE II SUB DISTRICT HOSPITAL",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13002,
-                    "facility_name" => "KAPU CLINIC",
+                    "mflcode" => 13002,
+                    "name" => "KAPU CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13038,
-                    "facility_name" => "KOMAROC MODERN MEDICAL CLINIC",
+                    "mflcode" => 13038,
+                    "name" => "KOMAROC MODERN MEDICAL CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13063,
-                    "facility_name" => "MARIA MATERNITY NURSING HOME",
+                    "mflcode" => 13063,
+                    "name" => "MARIA MATERNITY NURSING HOME",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13076,
-                    "facility_name" => "MAYFLOWER CLINIC",
+                    "mflcode" => 13076,
+                    "name" => "MAYFLOWER CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13173,
-                    "facility_name" => "MUKURU REUBEN CLINIC",
+                    "mflcode" => 13173,
+                    "name" => "MUKURU REUBEN CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13142,
-                    "facility_name" => "PINE NURSING HOME",
+                    "mflcode" => 13142,
+                    "name" => "PINE NURSING HOME",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12971,
-                    "facility_name" => "PROVIDE MUTIDWA CLINIC",
+                    "mflcode" => 12971,
+                    "name" => "PROVIDE MUTIDWA CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13151,
-                    "facility_name" => "PROVIDE KAYOLE CLINIC",
+                    "mflcode" => 13151,
+                    "name" => "PROVIDE KAYOLE CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13198,
-                    "facility_name" => "SAINT BEGSON  HOSPITAL",
+                    "mflcode" => 13198,
+                    "name" => "SAINT BEGSON  HOSPITAL",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13211,
-                    "facility_name" => "SAINT JUDE MEDICAL CLINIC",
+                    "mflcode" => 13211,
+                    "name" => "SAINT JUDE MEDICAL CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13215,
-                    "facility_name" => "SAINT MARY EMBAKASI CLINIC",
+                    "mflcode" => 13215,
+                    "name" => "SAINT MARY EMBAKASI CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13222,
-                    "facility_name" => "SAINT PATRICK CLINIC",
+                    "mflcode" => 13222,
+                    "name" => "SAINT PATRICK CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12228,
-                    "facility_name" => "SAINT THOMAS MEDICAL CLINIC",
+                    "mflcode" => 12228,
+                    "name" => "SAINT THOMAS MEDICAL CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13240,
-                    "facility_name" => "UMOJA HEALTH CENTRE",
+                    "mflcode" => 13240,
+                    "name" => "UMOJA HEALTH CENTRE",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13241,
-                    "facility_name" => "UMOJA HOSPITAL",
+                    "mflcode" => 13241,
+                    "name" => "UMOJA HOSPITAL",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13247,
-                    "facility_name" => "VICTORY HOSPITAL",
+                    "mflcode" => 13247,
+                    "name" => "VICTORY HOSPITAL",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 13101,
-                    "facility_name" => "MMM MUKURU CLINIC",
+                    "mflcode" => 13101,
+                    "name" => "MMM MUKURU CLINIC",
                     "subcounty_id" => 39
                 ],
                 [
-                    "mfl_code" => 12879,
-                    "facility_name" => "BAHATI HEALTH CENTRE",
+                    "mflcode" => 12879,
+                    "name" => "BAHATI HEALTH CENTRE",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12930,
-                    "facility_name" => "EASTLEIGH HEALTH CENTRE",
+                    "mflcode" => 12930,
+                    "name" => "EASTLEIGH HEALTH CENTRE",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13155,
-                    "facility_name" => "PUMWANI MAJENGO DISPENSARY",
+                    "mflcode" => 13155,
+                    "name" => "PUMWANI MAJENGO DISPENSARY",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13156,
-                    "facility_name" => "PUMWANI MATERNITY HOSPITAL",
+                    "mflcode" => 13156,
+                    "name" => "PUMWANI MATERNITY HOSPITAL",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13095,
-                    "facility_name" => "MOI AIR BASE HEALTH CENTRE",
+                    "mflcode" => 13095,
+                    "name" => "MOI AIR BASE HEALTH CENTRE",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13230,
-                    "facility_name" => "ST VINCENT CLINIC EDARP",
+                    "mflcode" => 13230,
+                    "name" => "ST VINCENT CLINIC EDARP",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13207,
-                    "facility_name" => "ST JOSEPH  CLINIC EDARP",
+                    "mflcode" => 13207,
+                    "name" => "ST JOSEPH  CLINIC EDARP",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13189,
-                    "facility_name" => "SOS BURUBURU CLINIC",
+                    "mflcode" => 13189,
+                    "name" => "SOS BURUBURU CLINIC",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13072,
-                    "facility_name" => "MARY IMMACULATE DISPENSARY",
+                    "mflcode" => 13072,
+                    "name" => "MARY IMMACULATE DISPENSARY",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12989,
-                    "facility_name" => "JERUSALEM CLINIC",
+                    "mflcode" => 12989,
+                    "name" => "JERUSALEM CLINIC",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12865,
-                    "facility_name" => "BAHATI CLINIC",
+                    "mflcode" => 12865,
+                    "name" => "BAHATI CLINIC",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13184,
-                    "facility_name" => "SHAURI MOYO CLINIC",
+                    "mflcode" => 13184,
+                    "name" => "SHAURI MOYO CLINIC",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12883,
-                    "facility_name" => "BIAFRA LION CLINIC",
+                    "mflcode" => 12883,
+                    "name" => "BIAFRA LION CLINIC",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13104,
-                    "facility_name" => "MUTHURWA CLINIC",
+                    "mflcode" => 13104,
+                    "name" => "MUTHURWA CLINIC",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13096,
-                    "facility_name" => "MOTHER&CHILD NURSING HOME",
+                    "mflcode" => 13096,
+                    "name" => "MOTHER&CHILD NURSING HOME",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13068,
-                    "facility_name" => "MARIE STOPES  NURSING HOME",
+                    "mflcode" => 13068,
+                    "name" => "MARIE STOPES  NURSING HOME",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12865,
-                    "facility_name" => "AFWANI NURSING HOME",
+                    "mflcode" => 12941,
+                    "name" => "AFWANI NURSING HOME",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12941,
-                    "facility_name" => "FAMILY LIFE PROMOTION & SERVICES CLINIC",
+                    "mflcode" => 13183,
+                    "name" => "FAMILY LIFE PROMOTION & SERVICES CLINIC",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13183,
-                    "facility_name" => "SHAURI MOYO BAPTIST VCT",
+                    "mflcode" => 13260,
+                    "name" => "SHAURI MOYO BAPTIST VCT",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13260,
-                    "facility_name" => "WOODSTREET NURSING HOME",
+                    "mflcode" => 12921,
+                    "name" => "WOODSTREET NURSING HOME",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12921,
-                    "facility_name" => "DORKCARE NURSING HOME",
+                    "mflcode" => 13034,
+                    "name" => "DORKCARE NURSING HOME",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13034,
-                    "facility_name" => "ST JOSEPH NURSING HOME",
+                    "mflcode" => 13055,
+                    "name" => "ST JOSEPH NURSING HOME",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13055,
-                    "facility_name" => "MADINA NURSING HOME",
+                    "mflcode" => 12933,
+                    "name" => "MADINA NURSING HOME",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12933,
-                    "facility_name" => "EDNA CLINIC",
+                    "mflcode" => 13225,
+                    "name" => "EDNA CLINIC",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13225,
-                    "facility_name" => "ST TERESA DISPENSARY (CATHOLIC)",
+                    "mflcode" => 12884,
+                    "name" => "ST TERESA DISPENSARY (CATHOLIC)",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12884,
-                    "facility_name" => "BIAFRA MEDICAL CLINIC",
+                    "mflcode" => 12916,
+                    "name" => "BIAFRA MEDICAL CLINIC",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12916,
-                    "facility_name" => "DIANI CLINIC",
+                    "mflcode" => 13077,
+                    "name" => "DIANI CLINIC",
                     "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13077,
-                    "facility_name" => "MATHARE NORTH HEALTH CENTRE",
+                    "mflcode" => 12997,
+                    "name" => "MATHARE NORTH HEALTH CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12997,
-                    "facility_name" => "KAHAWA WEST  HEALTH CENTRE",
+                    "mflcode" => 12876,
+                    "name" => "KAHAWA WEST  HEALTH CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12876,
-                    "facility_name" => "KASARANI MATERNITY",
+                    "mflcode" => 13006,
+                    "name" => "KASARANI MATERNITY",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13006,
-                    "facility_name" => "KARIOBANGI DISPENSARY",
+                    "mflcode" => 13010,
+                    "name" => "KARIOBANGI DISPENSARY",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13010,
-                    "facility_name" => "KASARANI DISPENSARY",
+                    "mflcode" => 13153,
+                    "name" => "KASARANI DISPENSARY",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13153,
-                    "facility_name" => "PRISON STAFF TRAINING DISPENSARY",
+                    "mflcode" => 13000,
+                    "name" => "PRISON STAFF TRAINING DISPENSARY",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13000,
-                    "facility_name" => "KAMITI PRISON HOSPITAL",
+                    "mflcode" => 13130,
+                    "name" => "KAMITI PRISON HOSPITAL",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13130,
-                    "facility_name" => "NATIONAL YOUTH SERVICES DISPENSARY",
+                    "mflcode" => 12963,
+                    "name" => "NATIONAL YOUTH SERVICES DISPENSARY",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12963,
-                    "facility_name" => "GENERAL SERVICES UNIT DISPENSARY",
+                    "mflcode" => 13172,
+                    "name" => "GENERAL SERVICES UNIT DISPENSARY",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13172,
-                    "facility_name" => "RUARAKA CLINIC",
+                    "mflcode" => 13160,
+                    "name" => "RUARAKA CLINIC",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13160,
-                    "facility_name" => "REDEEMED GOSPEL CHURCH HEALTH CENTRE",
+                    "mflcode" => 13150,
+                    "name" => "REDEEMED GOSPEL CHURCH HEALTH CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13150,
-                    "facility_name" => "PROVIDE INTERNATIONAL KOROGOCHO HEALTH CENTRE",
+                    "mflcode" => 13203,
+                    "name" => "PROVIDE INTERNATIONAL KOROGOCHO HEALTH CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13203,
-                    "facility_name" => "ST FRANCIS COMMUNITY HOSPITAL",
+                    "mflcode" => 12986,
+                    "name" => "ST FRANCIS COMMUNITY HOSPITAL",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12986,
-                    "facility_name" => "JAHMII MEDICAL CENTRE",
+                    "mflcode" => 13011,
+                    "name" => "JAHMII MEDICAL CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13011,
-                    "facility_name" => "KASARANI MATERNITY",
+                    "mflcode" => 12877,
+                    "name" => "KASARANI MATERNITY",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12877,
-                    "facility_name" => "BABADOGO MEDICAL CENTRE",
+                    "mflcode" => 13012,
+                    "name" => "BABADOGO MEDICAL CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13012,
-                    "facility_name" => "KASARANI MEDICAL CENTRE",
+                    "mflcode" => 13070,
+                    "name" => "KASARANI MEDICAL CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13070,
-                    "facility_name" => "MARURA NURSING HOME",
+                    "mflcode" => 12996,
+                    "name" => "MARURA NURSING HOME",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12996,
-                    "facility_name" => "KAHAWA GARISON HEALTH CENTRE",
+                    "mflcode" => 13024,
+                    "name" => "KAHAWA GARISON HEALTH CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13024,
-                    "facility_name" => "KENYATTA UNIVERSITY HEALTH SERVICES",
+                    "mflcode" => 12875,
+                    "name" => "KENYATTA UNIVERSITY HEALTH SERVICES",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12875,
-                    "facility_name" => "BABADOGO EARDAP CLINIC",
+                    "mflcode" => 12881,
+                    "name" => "BABADOGO EARDAP CLINIC",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12881,
-                    "facility_name" => "BARAKA MEDICAL CENTRE",
+                    "mflcode" => 12906,
+                    "name" => "BARAKA MEDICAL CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12906,
-                    "facility_name" => "CORNERSTONE VCT",
+                    "mflcode" => 13045,
+                    "name" => "CORNERSTONE VCT",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13045,
-                    "facility_name" => "LEA TOTO KARIOBANGI CLINIC",
+                    "mflcode" => 13071,
+                    "name" => "LEA TOTO KARIOBANGI CLINIC",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13071,
-                    "facility_name" => "MARURUI HEALTH CENTRE",
+                    "mflcode" => 12902,
+                    "name" => "MARURUI HEALTH CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12902,
-                    "facility_name" => "COMPASIONATE VCT",
+                    "mflcode" => 12955,
+                    "name" => "COMPASIONATE VCT",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12955,
-                    "facility_name" => "GIOVANNA DISPENSARY",
+                    "mflcode" => 12895,
+                    "name" => "GIOVANNA DISPENSARY",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12895,
-                    "facility_name" => "CHRISTIAN AID HEALTH CENTRE",
+                    "mflcode" => 12863,
+                    "name" => "CHRISTIAN AID HEALTH CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12863,
-                    "facility_name" => "AAR THIKA ROAD CLINIC",
+                    "mflcode" => 13125,
+                    "name" => "AAR THIKA ROAD CLINIC",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13125,
-                    "facility_name" => "NIMOLI MEDICAL CENTRE",
+                    "mflcode" => 12957,
+                    "name" => "NIMOLI MEDICAL CENTRE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12957,
-                    "facility_name" => "GITHURAI VCT",
+                    "mflcode" => 13022,
+                    "name" => "GITHURAI VCT",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13022,
-                    "facility_name" => "KENYA UTALII DISPENSARY",
+                    "mflcode" => 13020,
+                    "name" => "KENYA UTALII DISPENSARY",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13020,
-                    "facility_name" => "KENYA NETWORK WOMEN WITH AIDS CLINIC",
+                    "mflcode" => 12931,
+                    "name" => "KENYA NETWORK WOMEN WITH AIDS CLINIC",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12931,
-                    "facility_name" => "EDEN DISPENSARY",
+                    "mflcode" => 13127,
+                    "name" => "EDEN DISPENSARY",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13127,
-                    "facility_name" => "NATIONAL SECURITY INTELIGENCE SERVICE",
+                    "mflcode" => 12862,
+                    "name" => "NATIONAL SECURITY INTELIGENCE SERVICE",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12862,
-                    "facility_name" => "AAR KARIOBANGI CLINIC",
+                    "mflcode" => 13030,
+                    "name" => "AAR KARIOBANGI CLINIC",
                     "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13030,
-                    "facility_name" => "KIBERA SOUTH (MSF BELGIUM) DISPENSARY",
+                    "mflcode" => 13033,
+                    "name" => "KIBERA SOUTH (MSF BELGIUM) DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13033,
-                    "facility_name" => "KIKOSHEP MUGUMOINI DISPENSARY",
+                    "mflcode" => 13035,
+                    "name" => "KIKOSHEP MUGUMOINI DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13035,
-                    "facility_name" => "KISEMBO DISPENSARY",
+                    "mflcode" => 17384,
+                    "name" => "KISEMBO DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 17384,
-                    "facility_name" => "LANG'ATA COMPREHENSIVE MEDICAL SERVICE",
+                    "mflcode" => 13058,
+                    "name" => "LANG'ATA COMPREHENSIVE MEDICAL SERVICE",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13058,
-                    "facility_name" => "MAKINA CLINIC",
+                    "mflcode" => 13061,
+                    "name" => "MAKINA CLINIC",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13061,
-                    "facility_name" => "MARIA DOMINICA DISPENSARY",
+                    "mflcode" => 16167,
+                    "name" => "MARIA DOMINICA DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 16167,
-                    "facility_name" => "MARIE STOPES CLINIC (LANGATA)",
+                    "mflcode" => 13088,
+                    "name" => "MARIE STOPES CLINIC (LANGATA)",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13088,
-                    "facility_name" => "MERCILLIN AFYA CENTRE",
+                    "mflcode" => 13114,
+                    "name" => "MERCILLIN AFYA CENTRE",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13114,
-                    "facility_name" => "NAIROBI WEST CHIDREN DISPENSARY",
+                    "mflcode" => 17456,
+                    "name" => "NAIROBI WEST CHIDREN DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 17456,
-                    "facility_name" => "NEEMA YA YESU CLINIC",
+                    "mflcode" => 17394,
+                    "name" => "NEEMA YA YESU CLINIC",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 17394,
-                    "facility_name" => "WEMA MEDICAL CLINIC",
+                    "mflcode" => 13131,
+                    "name" => "WEMA MEDICAL CLINIC",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13131,
-                    "facility_name" => "NYUMBANI DIAGNOSTIC LABORATORY AND MEDICAL CLINIC",
+                    "mflcode" => 16168,
+                    "name" => "NYUMBANI DIAGNOSTIC LABORATORY AND MEDICAL CLINIC",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 16168,
-                    "facility_name" => "REVIVAL HOME BASED CARE CLINIC",
+                    "mflcode" => 13178,
+                    "name" => "REVIVAL HOME BASED CARE CLINIC",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13178,
-                    "facility_name" => "SAOLA MATERNITY AND NURSING HOME",
+                    "mflcode" => 13179,
+                    "name" => "SAOLA MATERNITY AND NURSING HOME",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13179,
-                    "facility_name" => "SENYE DISPENSARY",
+                    "mflcode" => 13186,
+                    "name" => "SENYE DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13186,
-                    "facility_name" => "SILANGA (MSF BELGIUM) DISPENSARY",
+                    "mflcode" => 13216,
+                    "name" => "SILANGA (MSF BELGIUM) DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13216,
-                    "facility_name" => "ST. MARY'S MEDICAL CLINIC",
+                    "mflcode" => 13221,
+                    "name" => "ST. MARY'S MEDICAL CLINIC",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13221,
-                    "facility_name" => "ST. ODILIA'S DISPENSARY",
+                    "mflcode" => 13234,
+                    "name" => "ST. ODILIA'S DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13234,
-                    "facility_name" => "TABITHA MEDICAL CLINIC",
+                    "mflcode" => 13245,
+                    "name" => "TABITHA MEDICAL CLINIC",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13245,
-                    "facility_name" => "USHIRIKA MEDICAL CLINIC",
+                    "mflcode" => 12891,
+                    "name" => "USHIRIKA MEDICAL CLINIC",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12891,
-                    "facility_name" => "CAROLINA FOR KIBERA VCT",
+                    "mflcode" => 12894,
+                    "name" => "CAROLINA FOR KIBERA VCT",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12894,
-                    "facility_name" => "CHEMI CHEMI DISPENSARY",
+                    "mflcode" => 12907,
+                    "name" => "CHEMI CHEMI DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12907,
-                    "facility_name" => "COTOLENGO HOME",
+                    "mflcode" => 12929,
+                    "name" => "COTOLENGO HOME",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12929,
-                    "facility_name" => "DREAMS CENTER DISPENSARY",
+                    "mflcode" => 12942,
+                    "name" => "DREAMS CENTER DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12942,
-                    "facility_name" => "FHOK HEALTH CENTRE",
+                    "mflcode" => 12944,
+                    "name" => "FHOK HEALTH CENTRE",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12944,
-                    "facility_name" => "FREPALS COMMUNITY NURSING HOME",
+                    "mflcode" => 12945,
+                    "name" => "FREPALS COMMUNITY NURSING HOME",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12945,
-                    "facility_name" => "FUTURE AGE MEDICAL SERVICES",
+                    "mflcode" => 12948,
+                    "name" => "FUTURE AGE MEDICAL SERVICES",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12948,
-                    "facility_name" => "GATWIKERA (MSF BELGIUM) MEDICAL CLINIC",
+                    "mflcode" => 12953,
+                    "name" => "GATWIKERA (MSF BELGIUM) MEDICAL CLINIC",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12953,
-                    "facility_name" => "GETRUDES CLINIC DISPENSARY (NAIROBI WEST)",
+                    "mflcode" => 17393,
+                    "name" => "GETRUDES CLINIC DISPENSARY (NAIROBI WEST)",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 17393,
-                    "facility_name" => "HUDUMA HEALTH CENTER",
+                    "mflcode" => 13028,
+                    "name" => "HUDUMA HEALTH CENTER",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13028,
-                    "facility_name" => "KIBERA COMMUNITY HEALTH CENTRE - AMREF",
+                    "mflcode" => 13029,
+                    "name" => "KIBERA COMMUNITY HEALTH CENTRE - AMREF",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13029,
-                    "facility_name" => "KIBERA D.O. DISPENSARY",
+                    "mflcode" => 13044,
+                    "name" => "KIBERA D.O. DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13044,
-                    "facility_name" => "LANGATA WOMEN PRISON DISPENSARY",
+                    "mflcode" => 13116,
+                    "name" => "LANGATA WOMEN PRISON DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13116,
-                    "facility_name" => "NAIROBI WEST MEN'S PRISON DISPENSARY",
+                    "mflcode" => 13239,
+                    "name" => "NAIROBI WEST MEN'S PRISON DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13239,
-                    "facility_name" => "UHURU CAMP DISPENSARY (O.P. ADMIN POLICE)",
+                    "mflcode" => 12886,
+                    "name" => "UHURU CAMP DISPENSARY (O.P. ADMIN POLICE)",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12886,
-                    "facility_name" => "BOMAS OF KENYA DISPENSARY",
+                    "mflcode" => 12919,
+                    "name" => "BOMAS OF KENYA DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12919,
-                    "facility_name" => "DOG UNIT DISPENSARY (O.P. KENYA POLICE)",
+                    "mflcode" => 13099,
+                    "name" => "DOG UNIT DISPENSARY (O.P. KENYA POLICE)",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13099,
-                    "facility_name" => "DSC KAREN DISPENSARY (ARMED FORCES)",
+                    "mflcode" => 12990,
+                    "name" => "DSC KAREN DISPENSARY (ARMED FORCES)",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12990,
-                    "facility_name" => "JINNAH AVE CLINIC",
+                    "mflcode" => 13003,
+                    "name" => "JINNAH AVE CLINIC",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13003,
-                    "facility_name" => "KAREN HEALTH CENTRE",
+                    "mflcode" => 13018,
+                    "name" => "KAREN HEALTH CENTRE",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13018,
-                    "facility_name" => "KCCT DISPENSARY",
+                    "mflcode" => 13041,
+                    "name" => "KCCT DISPENSARY",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13041,
-                    "facility_name" => "LANGATA HEALTH CENTRE",
+                    "mflcode" => 13043,
+                    "name" => "LANGATA HEALTH CENTRE",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13043,
-                    "facility_name" => "7KR MRS HEALTH CENTRE",
+                    "mflcode" => 13042,
+                    "name" => "7KR MRS HEALTH CENTRE",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13042,
-                    "facility_name" => "LANGATA HOSPITAL",
+                    "mflcode" => 13109,
+                    "name" => "LANGATA HOSPITAL",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13109,
-                    "facility_name" => "NAIROBI EQUATOR HOSPITAL",
+                    "mflcode" => 13112,
+                    "name" => "NAIROBI EQUATOR HOSPITAL",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13112,
-                    "facility_name" => "NAIROBI SOUTH C MEDICAL",
+                    "mflcode" => 13115,
+                    "name" => "NAIROBI SOUTH C MEDICAL",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13115,
-                    "facility_name" => "NAIROBI WEST HOSPITAL",
+                    "mflcode" => 13218,
+                    "name" => "NAIROBI WEST HOSPITAL",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13218,
-                    "facility_name" => "ST MARY'S MISSION HOSPITAL",
+                    "mflcode" => 13004,
+                    "name" => "ST MARY'S MISSION HOSPITAL",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13004,
-                    "facility_name" => "KAREN HOSPITAL",
+                    "mflcode" => 13032,
+                    "name" => "KAREN HOSPITAL",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13032,
-                    "facility_name" => "KIKOSHEP K VCT",
+                    "mflcode" => 13048,
+                    "name" => "KIKOSHEP K VCT",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13048,
-                    "facility_name" => "LEA TOTO KIBERA",
+                    "mflcode" => 13054,
+                    "name" => "LEA TOTO KIBERA",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13054,
-                    "facility_name" => "MADARAKA VCT",
+                    "mflcode" => 13262,
+                    "name" => "MADARAKA VCT",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 13262,
-                    "facility_name" => "ZINDUKA CLINIC",
+                    "mflcode" => 17455,
+                    "name" => "ZINDUKA CLINIC",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 17455,
-                    "facility_name" => "MTAANI VCT",
+                    "mflcode" => 12912,
+                    "name" => "MTAANI VCT",
                     "subcounty_id" => 151
                 ],
                 [
-                    "mfl_code" => 12912,
-                    "facility_name" => "DANDORA II HEALTH CENTRE",
-                    "subcounty_id" => 252
+                    "mflcode" => 12913,
+                    "name" => "DANDORA II HEALTH CENTRE",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12913,
-                    "facility_name" => "DANDORA 1 DISPENSARY",
-                    "subcounty_id" => 252
+                    "mflcode" => 13126,
+                    "name" => "DANDORA 1 DISPENSARY",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13126,
-                    "facility_name" => "NJIRU DISPENSARY",
-                    "subcounty_id" => 252
+                    "mflcode" => 13171,
+                    "name" => "NJIRU DISPENSARY",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13171,
-                    "facility_name" => "RUAI DISPENSARY",
-                    "subcounty_id" => 252
+                    "mflcode" => 17434,
+                    "name" => "RUAI DISPENSARY",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 17434,
-                    "facility_name" => "KARIOBANGI SOUTH DISPENSARY",
-                    "subcounty_id" => 252
+                    "mflcode" => 12911,
+                    "name" => "KARIOBANGI SOUTH DISPENSARY",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12911,
-                    "facility_name" => "EDARP DANDORA CLINIC",
-                    "subcounty_id" => 252
+                    "mflcode" => 17548,
+                    "name" => "EDARP DANDORA CLINIC",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 17548,
-                    "facility_name" => "EDARP NJIRU CLINIC",
-                    "subcounty_id" => 252
+                    "mflcode" => 13169,
+                    "name" => "EDARP NJIRU CLINIC",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13169,
-                    "facility_name" => "EDARP RUAI CLINIC",
-                    "subcounty_id" => 252
+                    "mflcode" => 13047,
+                    "name" => "EDARP RUAI CLINIC",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13047,
-                    "facility_name" => "LEA TOTO KARIOBANGI CLINIC",
-                    "subcounty_id" => 252
+                    "mflcode" => 12887,
+                    "name" => "LEA TOTO KARIOBANGI CLINIC",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 12887,
-                    "facility_name" => "BROTHER ANDRE CLINIC",
-                    "subcounty_id" => 252
+                    "mflcode" => 13176,
+                    "name" => "BROTHER ANDRE CLINIC",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13176,
-                    "facility_name" => "SAMARITAN MEDICAL CLINIC",
-                    "subcounty_id" => 252
+                    "mflcode" => 13148,
+                    "name" => "SAMARITAN MEDICAL CLINIC",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13148,
-                    "facility_name" => "PROVIDE INTERNATIONAL CLINIC",
-                    "subcounty_id" => 252
+                    "mflcode" => 13193,
+                    "name" => "PROVIDE INTERNATIONAL CLINIC",
+                    "subcounty_id" => 91
                 ],
                 [
-                    "mfl_code" => 13193,
-                    "facility_name" => "SPECIAL  TREATMENT CENTRE(CASINO)",
-                    "subcounty_id" => 296
+                    "mflcode" => 13121,
+                    "name" => "SPECIAL  TREATMENT CENTRE(CASINO)",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13121,
-                    "facility_name" => "NGAIRA DISPENSARY",
-                    "subcounty_id" => 296
+                    "mflcode" => 13163,
+                    "name" => "NGAIRA DISPENSARY",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13163,
-                    "facility_name" => "RHODES CHEST CLINIC",
-                    "subcounty_id" => 296
+                    "mflcode" => 13039,
+                    "name" => "RHODES CHEST CLINIC",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13039,
-                    "facility_name" => "LAGOS ROAD DISPENSARY(STAFF)",
-                    "subcounty_id" => 296
+                    "mflcode" => 13122,
+                    "name" => "LAGOS ROAD DISPENSARY(STAFF)",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13122,
-                    "facility_name" => "NGARA HEALTH CENTRE",
-                    "subcounty_id" => 296
+                    "mflcode" => 13138,
+                    "name" => "NGARA HEALTH CENTRE",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13138,
-                    "facility_name" => "PANGANI CLINIC",
-                    "subcounty_id" => 296
+                    "mflcode" => 13007,
+                    "name" => "PANGANI CLINIC",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13007,
-                    "facility_name" => "KARIOKOR CLINIC",
-                    "subcounty_id" => 296
+                    "mflcode" => 12974,
+                    "name" => "KARIOKOR CLINIC",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13076,
-                    "facility_name" => "MATHARI MENTAL HOSPITAL",
-                    "subcounty_id" => 296
+                    "mflcode" => 13075,
+                    "name" => "MATHARI MENTAL HOSPITAL",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12974,
-                    "facility_name" => "HURUMA LIONS DISPENSARY",
-                    "subcounty_id" => 296
+                    "mflcode" => 12973,
+                    "name" => "HURUMA LIONS DISPENSARY",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13075,
-                    "facility_name" => "MATHARE 3A EDARP",
-                    "subcounty_id" => 296
+                    "mflcode" => 12972,
+                    "name" => "MATHARE 3A EDARP",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12973,
-                    "facility_name" => "HURUMA EDARP",
-                    "subcounty_id" => 296
+                    "mflcode" => 12976,
+                    "name" => "HURUMA EDARP",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12972,
-                    "facility_name" => "HURUMA NCCK",
-                    "subcounty_id" => 296
+                    "mflcode" => 13199,
+                    "name" => "HURUMA NCCK",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12976,
-                    "facility_name" => "HURUMA NURSING HOME",
-                    "subcounty_id" => 296
+                    "mflcode" => 13139,
+                    "name" => "HURUMA NURSING HOME",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13199,
-                    "facility_name" => "ST BRIDGETS CLINIC",
-                    "subcounty_id" => 296
+                    "mflcode" => 13158,
+                    "name" => "ST BRIDGETS CLINIC",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13139,
-                    "facility_name" => "PARKROAD NURSING HOME",
-                    "subcounty_id" => 296
+                    "mflcode" => 12940,
+                    "name" => "PARKROAD NURSING HOME",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13158,
-                    "facility_name" => "RADIANT HOSPITAL",
-                    "subcounty_id" => 296
+                    "mflcode" => 12939,
+                    "name" => "RADIANT HOSPITAL",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12940,
-                    "facility_name" => "FAMILY HEATH OPTIONS  RIBEIRO",
-                    "subcounty_id" => 296
+                    "mflcode" => 12965,
+                    "name" => "FAMILY HEATH OPTIONS  RIBEIRO",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12939,
-                    "facility_name" => "FAMILY HEALTH OPTIONS  PHOENIX",
-                    "subcounty_id" => 296
+                    "mflcode" => 13243,
+                    "name" => "FAMILY HEALTH OPTIONS  PHOENIX",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12965,
-                    "facility_name" => "GURUNANAK HOSPITAL",
-                    "subcounty_id" => 296
+                    "mflcode" => 13066,
+                    "name" => "GURUNANAK HOSPITAL",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13243,
-                    "facility_name" => "UPENDO DISPENSARY",
-                    "subcounty_id" => 296
+                    "mflcode" => 13065,
+                    "name" => "UPENDO DISPENSARY",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13066,
-                    "facility_name" => "MARIE STOPES PANGANI",
-                    "subcounty_id" => 296
+                    "mflcode" => 12899,
+                    "name" => "MARIE STOPES PANGANI",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13065,
-                    "facility_name" => "MARIE STOPES KENCOM",
-                    "subcounty_id" => 296
+                    "mflcode" => 13250,
+                    "name" => "MARIE STOPES KENCOM",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12899,
-                    "facility_name" => "CRESCENT MEDICAL AID JAMIA",
-                    "subcounty_id" => 296
+                    "mflcode" => 13111,
+                    "name" => "CRESCENT MEDICAL AID JAMIA",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13250,
-                    "facility_name" => "WAKIBE MEDICAL CENTRE",
-                    "subcounty_id" => 296
+                    "mflcode" => 13237,
+                    "name" => "WAKIBE MEDICAL CENTRE",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13111,
-                    "facility_name" => "NAIROBI OUTPATIENT CLINIC",
-                    "subcounty_id" => 296
+                    "mflcode" => 13021,
+                    "name" => "NAIROBI OUTPATIENT CLINIC",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13237,
-                    "facility_name" => "TRANSCOM MEDICAL CENTRE",
-                    "subcounty_id" => 296
+                    "mflcode" => 13187,
+                    "name" => "TRANSCOM MEDICAL CENTRE",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13021,
-                    "facility_name" => "KENYA AIRWAYS CLINIC",
-                    "subcounty_id" => 296
+                    "mflcode" => 13092,
+                    "name" => "KENYA AIRWAYS CLINIC",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13187,
-                    "facility_name" => "SINGLE MOTHERS VCT(SMAK)",
-                    "subcounty_id" => 296
+                    "mflcode" => 13174,
+                    "name" => "SINGLE MOTHERS VCT(SMAK)",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13092,
-                    "facility_name" => "MINISTRY OF EDUC VCT(MOEST)",
-                    "subcounty_id" => 296
+                    "mflcode" => 13107,
+                    "name" => "MINISTRY OF EDUC VCT(MOEST)",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13174,
-                    "facility_name" => "RURAL AID VCT",
-                    "subcounty_id" => 296
+                    "mflcode" => 13206,
+                    "name" => "RURAL AID VCT",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13107,
-                    "facility_name" => "NAIOTH VCT",
-                    "subcounty_id" => 296
+                    "mflcode" => 12901,
+                    "name" => "NAIOTH VCT",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13206,
-                    "facility_name" => "ST JOHNS AMBULANCE VCT",
-                    "subcounty_id" => 296
+                    "mflcode" => 13031,
+                    "name" => "ST JOHNS AMBULANCE VCT",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12901,
-                    "facility_name" => "COMMUNITY HEALTH FOUND",
-                    "subcounty_id" => 296
+                    "mflcode" => 13233,
+                    "name" => "COMMUNITY HEALTH FOUND",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13031,
-                    "facility_name" => "KENYA INSTITUTE OF EDUCATION/KENYA ASSOCIATION OF COUNSELLING(KIE/KAPC)",
-                    "subcounty_id" => 296
+                    "mflcode" => 13180,
+                    "name" => "KENYA INSTITUTE OF EDUCATION/KENYA ASSOCIATION OF COUNSELLING(KIE/KAPC)",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13233,
-                    "facility_name" => "SUPREME COUNCIL OF MUSLIMS(SUPKEM)",
-                    "subcounty_id" => 296
+                    "mflcode" => 13108,
+                    "name" => "SUPREME COUNCIL OF MUSLIMS(SUPKEM)",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13180,
-                    "facility_name" => "SEX WORKERS OPERATION PROGRAME(SWOP)",
-                    "subcounty_id" => 296
+                    "mflcode" => 13078,
+                    "name" => "SEX WORKERS OPERATION PROGRAME(SWOP)",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13108,
-                    "facility_name" => "DEAF LIVERPOOL",
-                    "subcounty_id" => 296
+                    "mflcode" => 12861,
+                    "name" => "DEAF LIVERPOOL",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13078,
-                    "facility_name" => "MATHARE POLICE DEPOT",
-                    "subcounty_id" => 296
+                    "mflcode" => 12882,
+                    "name" => "MATHARE POLICE DEPOT",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12861,
-                    "facility_name" => "AFRICAN AIR RESCUE CITY CENTRE(AAR)",
-                    "subcounty_id" => 296
+                    "mflcode" => 12890,
+                    "name" => "AFRICAN AIR RESCUE CITY CENTRE(AAR)",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12882,
-                    "facility_name" => "BETHEL CLINIC",
-                    "subcounty_id" => 296
+                    "mflcode" => 12946,
+                    "name" => "BETHEL CLINIC",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12890,
-                    "facility_name" => "CANAAN MEDICAL CLINIC",
-                    "subcounty_id" => 296
+                    "mflcode" => 13083,
+                    "name" => "CANAAN MEDICAL CLINIC",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 12946,
-                    "facility_name" => "GAIMU MEDICAL CLINIC",
-                    "subcounty_id" => 296
+                    "mflcode" => 16796,
+                    "name" => "GAIMU MEDICAL CLINIC",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 13083,
-                    "facility_name" => "MEDICARE MEDICAL CLINIC",
-                    "subcounty_id" => 296
+                    "mflcode" => 12867,
+                    "name" => "MEDICARE MEDICAL CLINIC",
+                    "subcounty_id" => 86
                 ],
                 [
-                    "mfl_code" => 16796,
-                    "facility_name" => "AAR SARIT CLINIC",
-                    "subcounty_id" => 344
+                    "mflcode" => 12870,
+                    "name" => "AAR SARIT CLINIC",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12867,
-                    "facility_name" => "AGA KHAN HOSPITAL",
-                    "subcounty_id" => 344
+                    "mflcode" => 12874,
+                    "name" => "AGA KHAN HOSPITAL",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12870,
-                    "facility_name" => "AMURT HEALTH CENTRE",
-                    "subcounty_id" => 344
+                    "mflcode" => 12898,
+                    "name" => "AMURT HEALTH CENTRE",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12874,
-                    "facility_name" => "AVENUE NURSING  HOSPITAL",
-                    "subcounty_id" => 344
+                    "mflcode" => 12905,
+                    "name" => "AVENUE NURSING  HOSPITAL",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12898,
-                    "facility_name" => "CLINITEC DISPENSARY",
-                    "subcounty_id" => 344
+                    "mflcode" => 12918,
+                    "name" => "CLINITEC DISPENSARY",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12905,
-                    "facility_name" => "COPTIC HOSPITAL",
-                    "subcounty_id" => 344
+                    "mflcode" => 12922,
+                    "name" => "COPTIC HOSPITAL",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12918,
-                    "facility_name" => "DOD MRS DISPENSARY",
-                    "subcounty_id" => 344
+                    "mflcode" => 12924,
+                    "name" => "DOD MRS DISPENSARY",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12922,
-                    "facility_name" => "DR.GACHARE MEDICAL CLINIC",
-                    "subcounty_id" => 344
+                    "mflcode" => 12926,
+                    "name" => "DR.GACHARE MEDICAL CLINIC",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12924,
-                    "facility_name" => "DR.AZIZ MOHAMMED MEDICAL CLINIC",
-                    "subcounty_id" => 344
+                    "mflcode" => 12927,
+                    "name" => "DR.AZIZ MOHAMMED MEDICAL CLINIC",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12926,
-                    "facility_name" => "DR.MONTET MEDICAL CLINIC",
-                    "subcounty_id" => 344
+                    "mflcode" => 12928,
+                    "name" => "DR.MONTET MEDICAL CLINIC",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12927,
-                    "facility_name" => "DR.MUASYA MEDICAL CLINIC",
-                    "subcounty_id" => 344
+                    "mflcode" => 12950,
+                    "name" => "DR.MUASYA MEDICAL CLINIC",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12928,
-                    "facility_name" => "DR.WERE MEDICAL CLINIC",
-                    "subcounty_id" => 344
+                    "mflcode" => 12951,
+                    "name" => "DR.WERE MEDICAL CLINIC",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12950,
-                    "facility_name" => "GERTRUDES HOSPITAL",
-                    "subcounty_id" => 344
+                    "mflcode" => 12966,
+                    "name" => "GERTRUDES HOSPITAL",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12951,
-                    "facility_name" => "GERTRUDES OTHAYA ROAD DISPENSARY",
-                    "subcounty_id" => 344
+                    "mflcode" => 12968,
+                    "name" => "GERTRUDES OTHAYA ROAD DISPENSARY",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12966,
-                    "facility_name" => "GYNAPAED DISPENSARY",
-                    "subcounty_id" => 344
+                    "mflcode" => 12979,
+                    "name" => "GYNAPAED DISPENSARY",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12968,
-                    "facility_name" => "HIGHRIDGE HEALTH CENTRE",
-                    "subcounty_id" => 344
+                    "mflcode" => 12993,
+                    "name" => "HIGHRIDGE HEALTH CENTRE",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12979,
-                    "facility_name" => "I R IRAN DISPENSARY",
-                    "subcounty_id" => 344
+                    "mflcode" => 12994,
+                    "name" => "I R IRAN DISPENSARY",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12993,
-                    "facility_name" => "KABETE APPROVED DISPENSARY",
-                    "subcounty_id" => 344
+                    "mflcode" => 13001,
+                    "name" => "KABETE APPROVED DISPENSARY",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 12994,
-                    "facility_name" => "KABETE BARRACKS DISPENSARY",
-                    "subcounty_id" => 344
+                    "mflcode" => 13009,
+                    "name" => "KABETE BARRACKS DISPENSARY",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13001,
-                    "facility_name" => "KANGEMI HEALTH CENTRE",
-                    "subcounty_id" => 344
+                    "mflcode" => 13013,
+                    "name" => "KANGEMI HEALTH CENTRE",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13009,
-                    "facility_name" => "KARURA HEALTH CENTRE",
-                    "subcounty_id" => 344
+                    "mflcode" => 16169,
+                    "name" => "KARURA HEALTH CENTRE",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13013,
-                    "facility_name" => "KENYA AIDS VACCINE INITIATIVE",
-                    "subcounty_id" => 344
+                    "mflcode" => 16800,
+                    "name" => "KENYA AIDS VACCINE INITIATIVE",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 16169,
-                    "facility_name" => "LADY NORTHEY DISPENSARY",
-                    "subcounty_id" => 344
+                    "mflcode" => 13049,
+                    "name" => "LADY NORTHEY DISPENSARY",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 16800,
-                    "facility_name" => "LEA TOTO CLINIC (WESTLANDS)",
-                    "subcounty_id" => 344
+                    "mflcode" => 13050,
+                    "name" => "LEA TOTO CLINIC (WESTLANDS)",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13049,
-                    "facility_name" => "LIANAS CLINIC",
-                    "subcounty_id" => 344
+                    "mflcode" => 13052,
+                    "name" => "LIANAS CLINIC",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13050,
-                    "facility_name" => "LIVERPOOL VCT",
-                    "subcounty_id" => 344
+                    "mflcode" => 13062,
+                    "name" => "LIVERPOOL VCT",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13052,
-                    "facility_name" => "LOWER KABETE DISPENSARY",
-                    "subcounty_id" => 344
+                    "mflcode" => 13067,
+                    "name" => "LOWER KABETE DISPENSARY",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13062,
-                    "facility_name" => "MARIA IMMACULATA HOSPITAL",
-                    "subcounty_id" => 344
+                    "mflcode" => 13093,
+                    "name" => "MARIA IMMACULATA HOSPITAL",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13067,
-                    "facility_name" => "MARIE STOPES CLINIC WESTLANDS",
-                    "subcounty_id" => 344
+                    "mflcode" => 13098,
+                    "name" => "MARIE STOPES CLINIC WESTLANDS",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13093,
-                    "facility_name" => "MJI WA HURUMA DISPENSARY",
-                    "subcounty_id" => 344
+                    "mflcode" => 13110,
+                    "name" => "MJI WA HURUMA DISPENSARY",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13098,
-                    "facility_name" => "MP SHAH HOSPITAL",
-                    "subcounty_id" => 344
+                    "mflcode" => 13117,
+                    "name" => "MP SHAH HOSPITAL",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13110,
-                    "facility_name" => "NAIROBI HOSPITAL",
-                    "subcounty_id" => 344
+                    "mflcode" => 16795,
+                    "name" => "NAIROBI HOSPITAL",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13117,
-                    "facility_name" => "NAIROBI WOMEN'S HOSPITAL",
-                    "subcounty_id" => 344
+                    "mflcode" => 13120,
+                    "name" => "NAIROBI WOMEN'S HOSPITAL",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 16795,
-                    "facility_name" => "NAIROBI WOMEN'S HOSPITAL ADAMS",
-                    "subcounty_id" => 344
+                    "mflcode" => 13137,
+                    "name" => "NAIROBI WOMEN'S HOSPITAL ADAMS",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13120,
-                    "facility_name" => "NEW LIFE HOME(CHILDREN'S HOME WESTLANDS)",
-                    "subcounty_id" => 344
+                    "mflcode" => 13194,
+                    "name" => "NEW LIFE HOME(CHILDREN'S HOME WESTLANDS)",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13137,
-                    "facility_name" => "PADENS CLINIC",
-                    "subcounty_id" => 344
+                    "mflcode" => 13201,
+                    "name" => "PADENS CLINIC",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13194,
-                    "facility_name" => "NATIONAL SPINAL INJURY HOSPITAL",
-                    "subcounty_id" => 344
+                    "mflcode" => 13209,
+                    "name" => "NATIONAL SPINAL INJURY HOSPITAL",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13201,
-                    "facility_name" => "ST.FLORENCE MEDICAL CARE HEALTH CENTRE",
-                    "subcounty_id" => 344
+                    "mflcode" => 13231,
+                    "name" => "ST.FLORENCE MEDICAL CARE HEALTH CENTRE",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13209,
-                    "facility_name" => "ST.JOSEPH THE WORKER DISPENSARY",
-                    "subcounty_id" => 344
+                    "mflcode" => 13232,
+                    "name" => "ST.JOSEPH THE WORKER DISPENSARY",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13231,
-                    "facility_name" => "STATE HOUSE CLINIC",
-                    "subcounty_id" => 344
+                    "mflcode" => 13242,
+                    "name" => "STATE HOUSE CLINIC",
+                    "subcounty_id" => 237
                 ],
                 [
-                    "mfl_code" => 13232,
-                    "facility_name" => "STATE HOUSE DISPENSARY",
-                    "subcounty_id" => 344
-                ],
-                [
-                    "mfl_code" => 13242,
-                    "facility_name" => "UNIVERSITY OF NAIROBI DISPENSARY",
-                    "subcounty_id" => 344
-                ],
-                [
-                    "mfl_code" => 13258,
-                    "facility_name" => "WESTLANDS HEALTH CENTRE",
-                    "subcounty_id" => 344
+                    "mflcode" => 13258,
+                    "name" => "STATE HOUSE DISPENSARY",
+                    "subcounty_id" => 237
                 ]
             ]
         );
@@ -1646,6 +1636,8 @@ class CreateFacilityTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('tbl_facility');
+        Schema::enableForeignKeyConstraints();
     }
 }
