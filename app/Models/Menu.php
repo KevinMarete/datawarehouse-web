@@ -21,11 +21,11 @@ class Menu extends Model
 
   public function menu_group()
   {
-    return $this->belongsTo('App\Models\MenuGroup');
+    return $this->belongsTo('App\Models\MenuGroup')->withTrashed();
   }
 
   public function menu_roles()
   {
-    return $this->hasMany('App\Models\MenuRole');
+    return $this->hasMany('App\Models\MenuRole')->withTrashed();
   }
 }

@@ -20,6 +20,6 @@ class MenuGroup extends Model
 
   public function menus()
   {
-    return $this->hasMany('App\Models\Menu');
+    return $this->hasMany('App\Models\Menu')->withTrashed();
   }
 }

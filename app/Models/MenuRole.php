@@ -20,11 +20,11 @@ class MenuRole extends Model
 
   public function menu()
   {
-    return $this->belongsTo('App\Models\Menu');
+    return $this->belongsTo('App\Models\Menu')->withTrashed();
   }
 
   public function role()
   {
-    return $this->belongsTo('App\Models\Role');
+    return $this->belongsTo('App\Models\Role')->withTrashed();
   }
 }

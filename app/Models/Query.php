@@ -21,6 +21,6 @@ class Query extends Model
 
   public function query_category()
   {
-    return $this->belongsTo('App\Models\QueryCategory');
+    return $this->belongsTo('App\Models\QueryCategory')->withTrashed();
   }
 }
