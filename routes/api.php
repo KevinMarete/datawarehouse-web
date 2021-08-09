@@ -2,12 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CountyController;
+use App\Http\Controllers\Api\FacilityController;
 use App\Http\Controllers\Api\MenuController;
 use App\Http\Controllers\Api\MenuGroupController;
 use App\Http\Controllers\Api\MenuRoleController;
 use App\Http\Controllers\Api\QueryCategoryController;
 use App\Http\Controllers\Api\QueryController;
 use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\Api\SubCountyController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\PatientController;
 
@@ -41,12 +44,15 @@ Route::group(['middleware' => ['json.response', 'cors']], function () {
         Route::post('/activate', [AuthController::class, 'activate'])->name('activate');
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
         Route::resources([
+            'county' => CountyController::class,
+            'facility' => FacilityController::class,
             'menu' => MenuController::class,
             'menugroup' => MenuGroupController::class,
             'menurole' => MenuRoleController::class,
             'query' => QueryController::class,
             'querycategory' => QueryCategoryController::class,
             'role' => RoleController::class,
+            'subcounty' => SubCountyController::class,
             'user' => UserController::class,
         ]);
         Route::get('/role/{id}/menus', [RoleController::class, 'getRoleMenus'])->name('getrolemenus');
