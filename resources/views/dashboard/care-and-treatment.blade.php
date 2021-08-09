@@ -4,7 +4,7 @@
       @include('dashboard.filter')
       <div class="row">
         <div class="col-md-12">
-          <h3 class="title-5 m-b-35">Care and Treatment Cascades</h3>
+          <h3 class="title-5 m-3">Care and Treatment Cascades</h3>
         </div>
       </div>
       <div class="row">
