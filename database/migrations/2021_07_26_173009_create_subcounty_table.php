@@ -142,7 +142,7 @@ class CreateSubcountyTable extends Migration
                     "county_id" => 26
                 ],
                 [
-                    "name" => "BUURI WEST.",
+                    "name" => "BUURI WEST",
                     "county_id" => 26
                 ],
                 [
@@ -218,7 +218,7 @@ class CreateSubcountyTable extends Migration
                     "county_id" => 14
                 ],
                 [
-                    "name" => "GARBATULLA.",
+                    "name" => "GARBATULLA",
                     "county_id" => 9
                 ],
                 [
@@ -258,7 +258,7 @@ class CreateSubcountyTable extends Migration
                     "county_id" => 16
                 ],
                 [
-                    "name" => "HABASWEIN.",
+                    "name" => "HABASWEIN",
                     "county_id" => 46
                 ],
                 [
@@ -298,11 +298,11 @@ class CreateSubcountyTable extends Migration
                     "county_id" => 18
                 ],
                 [
-                    "name" => "IMENTI NORTH.",
+                    "name" => "IMENTI NORTH",
                     "county_id" => 26
                 ],
                 [
-                    "name" => "IMENTI SOUTH.",
+                    "name" => "IMENTI SOUTH",
                     "county_id" => 26
                 ],
                 [
@@ -722,7 +722,7 @@ class CreateSubcountyTable extends Migration
                     "county_id" => 24
                 ],
                 [
-                    "name" => "MANDERA WEST.",
+                    "name" => "MANDERA WEST",
                     "county_id" => 24
                 ],
                 [
@@ -746,15 +746,15 @@ class CreateSubcountyTable extends Migration
                     "county_id" => 1
                 ],
                 [
-                    "name" => "MARSABIT CENTRAL.",
+                    "name" => "MARSABIT CENTRAL",
                     "county_id" => 25
                 ],
                 [
-                    "name" => "MARSABIT NORTH.",
+                    "name" => "MARSABIT NORTH",
                     "county_id" => 25
                 ],
                 [
-                    "name" => "MARSABIT SOUTH.",
+                    "name" => "MARSABIT SOUTH",
                     "county_id" => 25
                 ],
                 [
@@ -838,7 +838,7 @@ class CreateSubcountyTable extends Migration
                     "county_id" => 26
                 ],
                 [
-                    "name" => "MERU NATIONAL PARK.",
+                    "name" => "MERU NATIONAL PARK",
                     "county_id" => 26
                 ],
                 [
@@ -974,441 +974,9 @@ class CreateSubcountyTable extends Migration
                     "county_id" => 18
                 ],
                 [
-                    "name" => "NAIVASHA",
-                    "county_id" => 31
-                ],
-                [
-                    "name" => "NAKURU EAST",
-                    "county_id" => 31
-                ],
-                [
-                    "name" => "NAKURU NORTH",
-                    "county_id" => 31
-                ],
-                [
-                    "name" => "NAKURU WEST",
-                    "county_id" => 31
-                ],
-                [
-                    "name" => "NAMBALE",
-                    "county_id" => 4
-                ],
-                [
-                    "name" => "NANDI CENTRAL",
-                    "county_id" => 32
-                ],
-                [
-                    "name" => "NANDI EAST",
-                    "county_id" => 32
-                ],
-                [
-                    "name" => "NANDI NORTH",
-                    "county_id" => 32
-                ],
-                [
-                    "name" => "NANDI SOUTH",
-                    "county_id" => 32
-                ],
-                [
-                    "name" => "NAROK EAST",
-                    "county_id" => 33
-                ],
-                [
-                    "name" => "NAROK NORTH",
-                    "county_id" => 33
-                ],
-                [
-                    "name" => "NAROK SOUTH",
-                    "county_id" => 33
-                ],
-                [
-                    "name" => "NAROK WEST",
-                    "county_id" => 33
-                ],
-                [
-                    "name" => "NAVAKHOLO",
-                    "county_id" => 11
-                ],
-                [
-                    "name" => "NDHIWA",
-                    "county_id" => 8
-                ],
-                [
-                    "name" => "NJIRU",
-                    "county_id" => 30
-                ],
-                [
-                    "name" => "NJORO",
-                    "county_id" => 31
-                ],
-                [
-                    "name" => "NORTH HORR",
-                    "county_id" => 25
-                ],
-                [
-                    "name" => "NYAHURURU",
-                    "county_id" => 20
-                ],
-                [
-                    "name" => "NYAKACH",
-                    "county_id" => 17
-                ],
-                [
-                    "name" => "NYALI",
-                    "county_id" => 28
-                ],
-                [
-                    "name" => "NYAMACHE",
-                    "county_id" => 16
-                ],
-                [
-                    "name" => "NYAMIRA NORTH",
-                    "county_id" => 34
-                ],
-                [
-                    "name" => "NYAMIRA SOUTH",
-                    "county_id" => 34
-                ],
-                [
-                    "name" => "NYANDARUA CENTRAL",
-                    "county_id" => 35
-                ],
-                [
-                    "name" => "NYANDARUA NORTH",
-                    "county_id" => 35
-                ],
-                [
-                    "name" => "NYANDARUA SOUTH",
-                    "county_id" => 35
-                ],
-                [
-                    "name" => "NYANDARUA WEST",
-                    "county_id" => 35
-                ],
-                [
-                    "name" => "NYANDO",
-                    "county_id" => 17
-                ],
-                [
-                    "name" => "NYATIKE",
-                    "county_id" => 27
-                ],
-                [
-                    "name" => "NYERI CENTRAL",
-                    "county_id" => 36
-                ],
-                [
-                    "name" => "NYERI SOUTH",
-                    "county_id" => 36
-                ],
-                [
-                    "name" => "NZAMBANI",
-                    "county_id" => 18
-                ],
-                [
-                    "name" => "NZAUI",
-                    "county_id" => 23
-                ],
-                [
-                    "name" => "POKOT CENTRAL",
-                    "county_id" => 47
-                ],
-                [
-                    "name" => "POKOT NORTH",
-                    "county_id" => 47
-                ],
-                [
-                    "name" => "POKOT SOUTH",
-                    "county_id" => 47
-                ],
-                [
-                    "name" => "RABAI",
-                    "county_id" => 14
-                ],
-                [
-                    "name" => "RACHUONYO EAST",
-                    "county_id" => 8
-                ],
-                [
-                    "name" => "RACHUONYO NORTH",
-                    "county_id" => 8
-                ],
-                [
-                    "name" => "RACHUONYO SOUTH",
-                    "county_id" => 8
-                ],
-                [
-                    "name" => "RANGWE",
-                    "county_id" => 8
-                ],
-                [
-                    "name" => "RARIEDA",
-                    "county_id" => 38
-                ],
-                [
-                    "name" => "RONGAI",
-                    "county_id" => 31
-                ],
-                [
-                    "name" => "RONGO",
-                    "county_id" => 27
-                ],
-                [
-                    "name" => "RUIRU",
-                    "county_id" => 13
-                ],
-                [
-                    "name" => "SABATIA",
-                    "county_id" => 45
-                ],
-                [
-                    "name" => "SAMBURU CENTRAL",
-                    "county_id" => 37
-                ],
-                [
-                    "name" => "SAMBURU EAST",
-                    "county_id" => 37
-                ],
-                [
-                    "name" => "SAMBURU KWALE",
-                    "county_id" => 19
-                ],
-                [
-                    "name" => "SAMBURU NORTH",
-                    "county_id" => 37
-                ],
-                [
-                    "name" => "SAMETA",
-                    "county_id" => 16
-                ],
-                [
-                    "name" => "SAMIA",
-                    "county_id" => 4
-                ],
-                [
-                    "name" => "SEME",
-                    "county_id" => 17
-                ],
-                [
-                    "name" => "SIAYA",
-                    "county_id" => 38
-                ],
-                [
-                    "name" => "SOIN SIGOWET",
-                    "county_id" => 12
-                ],
-                [
-                    "name" => "SOLOLO",
-                    "county_id" => 25
-                ],
-                [
-                    "name" => "SOTIK",
-                    "county_id" => 2
-                ],
-                [
-                    "name" => "SOY",
-                    "county_id" => 44
-                ],
-                [
-                    "name" => "STAREHE",
-                    "county_id" => 30
-                ],
-                [
-                    "name" => "SUBA NORTH",
-                    "county_id" => 8
-                ],
-                [
-                    "name" => "SUBA SOUTH",
-                    "county_id" => "8f3"
-                ],
-                [
-                    "name" => "SUBUKIA",
-                    "county_id" => 31
-                ],
-                [
-                    "name" => "SUNA EAST",
-                    "county_id" => 27
-                ],
-                [
-                    "name" => "SUNA WEST",
-                    "county_id" => 27
-                ],
-                [
-                    "name" => "TAITA",
-                    "county_id" => 39
-                ],
-                [
-                    "name" => "TANA DELTA",
-                    "county_id" => 40
-                ],
-                [
-                    "name" => "TANA NORTH",
-                    "county_id" => 40
-                ],
-                [
-                    "name" => "TANA RIVER",
-                    "county_id" => 40
-                ],
-                [
-                    "name" => "TARBAJ",
-                    "county_id" => 46
-                ],
-                [
-                    "name" => "TAVETA",
-                    "county_id" => 39
-                ],
-                [
-                    "name" => "TESO NORTH",
-                    "county_id" => 4
-                ],
-                [
-                    "name" => "TESO SOUTH",
-                    "county_id" => 4
-                ],
-                [
-                    "name" => "TETU",
-                    "county_id" => 36
-                ],
-                [
-                    "name" => "THAGICU",
-                    "county_id" => 18
-                ],
-                [
-                    "name" => "THARAKA NORTH",
-                    "county_id" => 41
-                ],
-                [
-                    "name" => "THARAKA SOUTH",
-                    "county_id" => 41
-                ],
-                [
-                    "name" => "THIKA EAST",
-                    "county_id" => 13
-                ],
-                [
-                    "name" => "THIKA WEST",
-                    "county_id" => 13
-                ],
-                [
-                    "name" => "TIATY EAST",
-                    "county_id" => 1
-                ],
-                [
-                    "name" => "TIGANIA CENTRAL",
-                    "county_id" => 26
-                ],
-                [
-                    "name" => "TIGANIA EAST.",
-                    "county_id" => 26
-                ],
-                [
-                    "name" => "TIGANIA WEST",
-                    "county_id" => 26
-                ],
-                [
-                    "name" => "TINDERET",
-                    "county_id" => 32
-                ],
-                [
-                    "name" => "TONGAREN",
-                    "county_id" => 3
-                ],
-                [
-                    "name" => "TRANS MARA EAST",
-                    "county_id" => 33
-                ],
-                [
-                    "name" => "TRANS MARA WEST",
-                    "county_id" => 33
-                ],
-                [
-                    "name" => "TRANS NZOIA EAST",
-                    "county_id" => 42
-                ],
-                [
-                    "name" => "TRANS NZOIA WEST",
-                    "county_id" => 42
-                ],
-                [
-                    "name" => "TSEIKURU",
-                    "county_id" => 18
-                ],
-                [
-                    "name" => "TURBO",
-                    "county_id" => 44
-                ],
-                [
-                    "name" => "TURKANA CENTRAL",
-                    "county_id" => 43
-                ],
-                [
-                    "name" => "TURKANA EAST",
-                    "county_id" => 43
-                ],
-                [
-                    "name" => "TURKANA NORTH",
-                    "county_id" => 43
-                ],
-                [
-                    "name" => "TURKANA SOUTH",
-                    "county_id" => 43
-                ],
-                [
-                    "name" => "TURKANA WEST",
-                    "county_id" => 43
-                ],
-                [
-                    "name" => "UGENYA",
-                    "county_id" => 38
-                ],
-                [
-                    "name" => "UGUNJA",
-                    "county_id" => 38
-                ],
-                [
-                    "name" => "URIRI",
-                    "county_id" => 27
-                ],
-                [
-                    "name" => "VIHIGA",
-                    "county_id" => 45
-                ],
-                [
-                    "name" => "VOI",
-                    "county_id" => 39
-                ],
-                [
-                    "name" => "WAJIR EAST.",
-                    "county_id" => 46
-                ],
-                [
-                    "name" => "WAJIR NORTH",
-                    "county_id" => 46
-                ],
-                [
-                    "name" => "WAJIR SOUTH",
-                    "county_id" => 46
-                ],
-                [
-                    "name" => "WAJIR WEST",
-                    "county_id" => 46
-                ],
-                [
-                    "name" => "WEBUYE WEST",
-                    "county_id" => 3
-                ],
-                [
-                    "name" => "WEST POKOT",
-                    "county_id" => 47
-                ],
-                [
                     "name" => "WESTLANDS",
                     "county_id" => 30
                 ],
-                [
-                    "name" => "YATTA",
-                    "county_id" => 22
-                ]
             ]
         );
     }
@@ -1420,6 +988,8 @@ class CreateSubcountyTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('tbl_subcounty');
+        Schema::enableForeignKeyConstraints();
     }
 }
