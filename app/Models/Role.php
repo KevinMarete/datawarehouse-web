@@ -19,11 +19,11 @@ class Role extends Model
 
   public function users()
   {
-    return $this->hasMany('App\Models\User')->withTrashed();
+    return $this->hasMany('App\Models\User');
   }
 
   public function menu_roles()
   {
-    return $this->hasMany('App\Models\MenuRole')->withTrashed();
+    return $this->hasMany('App\Models\MenuRole');
   }
 }

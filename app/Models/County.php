@@ -19,6 +19,6 @@ class County extends Model
 
   public function subcounties()
   {
-    return $this->hasMany('App\Models\SubCounty')->withTrashed();
+    return $this->hasMany('App\Models\SubCounty');
   }
 }

@@ -26,6 +26,6 @@ class Menu extends Model
 
   public function menu_roles()
   {
-    return $this->hasMany('App\Models\MenuRole')->withTrashed();
+    return $this->hasMany('App\Models\MenuRole');
   }
 }

@@ -25,6 +25,6 @@ class SubCounty extends Model
 
   public function facilities()
   {
-    return $this->hasMany('App\Models\Facility', 'subcounty_id', 'id')->withTrashed();
+    return $this->hasMany('App\Models\Facility', 'subcounty_id', 'id');
   }
 }

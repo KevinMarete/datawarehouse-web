@@ -19,6 +19,6 @@ class QueryCategory extends Model
 
   public function queries()
   {
-    return $this->hasMany('App\Models\Query')->withTrashed();
+    return $this->hasMany('App\Models\Query');
   }
 }
