@@ -14,7 +14,7 @@ class CheckUserAccess
 
     $restricted_menus = [
       'admin' => [],
-      'user' => ['role', 'menu', 'menurole', 'menugroup', 'user']
+      'user' => ['county', 'subcounty', 'menu', 'menurole', 'menugroup', 'role', 'subcounty', 'user']
     ];
 
     if (in_array($path, $restricted_menus[$role])) {
