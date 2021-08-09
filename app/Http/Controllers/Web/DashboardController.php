@@ -12,8 +12,10 @@ class DashboardController extends BaseController
   {
     $category = $request->category;
     $filters = [
-      'from' => '2020-02-01',
-      'to' => '2020-03-01'
+      'from' => session()->has('filter_from') ? session()->get('filter_from') : '2020-02-01',
+      'to' => session()->has('filter_to') ? session()->get('filter_to') : '2020-03-01',
+      'facility' => session()->has('filter_facility') ? session()->get('filter_facility') : [],
+      'subcounty' => session()->has('filter_subcounty') ? session()->get('filter_subcounty') : []
     ];
 
     $token = session()->get('token');
@@ -21,10 +23,10 @@ class DashboardController extends BaseController
 
     $view_data = [
       'chart_config' => $this->getChartConfig($token, $category, $filters),
-      'counties' => [],
-      'facilities' => [],
-      'from' => $filters['from'],
-      'to' => $filters['to']
+      'counties' => $this->manageResourceData($token, 'GET', 'county'),
+      'facilities' => $this->manageResourceData($token, 'GET', 'facility'),
+      'filters' => $filters,
+      'category' => $category
     ];
 
     $data = [
@@ -40,7 +42,11 @@ class DashboardController extends BaseController
 
   public function displayDashboardFilterView(Request $request)
   {
-    return redirect('/dashboard/care-and-treatment');
+    session()->put('filter_from', $request->filter_from);
+    session()->put('filter_to', $request->filter_to);
+    session()->put('filter_facility', $request->facility);
+    session()->put('filter_county', $request->subcounty);
+    return redirect('/dashboard/' . $request->category);
   }
 
   public function getChartConfig($token = null, $category = null, $filters = [])
