@@ -28,7 +28,7 @@ class AddCountyMenuRole extends Migration
     public function down()
     {
         $menu = DB::table('tbl_menu')->where('name', 'County')->first();
-        $role = DB::table('tbl_role')->where('name', 'user')->first();
+        $role = DB::table('tbl_role')->where('name', 'admin')->first();
 
         DB::table('tbl_menu_role')->where('menu_id', $menu->id)->where('role_id', $role->id)->delete();
     }
