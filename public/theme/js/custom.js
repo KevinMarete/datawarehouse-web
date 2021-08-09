@@ -56,6 +56,7 @@ jQuery(function ($) {
         });
     });
 
+    // Chart builder
     function buildChart(chartId, chartConfig) {
         const data = {
             labels: chartConfig.labels,
@@ -92,8 +93,8 @@ jQuery(function ($) {
     addReportFilter();
 
     function addReportFilter() {
-        var start = moment($("#report_start").val());
-        var end = moment($("#report_end").val());
+        var start = moment($("#filter_start").val());
+        var end = moment($("#filter_end").val());
 
         function cb(start, end) {
             $("#periodrange span").html(
@@ -131,18 +132,11 @@ jQuery(function ($) {
         cb(start, end);
     }
 
-    $("#reportrange").on("apply.daterangepicker", function (ev, picker) {
+    $("#periodrange").on("apply.daterangepicker", function (ev, picker) {
         var startDate = picker.startDate.format("YYYY-MM-DD");
         var endDate = picker.endDate.format("YYYY-MM-DD");
 
-        $("#report_start").val(startDate);
-        $("#report_end").val(endDate);
-    });
-
-    $("#report_name").on("change", function () {
-        var selected_report_group = $("#report_name :selected")
-            .parent()
-            .attr("data-id");
-        $("#report_group").val(selected_report_group);
+        $("#filter_start").val(startDate);
+        $("#filter_end").val(endDate);
     });
 });
