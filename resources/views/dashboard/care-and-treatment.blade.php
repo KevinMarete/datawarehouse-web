@@ -10,22 +10,22 @@
       <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6 p-3">
           <div class="chart-wrap">
-            <canvas id="currentChart" class="dashboard-chart" data-api-resource="{{ $chart_config['current_chart'] }}"></canvas>
+            <canvas id="currentChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['current_chart'] }}"></canvas>
           </div>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 p-3">
           <div class="chart-wrap">
-            <canvas id="newChart" class="dashboard-chart" data-api-resource="{{ $chart_config['new_chart'] }}"></canvas>
+            <canvas id="newChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['new_chart'] }}"></canvas>
           </div>
         </div>
         <div class="col-12 p-3">
           <div class="chart-wrap">
-            <canvas id="newAgeGenderChart" class="dashboard-chart" data-api-resource="{{ $chart_config['new_age_gender_chart'] }}"></canvas>
+            <canvas id="newAgeGenderChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['new_age_gender_chart'] }}"></canvas>
           </div>
         </div>
         <div class="col-12 p-3">
           <div class="chart-wrap">
-            <canvas id="currentAgeGenderChart" class="dashboard-chart" data-api-resource="{{ $chart_config['current_age_gender_chart'] }}"></canvas>
+            <canvas id="currentAgeGenderChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['current_age_gender_chart'] }}"></canvas>
           </div>
         </div>
       </div>

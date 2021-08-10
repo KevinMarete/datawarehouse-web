@@ -64,9 +64,15 @@ class PatientController extends Controller
   {
     $to = $request->to;
     $group_by_index = 'age_group';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-    $results = Patient::whereDate('start_regimen_date', '<', $to)->get();
+    $results = Patient::whereDate('start_regimen_date', '<', $to)
+      ->get()->toArray();
 
+    $results = $this->arrayFilterBy($results, $filters);
     $results = $this->arrayGroupBy($results, $group_by_index);
     $results = $this->arrayCount($results);
 
@@ -86,9 +92,14 @@ class PatientController extends Controller
   {
     $to = $request->to;
     $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-    $results = Patient::whereDate('start_regimen_date', '<', $to)->get();
+    $results = Patient::whereDate('start_regimen_date', '<', $to)->get()->toArray();
 
+    $results = $this->arrayFilterBy($results, $filters);
     $results = $this->arrayGroupBy($results, $group_by_index);
     $results = $this->arrayCount($results);
 
@@ -107,13 +118,19 @@ class PatientController extends Controller
   {
     $to = $request->to;
     $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-    $onart_results = Patient::whereDate('start_regimen_date', '<', $to)->get();
+    $onart_results = Patient::whereDate('start_regimen_date', '<', $to)->get()->toArray();
+    $onart_results = $this->arrayFilterBy($onart_results, $filters);
     $onart_results = $this->arrayGroupBy($onart_results, $group_by_index);
     $onart_results = $this->arrayCount($onart_results);
     $onart_results = array_merge($this->default_results[$group_by_index], $onart_results);
 
-    $oncare_results = Patient::whereDate('enrollment_date', '<', $to)->get();
+    $oncare_results = Patient::whereDate('enrollment_date', '<', $to)->get()->toArray();
+    $oncare_results = $this->arrayFilterBy($oncare_results, $filters);
     $oncare_results = $this->arrayGroupBy($oncare_results, $group_by_index);
     $oncare_results = $this->arrayCount($oncare_results);
     $oncare_results = array_merge($this->default_results[$group_by_index], $oncare_results);
@@ -140,9 +157,14 @@ class PatientController extends Controller
     $from = $request->from;
     $to = $request->to;
     $group_by_index = 'age_group';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-    $results = Patient::whereDate('start_regimen_date', '>=', $from)->whereDate('start_regimen_date', '<', $to)->get();
+    $results = Patient::whereDate('start_regimen_date', '>=', $from)->whereDate('start_regimen_date', '<', $to)->get()->toArray();
 
+    $results = $this->arrayFilterBy($results, $filters);
     $results = $this->arrayGroupBy($results, $group_by_index);
     $results = $this->arrayCount($results);
 
@@ -163,9 +185,14 @@ class PatientController extends Controller
     $from = $request->from;
     $to = $request->to;
     $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-    $results = Patient::whereDate('start_regimen_date', '>=', $from)->whereDate('start_regimen_date', '<', $to)->get();
+    $results = Patient::whereDate('start_regimen_date', '>=', $from)->whereDate('start_regimen_date', '<', $to)->get()->toArray();
 
+    $results = $this->arrayFilterBy($results, $filters);
     $results = $this->arrayGroupBy($results, $group_by_index);
     $results = $this->arrayCount($results);
 
@@ -184,9 +211,14 @@ class PatientController extends Controller
   {
     $to = $request->to;
     $group_by_index = 'age_group';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-    $results = Patient::whereDate('enrollment_date', '<', $to)->get();
+    $results = Patient::whereDate('enrollment_date', '<', $to)->get()->toArray();
 
+    $results = $this->arrayFilterBy($results, $filters);
     $results = $this->arrayGroupBy($results, $group_by_index);
     $results = $this->arrayCount($results);
 
@@ -206,9 +238,14 @@ class PatientController extends Controller
   {
     $to = $request->to;
     $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-    $results = Patient::whereDate('enrollment_date', '<', $to)->get();
+    $results = Patient::whereDate('enrollment_date', '<', $to)->get()->toArray();
 
+    $results = $this->arrayFilterBy($results, $filters);
     $results = $this->arrayGroupBy($results, $group_by_index);
     $results = $this->arrayCount($results);
 
@@ -228,9 +265,14 @@ class PatientController extends Controller
     $from = $request->from;
     $to = $request->to;
     $group_by_index = 'age_group';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-    $results = Patient::whereDate('enrollment_date', '>=', $from)->whereDate('enrollment_date', '<', $to)->get();
+    $results = Patient::whereDate('enrollment_date', '>=', $from)->whereDate('enrollment_date', '<', $to)->get()->toArray();
 
+    $results = $this->arrayFilterBy($results, $filters);
     $results = $this->arrayGroupBy($results, $group_by_index);
     $results = $this->arrayCount($results);
 
@@ -251,9 +293,14 @@ class PatientController extends Controller
     $from = $request->from;
     $to = $request->to;
     $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-    $results = Patient::whereDate('enrollment_date', '>=', $from)->whereDate('enrollment_date', '<', $to)->get();
+    $results = Patient::whereDate('enrollment_date', '>=', $from)->whereDate('enrollment_date', '<', $to)->get()->toArray();
 
+    $results = $this->arrayFilterBy($results, $filters);
     $results = $this->arrayGroupBy($results, $group_by_index);
     $results = $this->arrayCount($results);
 
@@ -262,7 +309,7 @@ class PatientController extends Controller
     return response()->json($results);
   }
 
-    /**
+  /**
    * Display all new patients totals on care by age group
    *
    * @param  \Illuminate\Http\Request  $request
@@ -273,9 +320,14 @@ class PatientController extends Controller
     $from = $request->from;
     $to = $request->to;
     $group_by_index = 'gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-    $results = Patient::whereDate('hiv_test_date', '>=', $from)->whereDate('hiv_test_date', '<', $to)->get();
+    $results = Patient::whereDate('hiv_test_date', '>=', $from)->whereDate('hiv_test_date', '<', $to)->get()->toArray();
 
+    $results = $this->arrayFilterBy($results, $filters);
     $results = $this->arrayGroupBy($results, $group_by_index);
     $results = $this->arrayCount($results);
 
@@ -295,15 +347,39 @@ class PatientController extends Controller
     $from = $request->from;
     $to = $request->to;
     $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-    $results = Patient::whereDate('hiv_test_date', '>=', $from)->whereDate('hiv_test_date', '<', $to)->get();
+    $results = Patient::whereDate('hiv_test_date', '>=', $from)->whereDate('hiv_test_date', '<', $to)->get()->toArray();
 
+    $results = $this->arrayFilterBy($results, $filters);
     $results = $this->arrayGroupBy($results, $group_by_index);
     $results = $this->arrayCount($results);
 
     $results = array_merge($this->default_results[$group_by_index], $results);
 
     return response()->json($results);
+  }
+
+  /**
+   * Filter Array Elements based on filters
+   *
+   * @param  Array  $array
+   * @param  Array  $filters
+   * @return Array
+   */
+  private function arrayFilterBy($array, $filters)
+  {
+    $results = [];
+    if (sizeof($filters['facility']) == 0 && sizeof($filters['sub_county']) == 0) {
+      return $array;
+    }
+    $results = array_filter($array, function ($value) use ($filters) {
+      return (in_array($value['facility'], $filters['facility']) || in_array($value['sub_county'], $filters['sub_county']));
+    });
+    return $results;
   }
 
   /**
@@ -317,7 +393,7 @@ class PatientController extends Controller
   {
     $results = [];
     foreach ($array as $val) {
-      $results[$val->$key][] = $val;
+      $results[$val[$key]][] = $val;
     }
     return $results;
   }
