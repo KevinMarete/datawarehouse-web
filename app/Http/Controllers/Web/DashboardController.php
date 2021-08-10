@@ -45,7 +45,7 @@ class DashboardController extends BaseController
     session()->put('filter_from', $request->filter_from);
     session()->put('filter_to', $request->filter_to);
     session()->put('filter_facility', $request->facility);
-    session()->put('filter_county', $request->subcounty);
+    session()->put('filter_subcounty', $request->subcounty);
     return redirect('/dashboard/' . $request->category);
   }
 
