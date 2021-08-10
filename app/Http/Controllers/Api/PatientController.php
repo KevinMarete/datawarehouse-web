@@ -373,10 +373,11 @@ class PatientController extends Controller
   private function arrayFilterBy($array, $filters)
   {
     $results = [];
+    if (sizeof($filters['facility']) == 0 && sizeof($filters['sub_county']) == 0) {
+      return $array;
+    }
     $results = array_filter($array, function ($value) use ($filters) {
-      foreach ($filters as $filter => $items) {
-        return sizeof($items) > 0 && in_array($value[$filter], $items) || sizeof($items) == 0;
-      }
+      return (in_array($value['facility'], $filters['facility']) || in_array($value['sub_county'], $filters['sub_county']));
     });
     return $results;
   }
