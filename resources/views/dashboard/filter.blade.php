@@ -32,9 +32,9 @@
                 <optgroup data-id="{{ $county['name'] }}" label="{{ ucwords($county['name']) }}">
                   @foreach($county['subcounties'] as $subcounty)
                   @if(in_array($subcounty['id'], $filters['subcounty']))
-                  <option value="{{ strtolower($subcounty['name']) }}" selected>{{ $subcounty['name'] }}</option>
+                  <option value="{{ strtoupper($subcounty['name']) }}" selected>{{ $subcounty['name'] }}</option>
                   @else
-                  <option value="{{ strtolower($subcounty['name']) }}">{{ $subcounty['name'] }}</option>
+                  <option value="{{ strtoupper($subcounty['name']) }}">{{ $subcounty['name'] }}</option>
                   @endif
                   @endforeach
                 </optgroup>
