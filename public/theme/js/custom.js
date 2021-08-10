@@ -66,7 +66,8 @@ jQuery(function ($) {
             type: chartConfig.type,
             data: data,
             options: {
-                maintainAspectRatio: true,
+                responsive: true,
+                maintainAspectRatio: false,
                 legend: {
                     display: true,
                 },
@@ -89,10 +90,10 @@ jQuery(function ($) {
         return new Chart(chartId, config);
     }
 
-    //Adding Report Filter
-    addReportFilter();
+    // Add Dashboard Filter
+    addDashboardFilter();
 
-    function addReportFilter() {
+    function addDashboardFilter() {
         var start = moment($("#filter_start").val());
         var end = moment($("#filter_end").val());
 
@@ -132,6 +133,7 @@ jQuery(function ($) {
         cb(start, end);
     }
 
+    // Set period from and to dates
     $("#periodrange").on("apply.daterangepicker", function (ev, picker) {
         var startDate = picker.startDate.format("YYYY-MM-DD");
         var endDate = picker.endDate.format("YYYY-MM-DD");
@@ -139,4 +141,26 @@ jQuery(function ($) {
         $("#filter_start").val(startDate);
         $("#filter_end").val(endDate);
     });
+
+    // Add searchable multiselect
+    $(".filter-select").select2({
+        placeholder: " Select an option ",
+        maximumSelectionLength: 10,
+        allowClear: true,
+        tags: true,
+        tokenSeparators: [",", " "],
+    });
+
+    // Add filter data
+    addFilteredData();
+
+    function addFilteredData() {
+        const facilityData = $.parseJSON($("#filter_facility").val());
+        const subCountyData = $.parseJSON($("#filter_subcounty").val());
+
+        $("select#facility").val(facilityData);
+        $("select#subcounty").val(subCountyData);
+
+        $(".filter-select").trigger("change");
+    }
 });
