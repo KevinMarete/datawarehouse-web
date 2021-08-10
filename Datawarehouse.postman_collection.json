@@ -1277,7 +1277,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\"DAGORETTI NORTH\"]\n}"
 						},
 						"url": {
 							"raw": "{{host}}{{port}}/api/patient/on-art/current/agegroup",
@@ -1320,7 +1320,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\n        \"DAGORETTI NORTH\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{host}}{{port}}/api/patient/on-art/current/agegroup-gender",
@@ -1363,7 +1363,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\n        \"DAGORETTI NORTH\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{host}}{{port}}/api/patient/on-art/current/prop",
@@ -1406,7 +1406,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\n        \"DAGORETTI NORTH\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{host}}{{port}}/api/patient/on-art/new/agegroup",
@@ -1449,7 +1449,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\n        \"DAGORETTI NORTH\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{host}}{{port}}/api/patient/on-art/new/agegroup-gender",
@@ -1492,7 +1492,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\n        \"DAGORETTI NORTH\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{host}}{{port}}/api/patient/on-care/current/agegroup",
@@ -1535,7 +1535,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\n        \"DAGORETTI NORTH\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{host}}{{port}}/api/patient/on-care/current/agegroup-gender",
@@ -1578,7 +1578,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\n        \"DAGORETTI NORTH\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{host}}{{port}}/api/patient/on-care/new/agegroup",
@@ -1621,7 +1621,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\n        \"DAGORETTI NORTH\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{host}}{{port}}/api/patient/on-care/new/agegroup-gender",
@@ -1664,7 +1664,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\n        \"DAGORETTI NORTH\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{host}}{{port}}/api/patient/tested/positive/gender",
@@ -1707,7 +1707,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\"\n}"
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\n        \"DAGORETTI NORTH\"\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{host}}{{port}}/api/patient/tested/positive/agegroup-gender",
