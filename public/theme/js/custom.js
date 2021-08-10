@@ -145,7 +145,7 @@ jQuery(function ($) {
     // Add searchable multiselect
     $(".filter-select").select2({
         placeholder: " Select an option ",
-        maximumSelectionLength: 10,
+        maximumSelectionLength: 4,
         allowClear: true,
         tags: true,
         tokenSeparators: [",", " "],
