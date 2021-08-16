@@ -28,15 +28,26 @@ Rename `.env.example` to `.env` then edit it with your custom settings. You will
 ## Resources
 
 -   [Passport Setup](https://stackoverflow.com/questions/39414956/laravel-passport-key-path-oauth-public-key-does-not-exist-or-is-not-readable)
+-   Docker Resources
+    -   [Docker + Laravel + Nginx + MySQL](https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose)
+    -   [Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-containerize-a-laravel-application-for-development-with-docker-compose-on-ubuntu-18-04)
 
 ## Running the development server
 
     $ php artisan serve
     $ php artisan serve --port 8001
 
-## Launch the app
+Go to browser and launch application on `http://localhost:8000`
 
-Go to browser and launch application on `http://localhost:8000` Default Credentials are as follows:
+## Running on docker
+
+    $ docker-compose up
+
+Go to browser and launch application on `http://localhost:85`
+
+## Default credentials for the app
+
+Default Credentials are as follows:
 
 -   Admin Account
     - Username: admin@gmail.com 

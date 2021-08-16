@@ -1,0 +1,70 @@
+version: "3.8"
+services:
+    #PHP Service
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: digitalocean.com/php
+        container_name: app
+        restart: unless-stopped
+        tty: true
+        environment:
+            SERVICE_NAME: app
+            SERVICE_TAGS: dev
+        working_dir: /var/www
+        env_file:
+            - ./.env
+        networks:
+            - app-network
+        depends_on:
+            - db
+
+    #Nginx Service
+    webserver:
+        image: nginx:alpine
+        container_name: webserver
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "85:80"
+        volumes:
+            - ./:/var/www
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+        networks:
+            - app-network
+        depends_on:
+            - app
+
+    #MySQL Service
+    db:
+        image: mysql:8.0.26
+        container_name: db
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "3308:3306"
+        environment:
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            SERVICE_TAGS: dev
+            SERVICE_NAME: db
+        command: --init-file /mysql/init_db.sql
+        volumes:
+            - dbdata:/var/lib/mysql
+            - ./mysql/my.cnf:/etc/mysql/my.cnf
+            - ./mysql/init_db.sql:/mysql/init_db.sql
+        cap_add:
+            - SYS_NICE # CAP_SYS_NICE
+        networks:
+            - app-network
+
+#Docker Networks
+networks:
+    app-network:
+        driver: bridge
+
+#Volumes
+volumes:
+    dbdata:
+        driver: local
