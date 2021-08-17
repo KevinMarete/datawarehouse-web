@@ -25,18 +25,9 @@ class CreateQueryCategoryTable extends Migration
 
         //Add default data
         DB::table('tbl_query_category')->insert(
-            array(
-                [
-                    'name' => 'Patient',
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ],
-                [
-                    'name' => 'HTS Client',
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ],
-            )
+            [
+                ['name' => 'DATIM Scripts', 'created_at' => now()],
+            ]
         );
     }
 

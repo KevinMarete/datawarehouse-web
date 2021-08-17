@@ -39,9 +39,23 @@ Rename `.env.example` to `.env` then edit it with your custom settings. You will
 
 Go to browser and launch application on `http://localhost:8000`
 
-## Running on docker
+## Running on Docker
 
-    $ docker-compose up
+#### Setup server
+
+    $ ./scripts/setup.sh
+
+#### Start server
+
+    $ ./scripts/start.sh
+
+#### Stop server
+
+    $ ./scripts/stop.sh
+
+#### Reset server
+
+    $ ./scripts/reset.sh
 
 Go to browser and launch application on `http://localhost:85`
 

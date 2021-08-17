@@ -155,12 +155,17 @@ jQuery(function ($) {
     addFilteredData();
 
     function addFilteredData() {
-        const facilityData = $.parseJSON($("#filter_facility").val());
-        const subCountyData = $.parseJSON($("#filter_subcounty").val());
+        const filterFacility = $("#filter_facility").val();
+        const filterSubcounty = $("#filter_subcounty").val();
 
-        $("select#facility").val(facilityData);
-        $("select#subcounty").val(subCountyData);
+        if (filterFacility && filterSubcounty) {
+            const facilityData = $.parseJSON(filterFacility);
+            const subCountyData = $.parseJSON(filterSubcounty);
 
-        $(".filter-select").trigger("change");
+            $("select#facility").val(facilityData);
+            $("select#subcounty").val(subCountyData);
+
+            $(".filter-select").trigger("change");
+        }
     }
 });

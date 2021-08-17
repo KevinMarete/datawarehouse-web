@@ -1931,7 +1931,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"query_statement\": \"\"\n}",
+							"raw": "{\n    \"query_statement\": \"\",\n    \"from\": \"\",\n    \"to\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"

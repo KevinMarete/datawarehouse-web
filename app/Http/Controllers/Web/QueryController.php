@@ -140,6 +140,8 @@ class QueryController extends BaseController
     $role_id = session()->get('role_id');
 
     $view_data = [
+      'default_from' => date("Y-m-01", strtotime("-1 month")),
+      'default_to' => date("Y-m-t", strtotime("-1 month")),
       'querycategories' => $this->manageResourceData($token, 'GET', 'querycategory', [])
     ];
 
@@ -159,7 +161,15 @@ class QueryController extends BaseController
     $response = [];
     $token = session()->get('token');
 
-    $results = $this->manageResourceData($token, 'POST', 'query/run', ['query_statement' => $request->query_description]);
+    $params = [
+      'query_statement' => $request->query_description,
+      'from' => $request->from,
+      'to' => $request->to
+    ];
+    $results = $this->manageResourceData($token, 'POST', 'query/run', $params);
+    if (empty($results)) {
+      $results = [['message' => 'Error! Your query could not be executed']];
+    }
 
     // Get columns
     $keys = $this->getKeysFromObjectArray($results);

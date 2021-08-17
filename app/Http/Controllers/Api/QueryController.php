@@ -113,8 +113,12 @@ class QueryController extends Controller
     public function runQuery(Request $request)
     {
         $results = [];
+        $query = str_replace([':from', ':to'], ["'" . $request->from . "'", "'" . $request->to . "'"], $request->query_statement);
         try {
-            $results = DB::connection('mysql_read')->select($request->query_statement);
+            $results = DB::connection('mysql_read')->select(DB::raw($query));
+            if (empty($results)) {
+                $results = [['message' => 'No data found']];
+            }
         } catch (\Illuminate\Database\QueryException $ex) {
             dd($ex->getMessage());
         }
