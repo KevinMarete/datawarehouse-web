@@ -12,8 +12,8 @@ class DashboardController extends BaseController
   {
     $category = $request->category;
     $filters = [
-      'from' => session()->has('filter_from') ? session()->get('filter_from') : '2020-02-01',
-      'to' => session()->has('filter_to') ? session()->get('filter_to') : '2020-03-01',
+      'from' => session()->has('filter_from') ? session()->get('filter_from') : date("Y-m-01", strtotime("-1 month")),
+      'to' => session()->has('filter_to') ? session()->get('filter_to') : date("Y-m-t", strtotime("-1 month")),
       'facility' => session()->has('filter_facility') ? session()->get('filter_facility') : [],
       'subcounty' => session()->has('filter_subcounty') ? session()->get('filter_subcounty') : []
     ];
