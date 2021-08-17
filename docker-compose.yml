@@ -15,6 +15,7 @@ services:
         working_dir: /var/www
         env_file:
             - ./.env
+        command: bash -c "echo 'Preparing migrations' && sleep 30 && php artisan migrate && php artisan passport:install && php-fpm"
         networks:
             - app-network
         depends_on:
@@ -38,7 +39,7 @@ services:
 
     #MySQL Service
     db:
-        image: mysql:8.0.26
+        image: mysql:5.7.33
         container_name: db
         restart: unless-stopped
         tty: true
@@ -49,7 +50,7 @@ services:
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
             SERVICE_TAGS: dev
             SERVICE_NAME: db
-        command: --init-file /mysql/init_db.sql
+        command: --init-file /mysql/init_db.sql --explicit_defaults_for_timestamp --ignore-db-dir=lost+found
         volumes:
             - dbdata:/var/lib/mysql
             - ./mysql/my.cnf:/etc/mysql/my.cnf
