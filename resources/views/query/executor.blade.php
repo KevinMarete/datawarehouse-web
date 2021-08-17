@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                   <label for="query_description" class="control-label mb-1">Query</label>
-                  <select id="query_description" name="query_description" class="form-control" required>
+                  <select id="query_description" name="query_description" class="form-control filter-select" required>
                     <option value="">Select Query</option>
                     @foreach($querycategories as $querycategory)
                     <optgroup label="{{ ucwords($querycategory['name']) }}">
@@ -28,7 +28,22 @@
                     @endforeach
                   </select>
                 </div>
-
+                <div class="form-group row">
+                  <div class="input-group col-sm-12 col-md-6 col-lg-6 mb-3">
+                    <div class="input-group-addon">From</div>
+                    <input type="date" id="from" name="from" value="{{ $default_from }}" class="form-control" required>
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                  </div>
+                  <div class="input-group col-sm-12 col-md-6 col-lg-6 mb-3">
+                    <div class="input-group-addon">To</div>
+                    <input type="date" id="to" name="to" value="{{ $default_to }}" class="form-control" required>
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="card-footer pt-2">
                 <div class="table-responsive-sm">
