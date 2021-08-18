@@ -1,12 +1,8 @@
 /*Create database*/
 CREATE DATABASE IF NOT EXISTS `datawarehouse_db`;
 
-/*Allow remote access for root user*/
-UPDATE mysql.user SET host='%' WHERE user='root';
-
-/*Add password to root user*/
-ALTER USER 'root'@'%' IDENTIFIED BY 'root';
-UPDATE mysql.user SET authentication_string = PASSWORD('root') WHERE User = 'root';
+/*Allow remote access for root user & Add password to root user*/
+UPDATE mysql.user SET authentication_string = PASSWORD('root'), plugin='mysql_native_password', host='%' WHERE User = 'root' AND host='localhost';
 
 /*Grant all privileges to root user*/
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
@@ -27,7 +23,7 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
-/*Create etl table*/
+/*Create etl tables*/
 CREATE TABLE IF NOT EXISTS `etl_art_master_list` (
   `Facility` varchar(34) CHARACTER SET utf8 DEFAULT NULL,
   `patient_id` int(11) NOT NULL,
@@ -2563,6 +2559,3 @@ CREATE TABLE IF NOT EXISTS `etl_viral_load` (
   KEY `patient_id_2` (`patient_id`,`visit_date`),
   CONSTRAINT `etl_viral_load_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `etl_patient_demographics` (`patient_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-
--- 2021-08-17 06:36:52
