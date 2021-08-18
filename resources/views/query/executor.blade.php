@@ -28,20 +28,13 @@
                     @endforeach
                   </select>
                 </div>
-                <div class="form-group row">
-                  <div class="input-group col-sm-12 col-md-6 col-lg-6 mb-3">
-                    <div class="input-group-addon">From</div>
-                    <input type="date" id="from" name="from" value="{{ $default_from }}" class="form-control" required>
-                    <div class="input-group-addon">
-                      <i class="fa fa-calendar"></i>
-                    </div>
-                  </div>
-                  <div class="input-group col-sm-12 col-md-6 col-lg-6 mb-3">
-                    <div class="input-group-addon">To</div>
-                    <input type="date" id="to" name="to" value="{{ $default_to }}" class="form-control" required>
-                    <div class="input-group-addon">
-                      <i class="fa fa-calendar"></i>
-                    </div>
+                <div class="form-group">
+                  <input type="hidden" id="filter_start" name="from" value=" {{ $default_from }}" required />
+                  <input type="hidden" id="filter_end" name="to" value="{{ $default_to }}" required />
+                  <label for="periodrange" class="control-label mb-1">Period</label>
+                  <div id="periodrange" class="form-control">
+                    <i class="fa fa-calendar"></i>&nbsp;
+                    <span></span> <i class="fa fa-caret-down"></i>
                   </div>
                 </div>
               </div>
