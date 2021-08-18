@@ -30,7 +30,7 @@ class CountyController extends Controller
     try {
       $this->validate($request, County::$rules);
       $county = County::firstOrCreate($request->all(), $request->all());
-      return response()->json($county);
+      return response()->json($county, 201);
     } catch (\Illuminate\Database\QueryException $e) {
       $errorCode = $e->errorInfo[1];
       if ($errorCode == '7') {
@@ -98,6 +98,6 @@ class CountyController extends Controller
       return response()->json(['error' => 'not_found']);
     }
     $county->delete();
-    return response()->json(['msg' => 'Removed successfully']);
+    return response()->json(['msg' => 'Removed successfully'], 204);
   }
 }
