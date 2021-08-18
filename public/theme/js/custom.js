@@ -90,10 +90,10 @@ jQuery(function ($) {
         return new Chart(chartId, config);
     }
 
-    // Add Dashboard Filter
-    addDashboardFilter();
+    // Add Period Filter
+    addPeriodFilter();
 
-    function addDashboardFilter() {
+    function addPeriodFilter() {
         var start = moment($("#filter_start").val());
         var end = moment($("#filter_end").val());
 
@@ -109,6 +109,7 @@ jQuery(function ($) {
             {
                 startDate: start,
                 endDate: end,
+                maxDate: moment(),
                 ranges: {
                     Today: [moment(), moment()],
                     Yesterday: [
