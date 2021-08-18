@@ -2,11 +2,10 @@
 CREATE DATABASE IF NOT EXISTS `datawarehouse_db`;
 
 /*Allow remote access for root user*/
-UPDATE mysql.user SET host='%' WHERE user='root';
+UPDATE mysql.user SET host='%' WHERE user='root' AND host='localhost';
 
 /*Add password to root user*/
-ALTER USER 'root'@'%' IDENTIFIED BY 'root';
-UPDATE mysql.user SET authentication_string = PASSWORD('root') WHERE User = 'root';
+UPDATE mysql.user SET authentication_string = PASSWORD('root'), plugin='mysql_native_password' WHERE User = 'root';
 
 /*Grant all privileges to root user*/
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
