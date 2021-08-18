@@ -25,6 +25,10 @@ Rename `.env.example` to `.env` then edit it with your custom settings. You will
 
     $ php artisan migrate
 
+## Initializing etl database tables
+
+    $ ./scripts/etl.init.sh
+
 ## Resources
 
 -   [Passport Setup](https://stackoverflow.com/questions/39414956/laravel-passport-key-path-oauth-public-key-does-not-exist-or-is-not-readable)
@@ -43,19 +47,19 @@ Go to browser and launch application on `http://localhost:8000`
 
 #### Setup server
 
-    $ ./scripts/setup.sh
+    $ ./scripts/docker_setup.sh
 
 #### Start server
 
-    $ ./scripts/start.sh
+    $ ./scripts/docker_start.sh
 
 #### Stop server
 
-    $ ./scripts/stop.sh
+    $ ./scripts/docker_stop.sh
 
 #### Reset server
 
-    $ ./scripts/reset.sh
+    $ ./scripts/docker_reset.sh
 
 Go to browser and launch application on `http://localhost:85`
 
