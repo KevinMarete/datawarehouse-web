@@ -80,7 +80,7 @@ class AuthController extends Controller
 			}
 		} else {
 			$response = 'User does not exist';
-			return response(['error' => $response]);
+			return response(['error' => $response], 404);
 		}
 	}
 
@@ -122,17 +122,17 @@ class AuthController extends Controller
 			}
 		} else {
 			$response = 'User does not exist';
-			return response(['error' => $response]);
+			return response(['error' => $response], 422);
 		}
 	}
 
 	public function viewprofile(Request $request)
 	{
 		$user = User::with('role')->find(auth('api')->user()->id);
-		if (is_null($user)) {
-			return response()->json(['error' => 'not_found']);
+		if ($user) {
+			return response($user, 200);
 		}
-		return response($user, 200);
+		return response()->json(['error' => 'not_found'], 401);
 	}
 
 	public function updateprofile(Request $request)
@@ -156,7 +156,7 @@ class AuthController extends Controller
 				return response(['error' => $response]);
 			}
 		}
-		return response(['error' => 'Details could not be updated']);
+		return response(['error' => 'Details could not be updated'], 422);
 	}
 
 	public function logout(Request $request)

@@ -36,6 +36,10 @@ Rename `.env.example` to `.env` then edit it with your custom settings. You will
     -   [Docker + Laravel + Nginx + MySQL](https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose)
     -   [Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-containerize-a-laravel-application-for-development-with-docker-compose-on-ubuntu-18-04)
 
+-   Testing Resources
+    -   [Getting Started with Unit Testing a Laravel API using PHPUnit](https://www.twilio.com/blog/unit-testing-laravel-api-phpunit)
+    -   [Generate Code Coverage Report in Laravel](https://medium.com/@anowarhossain/code-coverage-report-in-laravel-and-make-100-coverage-of-your-code-ce27cccbc738)
+
 ## Running the development server
 
     $ php artisan serve
