@@ -42,8 +42,17 @@ Rename `.env.example` to `.env` then edit it with your custom settings. You will
 
 ## Running the development server
 
-    $ php artisan serve
-    $ php artisan serve --port 8001
+#### Build server
+
+    $ ./scripts/dev_build.sh
+
+#### Start server
+
+    $ ./scripts/dev_start.sh
+
+#### Stop server
+
+    $ ./scripts/dev_stop.sh
 
 Go to browser and launch application on `http://localhost:8000`
 
