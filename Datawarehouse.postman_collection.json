@@ -2724,6 +2724,53 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Visit",
+			"item": [
+				{
+					"name": "Get OnMMD Patient Visit Totals By AgeGroup Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/visit/on-mmd/agegroup-gender",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"visit",
+								"on-mmd",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
