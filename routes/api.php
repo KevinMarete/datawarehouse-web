@@ -13,6 +13,7 @@ use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\SubCountyController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\PatientController;
+use App\Http\Controllers\Api\VisitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,5 +73,7 @@ Route::group(['middleware' => ['json.response', 'cors']], function () {
 
         Route::post('/patient/tested/positive/gender', [PatientController::class, 'getTestedPostivePatientTotalsByGender']);
         Route::post('/patient/tested/positive/agegroup-gender', [PatientController::class, 'getTestedPostivePatientTotalsByAgeGroupGender']);
+
+        Route::post('/visit/on-mmd/agegroup-gender', [VisitController::class, 'getOnMultiMonthDispensingTotalsByAgeGroupGender']);
     });
 });
