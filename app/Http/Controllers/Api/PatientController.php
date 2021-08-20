@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Patient;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\BaseController;
 use Illuminate\Http\Request;
 
-class PatientController extends Controller
+class PatientController extends BaseController
 {
 
   protected $default_results;
@@ -361,55 +361,5 @@ class PatientController extends Controller
     $results = array_merge($this->default_results[$group_by_index], $results);
 
     return response()->json($results);
-  }
-
-  /**
-   * Filter Array Elements based on filters
-   *
-   * @param  Array  $array
-   * @param  Array  $filters
-   * @return Array
-   */
-  private function arrayFilterBy($array, $filters)
-  {
-    $results = [];
-    if (sizeof($filters['facility']) == 0 && sizeof($filters['sub_county']) == 0) {
-      return $array;
-    }
-    $results = array_filter($array, function ($value) use ($filters) {
-      return (in_array($value['facility'], $filters['facility']) || in_array($value['sub_county'], $filters['sub_county']));
-    });
-    return $results;
-  }
-
-  /**
-   * Group Array Elements based on key
-   *
-   * @param  Array  $array
-   * @param  string  $key
-   * @return Array
-   */
-  private function arrayGroupBy($array, $key)
-  {
-    $results = [];
-    foreach ($array as $val) {
-      $results[$val[$key]][] = $val;
-    }
-    return $results;
-  }
-
-  /**
-   * Count Array Elements
-   *
-   * @param  Array  $array
-   * @return Array
-   */
-  private function arrayCount($array)
-  {
-    $response = [];
-    foreach ($array as $index => $val) {
-      $response[$index] = count($val);
-    }
-    return $response;
   }
 }
