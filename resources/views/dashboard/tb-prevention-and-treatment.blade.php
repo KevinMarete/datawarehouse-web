@@ -8,89 +8,94 @@
         </div>
       </div>
       <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+          <div class="chart-wrap">
+            <canvas id="totalsTbHivOverallCascadesChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['totals_tb_hiv_overall_cascades_chart'] }}"></canvas>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+          <div class="chart-wrap">
+            <canvas id="testingPointTbHivOverallCascadesChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['testing_point_tb_hiv_overall_cascades_chart'] }}"></canvas>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+          <div class="chart-wrap">
+            <canvas id="childrenTbHivAgeCascadesChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['children_tb_hiv_age_cascades_chart'] }}"></canvas>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+          <div class="chart-wrap">
+            <canvas id="adultsTbHivAgeCascadesChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['adults_tb_hiv_age_cascades_chart'] }}"></canvas>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+          <div class="chart-wrap">
+            <canvas id="childrenTbHivGenderCascadesChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['children_tb_hiv_gender_cascades_chart'] }}"></canvas>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+          <div class="chart-wrap">
+            <canvas id="adultsTbHivGenderCascadesChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['adults_tb_hiv_gender_cascades_chart'] }}"></canvas>
+          </div>
+        </div>
         <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="childrenTestingLinkageChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['children_testing_linkage_chart'] }}"></canvas>
+            <canvas id="overallTbTreatmentOutcomesChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['overall_tb_treatment_outcomes_chart'] }}"></canvas>
           </div>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="adolescentsTestingLinkageChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['adolescents_testing_linkage_chart'] }}"></canvas>
+            <canvas id="ageTbTreatmentOutcomesChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['age_tb_treatment_outcomes_chart'] }}"></canvas>
           </div>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="youthsTestingLinkageChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['youths_testing_linkage_chart'] }}"></canvas>
+            <canvas id="genderTbTreatmentOutcomesChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['gender_tb_treatment_outcomes_chart'] }}"></canvas>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+        <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="adultsTestingLinkageChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['adults_testing_linkage_chart'] }}"></canvas>
+            <canvas id="childrenTbPreventionChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['children_tb_prevention_chart'] }}"></canvas>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+        <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="totalsTestingLinkageChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['totals_testing_linkage_chart'] }}"></canvas>
+            <canvas id="adultsTbPreventionChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['adults_tb_prevention_chart'] }}"></canvas>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+        <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="genderOverallTestingChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['gender_overall_testing_chart'] }}"></canvas>
+            <canvas id="totalsTbPreventionChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['totals_tb_prevention_chart'] }}"></canvas>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+        <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="genderOverallPositiveTestingChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['gender_overall_positive_testing_chart'] }}"></canvas>
+            <canvas id="childrenTbTreatmentChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['children_tb_treatment_chart'] }}"></canvas>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+        <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="totalTestedVsPositiveChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['total_tested_vs_positive_chart'] }}"></canvas>
+            <canvas id="adultsTbTreatmentChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['adults_tb_treatment_chart'] }}"></canvas>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+        <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="totalTestedVsPositiveLinkedChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['total_tested_vs_positive_linked_chart'] }}"></canvas>
+            <canvas id="totalsTbTreatmentChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['totals_tb_treatment_chart'] }}"></canvas>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+        <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="malesTestedVsPositiveChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['males_tested_vs_positive_chart'] }}"></canvas>
+            <canvas id="childrenBacteriologicDiagnosisChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['children_bacteriologic_diagnosis_chart'] }}"></canvas>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+        <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="malesTestedVsPositiveLinkedChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['males_tested_vs_positive_linked_chart'] }}"></canvas>
+            <canvas id="adultsBacteriologicDiagnosisChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['adults_bacteriologic_diagnosis_chart'] }}"></canvas>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
+        <div class="col-sm-12 col-md-4 col-lg-4 p-3">
           <div class="chart-wrap">
-            <canvas id="femalesTestedVsPositiveChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['females_tested_vs_positive_chart'] }}"></canvas>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
-          <div class="chart-wrap">
-            <canvas id="femalesTestedVsPositiveLinkedChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['females_tested_vs_positive_linked_chart'] }}"></canvas>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
-          <div class="chart-wrap">
-            <canvas id="positivityExpandedTestingPointsChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['positivity_expanded_testing_points_chart'] }}"></canvas>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
-          <div class="chart-wrap">
-            <canvas id="contributionExpandedTestingPointsChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['contribution_expanded_testing_points_chart'] }}"></canvas>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
-          <div class="chart-wrap">
-            <canvas id="positivityDatimModalitiesChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['positivity_datim_modalities_chart'] }}"></canvas>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 p-3">
-          <div class="chart-wrap">
-            <canvas id="contributionDatimModalitiesChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['contribution_datim_modalities_chart'] }}"></canvas>
+            <canvas id="totalsBacteriologicDiagnosisChart" width="900" height="400" class="dashboard-chart" data-api-resource="{{ $chart_config['totals_bacteriologic_diagnosis_chart'] }}"></canvas>
           </div>
         </div>
       </div>
