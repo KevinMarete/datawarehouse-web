@@ -6,7 +6,7 @@ use App\Models\Visit;
 use App\Http\Controllers\Api\BaseController;
 use Illuminate\Http\Request;
 
-class VisitController extends BaseController
+class PmtctController extends BaseController
 {
 
   protected $default_results;
@@ -53,14 +53,27 @@ class VisitController extends BaseController
         ],
       ];
   }
+  public function getPmtctCascadesByAgeGroupGender(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
 
-  /**
-   * Display all on multi month dispensing totals on art by age group
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
-  public function getOnMultiMonthDispensingTotalsByAgeGroupGender(Request $request)
+    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getPmtctHcaByAgeGroupGender(Request $request)
   {
     $from = $request->from;
     $to = $request->to;
