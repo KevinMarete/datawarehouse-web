@@ -9,7 +9,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'cohort/children/category',
+          'dataUrl' => 'screening/cervical/children/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'lightgreen'
@@ -23,7 +23,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'cohort/adolescents/category',
+          'dataUrl' => 'screening/cervical/adolescents/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'lightgreen'

@@ -37,7 +37,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'testing/cd4/adult/category',
+          'dataUrl' => 'testing/cd4/adults/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'lightgreen'

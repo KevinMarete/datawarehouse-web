@@ -79,7 +79,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'tb/cascades/children/gender',
+          'dataUrl' => 'tb/cascades/adults/gender',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'blue'

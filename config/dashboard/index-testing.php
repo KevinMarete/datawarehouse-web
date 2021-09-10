@@ -9,7 +9,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'indextesting/children/category',
+          'dataUrl' => 'testing/index/children/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'blue'
@@ -23,63 +23,21 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'indextesting/adults/category',
+          'dataUrl' => 'testing/index/adults/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'green'
         ]
       ]
     ],
-    'totals_new_on_ipt_chart' => [
+    'totals_index_testing_chart' => [
       'title' => 'Index Testing (Totals)',
       'type' => 'bar',
       'labels' => [],
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'indextesting/totals/category',
-          'data' => [],
-          'borderColor' => 'transparent',
-          'backgroundColor' => 'yellow'
-        ]
-      ]
-    ],
-    'children_current_ever_on_ipt_chart' => [
-      'title' => 'Index Testing (Children < 15 Years)',
-      'type' => 'bar',
-      'labels' => [],
-      'datasets' => [
-        [
-          'label' => 'Totals',
-          'dataUrl' => 'indextesting/children/category',
-          'data' => [],
-          'borderColor' => 'transparent',
-          'backgroundColor' => 'blue'
-        ]
-      ]
-    ],
-    'adults_current_ever_on_ipt_chart' => [
-      'title' => 'Index Testing (Adults 15+ Years)',
-      'type' => 'bar',
-      'labels' => [],
-      'datasets' => [
-        [
-          'label' => 'Totals',
-          'dataUrl' => 'indextesting/adults/category',
-          'data' => [],
-          'borderColor' => 'transparent',
-          'backgroundColor' => 'green'
-        ]
-      ]
-    ],
-    'totals_current_ever_on_ipt_chart' => [
-      'title' => 'Index Testing (Totals)',
-      'type' => 'bar',
-      'labels' => [],
-      'datasets' => [
-        [
-          'label' => 'Totals',
-          'dataUrl' => 'indextesting/totals/category',
+          'dataUrl' => 'testing/index/totals/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'yellow'
@@ -93,7 +51,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'indextesting/ft/category',
+          'dataUrl' => 'testing/index/ft/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'blue'
@@ -107,7 +65,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'indextesting/pns/category',
+          'dataUrl' => 'testing/index/pns/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'lightgreen'

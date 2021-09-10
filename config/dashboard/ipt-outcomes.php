@@ -107,7 +107,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'ipt/outcomes/totals/category',
+          'dataUrl' => 'ipt/not-completing/totals/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'green'
@@ -135,7 +135,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'ipt/outcomes/adults/category',
+          'dataUrl' => 'ipt/not-completing/adults/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'green'
@@ -163,7 +163,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'ipt/outcomes/children/category',
+          'dataUrl' => 'ipt/not-completing/children/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'green'

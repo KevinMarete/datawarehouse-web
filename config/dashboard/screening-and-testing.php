@@ -174,33 +174,6 @@ return [
         ]
       ]
     ],
-
-    'females_tested_v_tested_positive_chart' => [
-      'title' => 'Females Tested for HIV vs Females Tested HIV+',
-      'type' => 'horizontalBar',
-      'labels' => [],
-      'datasets' => [
-        [
-          'dataUrl' => 'testing/hiv/hiv+/females',
-          'data' => [],
-          'borderColor' => 'transparent',
-          'backgroundColor' => 'orange',
-        ]
-      ]
-    ],
-    'females_tested_positive_v_tested_positive_linked_chart' => [
-      'title' => 'Females Tested HIV+ vs Females Tested HIV+ Linked',
-      'type' => 'horizontalBar',
-      'labels' => [],
-      'datasets' => [
-        [
-          'dataUrl' => 'testing/hiv+/linked/females',
-          'data' => [],
-          'borderColor' => 'transparent',
-          'backgroundColor' => 'orange',
-        ]
-      ]
-    ],
     'hiv_testing_points_testing_modalities_chart' => [
       'title' => 'HIV Testing & Positivity By Different Testing Modalities (Expanded Testing Points)',
       'type' => 'horizontalBar',

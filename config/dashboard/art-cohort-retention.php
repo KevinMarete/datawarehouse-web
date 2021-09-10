@@ -37,7 +37,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'cohort/adult/category',
+          'dataUrl' => 'cohort/adults/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'lightgreen'
