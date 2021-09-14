@@ -38,7 +38,7 @@
 - etl_hts_referral_and_linkage
 - etl_hts_test
 #### Models
-- HTS
+- Hts
 
 ### Multi-Month Dispensing
 #### Charts
@@ -62,7 +62,7 @@
 - etl_client_enrollment (not sure which enrollment table to use!)
 - etl_hiv_enrollment
 #### Models
-- Enrollment
+- Hts
 
 ### Viral Load Testing
 #### Charts
@@ -72,7 +72,7 @@
 - etl_laboratory_extract (lab_test = 856 or lab_test = 1305,  lab_reason = 161236 "Routine")
 - etl_viral_load -- not sure it works
 #### Models
-- ViralLoad
+- Hts
 
 ### ART Cohort Retention
 #### Charts
@@ -84,7 +84,7 @@
 - etl_client_enrollment
 - etl_current_in_care
 #### Models
-- ARTCohort
+- Cohort
 
 ### HIV/Cervical Cancer
 #### Charts
@@ -93,7 +93,7 @@
 #### Tables
 - etl_cervical_cancer_screening
 #### Models
-- CervicalCancer
+- Cancer
 
 ### PMTCT & EID & HEI POS & HCA
 #### Charts
@@ -118,10 +118,8 @@
 - etl_hei_follow_up_visit
 - etl_hei_immunization
 #### Models
-- PMTCT
-- EID
-- HEI
-- PMTCT
+- Mch
+- Hei
   
 ### IPT Outcomes
 #### Charts
@@ -143,7 +141,7 @@
 - etl_ipt_outcome
 - etl_ipt_screening
 #### Models
-- IPT
+- Ipt
   
 ### TB Prevention and Treatment
 #### Charts
@@ -170,7 +168,7 @@
 - etl_tb_follow_up_visit
 - etl_tb_screening
 #### Models
-- TB
+- Tb
 
 ### Index Testing
 #### Charts
@@ -185,4 +183,4 @@
 - etl_hts_referral_and_linkage
 - etl_hts_test
 #### Models
-- IndexTest
+- Hts
