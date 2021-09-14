@@ -14,15 +14,30 @@ class BaseController extends Controller
    * @param  Array  $filters
    * @return Array
    */
+
   public function arrayFilterBy($array, $filters)
   {
     $results = [];
-    if (sizeof($filters['facility']) == 0 && sizeof($filters['sub_county']) == 0) {
-      return $array;
-    }
-    $results = array_filter($array, function ($value) use ($filters) {
-      return (in_array($value['facility'], $filters['facility']) || in_array($value['sub_county'], $filters['sub_county']));
+
+    //Remove empty filters
+    $filters = array_filter($filters, function ($filter) {
+      return sizeof($filter) > 0;
     });
+
+    //Filter by all conditions
+    foreach ($array as $value) {
+      $match = [];
+      foreach ($filters as $filter_name => $filter_values) {
+        if (array_key_exists($filter_name, $value) && in_array($value[$filter_name], $filter_values)) {
+          $match[] = true;
+        } else {
+          $match[] = false;
+        }
+      }
+      if (!in_array(false, $match)) {
+        $results[] = $value;
+      }
+    }
     return $results;
   }
 
