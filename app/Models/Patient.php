@@ -10,6 +10,7 @@ class Patient extends Model
   protected $table = 'etl_art_master_list';
 
   protected $maps = [
+    'ART_Status' => 'current_status',
     'Enrollment_Date' => 'enrollment_date',
     'Facility' => 'facility',
     'Gender' => 'gender',
@@ -24,6 +25,7 @@ class Patient extends Model
     'age_group',
     'age_group_gender',
     'county',
+    'current_status',
     'enrollment_date',
     'facility',
     'gender',
@@ -39,6 +41,7 @@ class Patient extends Model
     'county',
     'current_regimen',
     'current_regimen_date',
+    'current_status',
     'enrollment_date',
     'facility',
     'gender',
@@ -49,6 +52,7 @@ class Patient extends Model
   ];
 
   protected $hidden = [
+    'ART_Status',
     'Gender',
     'Enrollment_Date',
     'Facility',
@@ -111,6 +115,11 @@ class Patient extends Model
   public function getCountyAttribute()
   {
     return strtoupper($this->attributes['location']);
+  }
+
+  public function getCurrentStatusAttribute()
+  {
+    return strtolower($this->attributes['ART_Status']);
   }
 
   public function getEnrollmentDateAttribute()
