@@ -1,5 +1,5 @@
 #!/bin/sh
-composer install
+composer update
 php artisan key:generate
 php artisan config:clear
 php artisan migrate:refresh
