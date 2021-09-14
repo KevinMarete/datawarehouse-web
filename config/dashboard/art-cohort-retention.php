@@ -4,7 +4,7 @@ return [
   'charts' => [
     'children_cohort_chart' => [
       'title' => '12 Months ART Cohort Retention Cascades (Children 0-9 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -18,7 +18,7 @@ return [
     ],
     'adolescents_cohort_chart' => [
       'title' => '12 Months ART Cohort Retention Cascades (Adolescents 10-19 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -32,7 +32,7 @@ return [
     ],
     'adults_cohort_chart' => [
       'title' => '12 Months ART Cohort Retention Cascades (Adults 20+ Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -46,7 +46,7 @@ return [
     ],
     'totals_cohort_chart' => [
       'title' => '12 Months ART Cohort Retention Cascades (Totals)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
