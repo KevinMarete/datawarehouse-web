@@ -93,7 +93,7 @@
 #### Tables
 - etl_cervical_cancer_screening
 #### Models
-- Cancer
+- CervicalScreening
 
 ### PMTCT & EID & HEI POS & HCA
 #### Charts
