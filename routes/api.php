@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CervicalScreeningController;
 use App\Http\Controllers\Api\CountyController;
 use App\Http\Controllers\Api\FacilityController;
 use App\Http\Controllers\Api\MenuController;
@@ -16,7 +17,6 @@ use App\Http\Controllers\Api\PatientController;
 use App\Http\Controllers\Api\CohortController;
 use App\Http\Controllers\Api\IptController;
 use App\Http\Controllers\Api\PmtctController;
-use App\Http\Controllers\Api\ScreeningController;
 use App\Http\Controllers\Api\TbController;
 use App\Http\Controllers\Api\TestController;
 use App\Http\Controllers\Api\VisitController;
@@ -90,8 +90,8 @@ Route::group(['middleware' => ['json.response', 'cors']], function () {
         Route::post('/testing/cd4/totals/category', [TestController::class, 'getCD4TestsTotalsByCategory']);
 
         /*HIV/Cervical Cancer*/
-        Route::post('/screening/cervical/children/category', [ScreeningController::class, 'getScreeningCervicalChildrenByCategory']);
-        Route::post('/screening/cervical/adolescents/category', [ScreeningController::class, 'getScreeningCervicalAdolescentsByCategory']);
+        Route::post('/screening/cervical/category', [CervicalScreeningController::class, 'getCervicalScreeningByCategory']);
+        Route::post('/screening/cervical/visit-type', [CervicalScreeningController::class, 'getCervicalScreeningByVisitType']);
 
         /*Index Testing*/
         Route::post('/testing/index/children/category', [TestController::class, 'getIndexTestingChildrenByCategory']);
