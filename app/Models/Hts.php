@@ -62,14 +62,14 @@ class Hts extends Model
 
   public function getAgeAttribute()
   {
-    return Carbon::parse($this->patient->dob)->age;
+    return (isset($this->patient->dob) ? Carbon::parse($this->patient->dob)->age : 0);
   }
 
   public function getAgeGroupAttribute()
   {
-    if ($this->patient->age > 0 && $this->patient->age < 10) {
+    if ($this->age > 0 && $this->age < 10) {
       $age_group = "0 - 9 yrs (Children)";
-    } elseif ($this->patient->age >= 10 && $this->patient->age < 20) {
+    } elseif ($this->age >= 10 && $this->age < 20) {
       $age_group = "10 - 19 yrs (Adolescents)";
     } else {
       $age_group = "20+ yrs (Adults)";
@@ -79,8 +79,8 @@ class Hts extends Model
 
   public function getAgeGroupGenderAttribute()
   {
-    $age = $this->patient->age;
-    $gender = $this->patient->gender;
+    $age = $this->age;
+    $gender = $this->gender;
 
     if ($age < 1) {
       $age_group_gender = "<1 " . $gender;
@@ -112,31 +112,34 @@ class Hts extends Model
 
   public function getCountyAttribute()
   {
-    return strtoupper($this->patient->attributes['location']);
+    return (isset($this->patient->attributes['location']) ? strtoupper($this->patient->attributes['location']) : 'None');
   }
 
   public function getCurrentStatusAttribute()
   {
-    return strtoupper($this->patient->attributes['ART_Status']);
+    return (isset($this->patient->attributes['ART_Status']) ? strtoupper($this->patient->attributes['ART_Status']) : 'None');
   }
 
   public function getEnrollmentDateAttribute()
   {
-    return strtoupper($this->patient->attributes['Enrollment_Date']);
+    return (isset($this->patient->attributes['Enrollment_Date']) ? $this->patient->attributes['Enrollment_Date'] : 'None');
   }
 
   public function getFacilityAttribute()
   {
-    return strtoupper($this->patient->attributes['Facility']);
+    return (isset($this->patient->attributes['Facility']) ? strtoupper($this->patient->attributes['Facility']) : 'None');
   }
 
   public function getGenderAttribute()
   {
-    return $this->patient->attributes['Gender'];
+    return (isset($this->patient->attributes['Gender']) ? $this->patient->attributes['Gender'] : 'None');
   }
 
   public function getIsNewCareAttribute()
   {
+    if (!isset($this->patient->enrollment_date)) {
+      return false;
+    }
     // If $test_date < 30 days then is_new_care = 1 otherwise is_new_care = 0
     $enrollment_date = Carbon::parse($this->patient->enrollment_date);
     $test_date = Carbon::parse($this->attributes["date_test_requested"]);
@@ -145,41 +148,47 @@ class Hts extends Model
 
   public function getIsNewCareBcd4Attribute()
   {
-    return ($this->attributes['lab_test'] == 5497 ? false : true);
+    if (!isset($this->patient->attributes['baseline_cd4'])) {
+      return false;
+    }
+    return ($this->is_new_care && !is_null($this->patient->attributes['baseline_cd4']) ? true : false);
   }
 
   public function getIsEligibleCragAttribute()
   {
-    return (is_null($this->attributes['lab_test']) ? false : true);
+    if (!isset($this->patient->attributes['baseline_cd4'])) {
+      return false;
+    }
+    return ($this->is_new_care && !is_null($this->patient->attributes['baseline_cd4']) && $this->patient->attributes['baseline_cd4'] < 200 ? true : false);
   }
 
   public function getIsCragTestAttribute()
   {
-    return (is_null($this->attributes['lab_test']) ? false : true);
+    return ($this->attributes['lab_test'] == 1305 ? true : false);
   }
 
   public function getIsCragTestPositiveAttribute()
   {
-    return (is_null($this->attributes['lab_test']) ? false : true);
+    return ($this->attributes['lab_test'] == 1305 && $this->attributes['test_result'] > 95 ? true : false);
   }
 
   public function getIsFluconazoleAttribute()
   {
-    return (is_null($this->attributes['lab_test']) ? false : true);
+    return false;
   }
 
   public function getStartRegimenDateAttribute()
   {
-    return $this->patient->attributes['Start_regimen_date'];
+    return (isset($this->patient->attributes['Start_regimen_date']) ? $this->patient->attributes['Start_regimen_date'] : 'None');
   }
 
   public function getStartRegimenAttribute()
   {
-    return $this->patient->attributes['Start_regimen'];
+    return (isset($this->patient->attributes['Start_regimen']) ? $this->patient->attributes['Start_regimen'] : 'None');
   }
 
   public function getSubCountyAttribute()
   {
-    return strtoupper($this->patient->attributes['sub_location']);
+    return (isset($this->patient->attributes['sub_location']) ? strtoupper($this->patient->attributes['sub_location']) : 'None');
   }
 }
