@@ -2771,6 +2771,361 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Cohort",
+			"item": [
+				{
+					"name": "Get Cohort Children By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/cohort/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"cohort",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cohort Adolescents By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/cohort/adolescents/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"cohort",
+								"adolescents",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cohort Adults By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/cohort/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"cohort",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cohort Totals By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/cohort/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"cohort",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "CD4",
+					"item": [
+						{
+							"name": "Get Testing CD4 Children By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/cd4/children/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"cd4",
+										"children",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Testing CD4 Adolescents By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/cd4/adolescents/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"cd4",
+										"adolescents",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Testing CD4 Adults By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/cd4/adults/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"cd4",
+										"adults",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Testing CD4 Totals By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/cd4/totals/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"cd4",
+										"totals",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
 		}
 	]
 }
