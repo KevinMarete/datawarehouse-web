@@ -17,7 +17,7 @@ class BaseController extends Controller
       'defaults' => [
         'exceptions' => false
       ],
-      'timeout'  => 10.0
+      'timeout'  => 30.0
     ]);
   }
 
