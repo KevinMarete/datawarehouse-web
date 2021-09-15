@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Hts;
 use App\Models\Visit;
 use App\Http\Controllers\Api\BaseController;
 use Illuminate\Http\Request;
@@ -47,6 +48,14 @@ class TestController extends BaseController
           '50+ F' => 0,
           '50+ M' => 0,
         ],
+        'category' => [
+          'New in Care' => 0,
+          'New in Care with bCD4' => 0,
+          'New in Care with bCD4<200 (Eligible for CRAG)' => 0,
+          'No. with CRAG Test' => 0,
+          'No. with Positive CRAG Test Result' => 0,
+          'No. on Fluconazole' => 0
+        ],
         'gender' => [
           'F' => 0,
           'M' => 0
@@ -57,80 +66,168 @@ class TestController extends BaseController
   {
     $from = $request->from;
     $to = $request->to;
-    $group_by_index = 'age_group_gender';
+    $group_by_index = 'category';
     $filters = [
       'facility' => $request->facility,
-      'sub_county' => $request->subcounty
+      'sub_county' => $request->subcounty,
+      'age_group' => ['0 - 9 yrs (Children)']
     ];
+    $default_results = $this->default_results[$group_by_index];
 
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
 
-    return response()->json($results);
+    $new_care_results = $this->arrayGroupBy($results, 'is_new_care');
+    $new_care_results = $this->arrayCount($new_care_results);
+    $default_results['New in Care'] = (isset($new_care_results['1']) ? $new_care_results['1'] : 0);
+
+    $new_care_bcd4_results = $this->arrayGroupBy($results, 'is_new_care_bcd4');
+    $new_care_bcd4_results = $this->arrayCount($new_care_bcd4_results);
+    $default_results['New in Care with bCD4'] = (isset($new_care_bcd4_results['1']) ? $new_care_bcd4_results['1'] : 0);
+
+    $eligible_crag_results = $this->arrayGroupBy($results, 'is_eligible_crag');
+    $eligible_crag_results = $this->arrayCount($eligible_crag_results);
+    $default_results['New in Care with bCD4<200 (Eligible for CRAG)'] = (isset($eligible_crag_results['1']) ? $eligible_crag_results['1'] : 0);
+
+    $crag_test_results = $this->arrayGroupBy($results, 'is_crag_test');
+    $crag_test_results = $this->arrayCount($crag_test_results);
+    $default_results['No. with CRAG Test'] = (isset($crag_test_results['1']) ? $crag_test_results['1'] : 0);
+
+    $crag_test_positive_results = $this->arrayGroupBy($results, 'is_crag_test_positive');
+    $crag_test_positive_results = $this->arrayCount($crag_test_positive_results);
+    $default_results['No. with Positive CRAG Test Result'] = (isset($crag_test_positive_results['1']) ? $crag_test_positive_results['1'] : 0);
+
+    $fluconazole_results = $this->arrayGroupBy($results, 'is_fluconazole');
+    $fluconazole_results = $this->arrayCount($fluconazole_results);
+    $default_results['No. on Fluconazole'] = (isset($fluconazole_results['1']) ? $fluconazole_results['1'] : 0);
+
+    return response()->json($default_results);
   }
 
   public function getCD4TestsAdolescentsByCategory(Request $request)
   {
     $from = $request->from;
     $to = $request->to;
-    $group_by_index = 'age_group_gender';
+    $group_by_index = 'category';
     $filters = [
       'facility' => $request->facility,
-      'sub_county' => $request->subcounty
+      'sub_county' => $request->subcounty,
+      'age_group' => ['10 - 19 yrs (Adolescents)']
     ];
+    $default_results = $this->default_results[$group_by_index];
 
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
 
-    return response()->json($results);
+    $new_care_results = $this->arrayGroupBy($results, 'is_new_care');
+    $new_care_results = $this->arrayCount($new_care_results);
+    $default_results['New in Care'] = (isset($new_care_results['1']) ? $new_care_results['1'] : 0);
+
+    $new_care_bcd4_results = $this->arrayGroupBy($results, 'is_new_care_bcd4');
+    $new_care_bcd4_results = $this->arrayCount($new_care_bcd4_results);
+    $default_results['New in Care with bCD4'] = (isset($new_care_bcd4_results['1']) ? $new_care_bcd4_results['1'] : 0);
+
+    $eligible_crag_results = $this->arrayGroupBy($results, 'is_eligible_crag');
+    $eligible_crag_results = $this->arrayCount($eligible_crag_results);
+    $default_results['New in Care with bCD4<200 (Eligible for CRAG)'] = (isset($eligible_crag_results['1']) ? $eligible_crag_results['1'] : 0);
+
+    $crag_test_results = $this->arrayGroupBy($results, 'is_crag_test');
+    $crag_test_results = $this->arrayCount($crag_test_results);
+    $default_results['No. with CRAG Test'] = (isset($crag_test_results['1']) ? $crag_test_results['1'] : 0);
+
+    $crag_test_positive_results = $this->arrayGroupBy($results, 'is_crag_test_positive');
+    $crag_test_positive_results = $this->arrayCount($crag_test_positive_results);
+    $default_results['No. with Positive CRAG Test Result'] = (isset($crag_test_positive_results['1']) ? $crag_test_positive_results['1'] : 0);
+
+    $fluconazole_results = $this->arrayGroupBy($results, 'is_fluconazole');
+    $fluconazole_results = $this->arrayCount($fluconazole_results);
+    $default_results['No. on Fluconazole'] = (isset($fluconazole_results['1']) ? $fluconazole_results['1'] : 0);
+
+    return response()->json($default_results);
   }
 
   public function getCD4TestsAdultsByCategory(Request $request)
   {
     $from = $request->from;
     $to = $request->to;
-    $group_by_index = 'age_group_gender';
+    $group_by_index = 'category';
     $filters = [
       'facility' => $request->facility,
-      'sub_county' => $request->subcounty
+      'sub_county' => $request->subcounty,
+      'age_group' => ['20+ yrs (Adults)']
     ];
+    $default_results = $this->default_results[$group_by_index];
 
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
 
-    return response()->json($results);
+    $new_care_results = $this->arrayGroupBy($results, 'is_new_care');
+    $new_care_results = $this->arrayCount($new_care_results);
+    $default_results['New in Care'] = (isset($new_care_results['1']) ? $new_care_results['1'] : 0);
+
+    $new_care_bcd4_results = $this->arrayGroupBy($results, 'is_new_care_bcd4');
+    $new_care_bcd4_results = $this->arrayCount($new_care_bcd4_results);
+    $default_results['New in Care with bCD4'] = (isset($new_care_bcd4_results['1']) ? $new_care_bcd4_results['1'] : 0);
+
+    $eligible_crag_results = $this->arrayGroupBy($results, 'is_eligible_crag');
+    $eligible_crag_results = $this->arrayCount($eligible_crag_results);
+    $default_results['New in Care with bCD4<200 (Eligible for CRAG)'] = (isset($eligible_crag_results['1']) ? $eligible_crag_results['1'] : 0);
+
+    $crag_test_results = $this->arrayGroupBy($results, 'is_crag_test');
+    $crag_test_results = $this->arrayCount($crag_test_results);
+    $default_results['No. with CRAG Test'] = (isset($crag_test_results['1']) ? $crag_test_results['1'] : 0);
+
+    $crag_test_positive_results = $this->arrayGroupBy($results, 'is_crag_test_positive');
+    $crag_test_positive_results = $this->arrayCount($crag_test_positive_results);
+    $default_results['No. with Positive CRAG Test Result'] = (isset($crag_test_positive_results['1']) ? $crag_test_positive_results['1'] : 0);
+
+    $fluconazole_results = $this->arrayGroupBy($results, 'is_fluconazole');
+    $fluconazole_results = $this->arrayCount($fluconazole_results);
+    $default_results['No. on Fluconazole'] = (isset($fluconazole_results['1']) ? $fluconazole_results['1'] : 0);
+
+    return response()->json($default_results);
   }
 
   public function getCD4TestsTotalsByCategory(Request $request)
   {
     $from = $request->from;
     $to = $request->to;
-    $group_by_index = 'age_group_gender';
+    $group_by_index = 'category';
     $filters = [
       'facility' => $request->facility,
-      'sub_county' => $request->subcounty
+      'sub_county' => $request->subcounty,
+      'age_group' => []
     ];
+    $default_results = $this->default_results[$group_by_index];
 
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
 
-    return response()->json($results);
+    $new_care_results = $this->arrayGroupBy($results, 'is_new_care');
+    $new_care_results = $this->arrayCount($new_care_results);
+    $default_results['New in Care'] = (isset($new_care_results['1']) ? $new_care_results['1'] : 0);
+
+    $new_care_bcd4_results = $this->arrayGroupBy($results, 'is_new_care_bcd4');
+    $new_care_bcd4_results = $this->arrayCount($new_care_bcd4_results);
+    $default_results['New in Care with bCD4'] = (isset($new_care_bcd4_results['1']) ? $new_care_bcd4_results['1'] : 0);
+
+    $eligible_crag_results = $this->arrayGroupBy($results, 'is_eligible_crag');
+    $eligible_crag_results = $this->arrayCount($eligible_crag_results);
+    $default_results['New in Care with bCD4<200 (Eligible for CRAG)'] = (isset($eligible_crag_results['1']) ? $eligible_crag_results['1'] : 0);
+
+    $crag_test_results = $this->arrayGroupBy($results, 'is_crag_test');
+    $crag_test_results = $this->arrayCount($crag_test_results);
+    $default_results['No. with CRAG Test'] = (isset($crag_test_results['1']) ? $crag_test_results['1'] : 0);
+
+    $crag_test_positive_results = $this->arrayGroupBy($results, 'is_crag_test_positive');
+    $crag_test_positive_results = $this->arrayCount($crag_test_positive_results);
+    $default_results['No. with Positive CRAG Test Result'] = (isset($crag_test_positive_results['1']) ? $crag_test_positive_results['1'] : 0);
+
+    $fluconazole_results = $this->arrayGroupBy($results, 'is_fluconazole');
+    $fluconazole_results = $this->arrayCount($fluconazole_results);
+    $default_results['No. on Fluconazole'] = (isset($fluconazole_results['1']) ? $fluconazole_results['1'] : 0);
+
+    return response()->json($default_results);
   }
 
   public function getIndexTestingChildrenByCategory(Request $request)
