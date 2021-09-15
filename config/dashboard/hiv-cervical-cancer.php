@@ -4,15 +4,15 @@ return [
   'charts' => [
     'cervical_cancer_cascade_chart' => [
       'title' => 'HIV/Cervical Cancer Cascade',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'screening/cervical/children/category',
+          'dataUrl' => 'screening/cervical/category',
           'data' => [],
           'borderColor' => 'transparent',
-          'backgroundColor' => 'lightgreen'
+          'backgroundColor' => 'orange'
         ]
       ]
     ],
@@ -23,7 +23,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'screening/cervical/adolescents/category',
+          'dataUrl' => 'screening/cervical/visit-type',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'lightgreen'
