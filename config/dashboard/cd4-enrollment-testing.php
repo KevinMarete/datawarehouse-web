@@ -4,7 +4,7 @@ return [
   'charts' => [
     'children_cd4_enrollment_testing_chart' => [
       'title' => 'CD4 Enrollment Testing (Children 0-9 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -18,7 +18,7 @@ return [
     ],
     'adolescents_cd4_enrollment_testing_chart' => [
       'title' => 'CD4 Enrollment Testing (Adolescents 10-19 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -32,7 +32,7 @@ return [
     ],
     'adults_cd4_enrollment_testing_chart' => [
       'title' => 'CD4 Enrollment Testing (Adults 20+ Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -46,7 +46,7 @@ return [
     ],
     'totals_cd4_enrollment_testing_chart' => [
       'title' => 'CD4 Enrollment Testing (Total)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
