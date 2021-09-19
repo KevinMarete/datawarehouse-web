@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\FacilityController;
 use App\Http\Controllers\Api\MenuController;
 use App\Http\Controllers\Api\MenuGroupController;
 use App\Http\Controllers\Api\MenuRoleController;
+use App\Http\Controllers\Api\ProgramController;
 use App\Http\Controllers\Api\QueryCategoryController;
 use App\Http\Controllers\Api\QueryController;
 use App\Http\Controllers\Api\RoleController;
@@ -56,6 +57,7 @@ Route::group(['middleware' => ['json.response', 'cors']], function () {
             'menu' => MenuController::class,
             'menugroup' => MenuGroupController::class,
             'menurole' => MenuRoleController::class,
+            'program' => ProgramController::class,
             'query' => QueryController::class,
             'querycategory' => QueryCategoryController::class,
             'role' => RoleController::class,
