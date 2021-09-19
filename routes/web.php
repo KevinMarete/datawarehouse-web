@@ -6,6 +6,7 @@ use App\Http\Controllers\Web\AccountController;
 use App\Http\Controllers\Web\CountyController;
 use App\Http\Controllers\Web\DashboardController;
 use App\Http\Controllers\Web\FacilityController;
+use App\Http\Controllers\Web\ProgramController;
 use App\Http\Controllers\Web\QueryCategoryController;
 use App\Http\Controllers\Web\QueryController;
 use App\Http\Controllers\Web\UserController;
@@ -141,4 +142,9 @@ Route::group(['middleware' => ['usersession', 'useraccess']], function () {
 
     Route::get('/dashboard/{category}', [DashboardController::class, 'displayDashboardView']);
     Route::post('/dashboard/filter', [DashboardController::class, 'displayDashboardFilterView']);
+
+    /*Program Routes*/
+    Route::get('/program/upload', [ProgramController::class, 'displayProgramDataUploadView']);
+    Route::get('/program/template', [ProgramController::class, 'getUploadTemplate']);
+    Route::post('/program/save', [ProgramController::class, 'saveProgramData']);
 });
