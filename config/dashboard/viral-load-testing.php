@@ -4,7 +4,7 @@ return [
   'charts' => [
     'children_targeted_routine_vl_cascades_chart' => [
       'title' => 'Targeted vs Routine Viral Load Cascades (Children 0-9 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -16,9 +16,9 @@ return [
         ]
       ]
     ],
-    'adults_targeted_routine_vl_cascades_chart' => [
+    'adolescents_targeted_routine_vl_cascades_chart' => [
       'title' => 'Targeted vs Routine Viral Load Cascades (Adolescents 10-19 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
