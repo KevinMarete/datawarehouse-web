@@ -29,18 +29,18 @@ return [
       'labels' => [],
       'datasets' => [
         [
-          'label' => 'Current On ART',
-          'dataUrl' => 'patient/on-art/current/agegroup-gender',
-          'data' => [],
-          'borderColor' => 'transparent',
-          'backgroundColor' => 'lightgreen'
-        ],
-        [
           'label' => 'On MMD',
           'dataUrl' => 'visit/on-mmd/agegroup-gender',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'blue'
+        ],
+        [
+          'label' => 'Overall MMD Uptake',
+          'dataUrl' => 'visit/overall-mmd/agegroup-gender',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'lightgreen'
         ],
       ]
     ],
@@ -50,18 +50,25 @@ return [
       'labels' => [],
       'datasets' => [
         [
-          'label' => 'Current On ART',
-          'dataUrl' => 'patient/on-art/current/agegroup-gender',
+          'label' => '<3 Months of ARVs',
+          'dataUrl' => 'patient/on-art/3months/agegroup-gender',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'red'
+        ],
+        [
+          'label' => '3-5 Months of ARVs',
+          'dataUrl' => 'patient/on-art/3-5months/agegroup-gender',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'lightgreen'
         ],
         [
-          'label' => 'On MMD',
-          'dataUrl' => 'visit/on-mmd/agegroup-gender',
+          'label' => '6 or More Months of ARVs',
+          'dataUrl' => 'patient/on-art/6months/agegroup-gender',
           'data' => [],
           'borderColor' => 'transparent',
-          'backgroundColor' => 'blue'
+          'backgroundColor' => 'grey'
         ],
       ]
     ],
