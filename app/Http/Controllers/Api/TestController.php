@@ -77,6 +77,15 @@ class TestController extends BaseController
             'PNS [HIV-]' => 0,
             'PNS [HIV+]' => 0,
             'PNS [Yield]' => 0,
+          ],
+          'vl_testing' => [
+            'VL Done [Last 12 Months]' => 0,
+            'VL Done [Routine]' => 0,
+            'VL Done [Targeted]' => 0,
+            'Routine [Suppressed]' => 0,
+            'Routine [Not Suppressed]' => 0,
+            'Targeted [Suppressed]' => 0,
+            'Targeted [Not Suppressed]' => 0,
           ]
         ],
         'gender' => [
@@ -85,6 +94,7 @@ class TestController extends BaseController
         ]
       ];
   }
+
   public function getCD4TestsChildrenByCategory(Request $request)
   {
     $from = $request->from;
@@ -799,39 +809,91 @@ class TestController extends BaseController
   {
     $from = $request->from;
     $to = $request->to;
-    $group_by_index = 'age_group_gender';
+    $group_by_index = 'category';
     $filters = [
       'facility' => $request->facility,
-      'sub_county' => $request->subcounty
+      'sub_county' => $request->subcounty,
+      'age_group' => ['0 - 9 yrs (Children)']
     ];
+    $default_results = $this->default_results[$group_by_index]['vl_testing'];
 
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
 
-    return response()->json($results);
+    $vl_results = $this->arrayGroupBy($results, 'is_vl');
+    $vl_results = $this->arrayCount($vl_results);
+    $default_results['VL Done [Last 12 Months]'] = (isset($vl_results['1']) ? $vl_results['1'] : 0);
+
+    $vl_routine_results = $this->arrayGroupBy($results, 'is_vl_routine');
+    $vl_routine_results = $this->arrayCount($vl_routine_results);
+    $default_results['VL Done [Routine]'] = (isset($vl_routine_results['1']) ? $vl_routine_results['1'] : 0);
+
+    $vl_targeted_results = $this->arrayGroupBy($results, 'is_vl_targeted');
+    $vl_targeted_results = $this->arrayCount($vl_targeted_results);
+    $default_results['VL Done [Targeted]'] = (isset($vl_targeted_results['1']) ? $vl_targeted_results['1'] : 0);
+
+    $vl_routine_suppressed_results = $this->arrayGroupBy($results, 'is_vl_routine_suppressed');
+    $vl_routine_suppressed_results = $this->arrayCount($vl_routine_suppressed_results);
+    $default_results['Routine [Suppressed]'] = (isset($vl_routine_suppressed_results['1']) ? $vl_routine_suppressed_results['1'] : 0);
+
+    $vl_routine_not_suppressed_results = $this->arrayGroupBy($results, 'is_vl_routine_not_suppressed');
+    $vl_routine_not_suppressed_results = $this->arrayCount($vl_routine_not_suppressed_results);
+    $default_results['Routine [Not Suppressed]'] = (isset($vl_routine_not_suppressed_results['1']) ? $vl_routine_not_suppressed_results['1'] : 0);
+
+    $vl_targeted_suppressed_results = $this->arrayGroupBy($results, 'is_vl_targeted_suppressed');
+    $vl_targeted_suppressed_results = $this->arrayCount($vl_targeted_suppressed_results);
+    $default_results['Targeted [Suppressed]'] = (isset($vl_targeted_suppressed_results['1']) ? $vl_targeted_suppressed_results['1'] : 0);
+
+    $vl_targeted_not_suppressed_results = $this->arrayGroupBy($results, 'is_vl_targeted_not_suppressed');
+    $vl_targeted_not_suppressed_results = $this->arrayCount($vl_targeted_not_suppressed_results);
+    $default_results['Targeted [Not Suppressed]'] = (isset($vl_targeted_not_suppressed_results['1']) ? $vl_targeted_not_suppressed_results['1'] : 0);
+
+    return response()->json($default_results);
   }
 
   public function getVlTestingAdolescentsByCategory(Request $request)
   {
     $from = $request->from;
     $to = $request->to;
-    $group_by_index = 'age_group_gender';
+    $group_by_index = 'category';
     $filters = [
       'facility' => $request->facility,
-      'sub_county' => $request->subcounty
+      'sub_county' => $request->subcounty,
+      'age_group' => ['10 - 19 yrs (Adolescents)']
     ];
+    $default_results = $this->default_results[$group_by_index]['vl_testing'];
 
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
 
-    return response()->json($results);
+    $vl_results = $this->arrayGroupBy($results, 'is_vl');
+    $vl_results = $this->arrayCount($vl_results);
+    $default_results['VL Done [Last 12 Months]'] = (isset($vl_results['1']) ? $vl_results['1'] : 0);
+
+    $vl_routine_results = $this->arrayGroupBy($results, 'is_vl_routine');
+    $vl_routine_results = $this->arrayCount($vl_routine_results);
+    $default_results['VL Done [Routine]'] = (isset($vl_routine_results['1']) ? $vl_routine_results['1'] : 0);
+
+    $vl_targeted_results = $this->arrayGroupBy($results, 'is_vl_targeted');
+    $vl_targeted_results = $this->arrayCount($vl_targeted_results);
+    $default_results['VL Done [Targeted]'] = (isset($vl_targeted_results['1']) ? $vl_targeted_results['1'] : 0);
+
+    $vl_routine_suppressed_results = $this->arrayGroupBy($results, 'is_vl_routine_suppressed');
+    $vl_routine_suppressed_results = $this->arrayCount($vl_routine_suppressed_results);
+    $default_results['Routine [Suppressed]'] = (isset($vl_routine_suppressed_results['1']) ? $vl_routine_suppressed_results['1'] : 0);
+
+    $vl_routine_not_suppressed_results = $this->arrayGroupBy($results, 'is_vl_routine_not_suppressed');
+    $vl_routine_not_suppressed_results = $this->arrayCount($vl_routine_not_suppressed_results);
+    $default_results['Routine [Not Suppressed]'] = (isset($vl_routine_not_suppressed_results['1']) ? $vl_routine_not_suppressed_results['1'] : 0);
+
+    $vl_targeted_suppressed_results = $this->arrayGroupBy($results, 'is_vl_targeted_suppressed');
+    $vl_targeted_suppressed_results = $this->arrayCount($vl_targeted_suppressed_results);
+    $default_results['Targeted [Suppressed]'] = (isset($vl_targeted_suppressed_results['1']) ? $vl_targeted_suppressed_results['1'] : 0);
+
+    $vl_targeted_not_suppressed_results = $this->arrayGroupBy($results, 'is_vl_targeted_not_suppressed');
+    $vl_targeted_not_suppressed_results = $this->arrayCount($vl_targeted_not_suppressed_results);
+    $default_results['Targeted [Not Suppressed]'] = (isset($vl_targeted_not_suppressed_results['1']) ? $vl_targeted_not_suppressed_results['1'] : 0);
+
+    return response()->json($default_results);
   }
 }
