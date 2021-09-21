@@ -3304,6 +3304,226 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Index",
+					"item": [
+						{
+							"name": "Get Index Testing Children By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/index/children/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"index",
+										"children",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Index Testing Adults By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/index/adults/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"index",
+										"adults",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Index Testing Totals By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/index/totals/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"index",
+										"totals",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get FT Testing Points By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/index/ft/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"index",
+										"ft",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get PNS Testing Points By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/index/pns/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"index",
+										"pns",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -3382,6 +3602,527 @@
 								"screening",
 								"cervical",
 								"visit-type"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IPT Outcomes",
+			"item": [
+				{
+					"name": "Get IPT New Children By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/new/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"new",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT New Adults By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/new/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"new",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT New Totals By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/new/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"new",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Current Children By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/current/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"current",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Current Adults By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/current/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"current",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Current Totals By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/current/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"current",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Outcomes Totals By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/outcomes/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"outcomes",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Outcomes Adults By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/outcomes/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"outcomes",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Outcomes Children By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/outcomes/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"outcomes",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Not Completing Totals By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/not-completing/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"not-completing",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Not Completing Adults By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/not-completing/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"not-completing",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Not Completing Children By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/not-completing/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"not-completing",
+								"children",
+								"category"
 							],
 							"query": [
 								{
