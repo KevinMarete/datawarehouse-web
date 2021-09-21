@@ -4,7 +4,7 @@ return [
   'charts' => [
     'children_new_on_ipt_chart' => [
       'title' => 'New on IPT (Children < 15 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -18,7 +18,7 @@ return [
     ],
     'adults_new_on_ipt_chart' => [
       'title' => 'New on IPT (Adults 15+ Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -32,7 +32,7 @@ return [
     ],
     'totals_new_on_ipt_chart' => [
       'title' => 'New on IPT (Totals)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
