@@ -1731,6 +1731,135 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get Current OnArt Patient Less than 3 Months By AgeGroup and Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\"WESTLANDS\"]\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/patient/on-art/3months/agegroup-gender",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"on-art",
+								"3months",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current OnArt Patient Between 3 and 5 Months By AgeGroup and Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\"WESTLANDS\"]\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/patient/on-art/3-5months/agegroup-gender",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"on-art",
+								"3-5months",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current OnArt Patient 6 Months and More By AgeGroup and Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\"WESTLANDS\"]\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/patient/on-art/6months/agegroup-gender",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"on-art",
+								"6months",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -2937,6 +3066,48 @@
 								"api",
 								"visit",
 								"on-mmd",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Overall MMD Patient Visit Totals By AgeGroup Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/visit/overall-mmd/agegroup-gender",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"visit",
+								"overall-mmd",
 								"agegroup-gender"
 							],
 							"query": [
