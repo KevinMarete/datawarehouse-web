@@ -4,7 +4,7 @@ return [
   'charts' => [
     'children_index_testing_chart' => [
       'title' => 'Index Testing (Children < 15 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -18,7 +18,7 @@ return [
     ],
     'adults_index_testing_chart' => [
       'title' => 'Index Testing (Adults 15+ Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -32,7 +32,7 @@ return [
     ],
     'totals_index_testing_chart' => [
       'title' => 'Index Testing (Totals)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
