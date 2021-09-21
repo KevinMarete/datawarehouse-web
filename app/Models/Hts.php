@@ -39,6 +39,13 @@ class Hts extends Model
     'is_tested_positive',
     'is_child',
     'is_adult',
+    'is_vl',
+    'is_vl_routine',
+    'is_vl_targeted',
+    'is_vl_routine_suppressed',
+    'is_vl_routine_not_suppressed',
+    'is_vl_targeted_suppressed',
+    'is_vl_targeted_not_suppressed',
     'start_regimen',
     'start_regimen_date',
     'sub_county'
@@ -73,6 +80,13 @@ class Hts extends Model
     'is_tested_positive',
     'is_child',
     'is_adult',
+    'is_vl',
+    'is_vl_routine',
+    'is_vl_targeted',
+    'is_vl_routine_suppressed',
+    'is_vl_routine_not_suppressed',
+    'is_vl_targeted_suppressed',
+    'is_vl_targeted_not_suppressed',
     'patient_id',
     'start_regimen',
     'start_regimen_date',
@@ -266,6 +280,44 @@ class Hts extends Model
   public function getIsAdultAttribute()
   {
     return ($this->age >= 15 ? true : false);
+  }
+
+  public function getIsVlAttribute()
+  {
+    ($this->attributes['lab_test'] == 856 ? true : false);
+  }
+
+  public function getIsVlRoutineAttribute()
+  {
+    (($this->is_vl && $this->attributes['urgency'] == 'ROUTINE') ? true : false);
+  }
+
+  public function getIsVlTargetedAttribute()
+  {
+    (($this->is_vl && $this->attributes['urgency'] != 'ROUTINE') ? true : false);
+  }
+
+  public function getIsVlRoutineSuppressedAttribute()
+  {
+    (($this->is_vl_routine && $this->attributes['test_result'] < 200) ? true : false);
+  }
+
+  public function getIsVlRoutineNotSuppressedAttribute()
+  {
+    (($this->is_vl_routine && $this->attributes['test_result'] >= 200) ? true : false);
+
+  }
+
+  public function getIsVlTargetedSuppressedAttribute()
+  {
+    (($this->is_vl_targeted && $this->attributes['test_result'] < 200) ? true : false);
+
+  }
+
+  public function getIsVlTargetedNotSuppressedAttribute()
+  {
+    (($this->is_vl_targeted && $this->attributes['test_result'] >= 200) ? true : false);
+
   }
 
   public function getStartRegimenDateAttribute()
