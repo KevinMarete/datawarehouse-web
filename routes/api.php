@@ -79,6 +79,10 @@ Route::group(['middleware' => ['json.response', 'cors']], function () {
         Route::post('/patient/on-care/new/agegroup', [PatientController::class, 'getNewOnCarePatientTotalsByAgeGroup']);
         Route::post('/patient/on-care/new/agegroup-gender', [PatientController::class, 'getNewOnCarePatientTotalsByAgeGroupGender']);
 
+        Route::post('/patient/on-art/3months/agegroup-gender', [PatientController::class, 'get3MonthsOnArtPatientTotalsByAgeGroupGender']);
+        Route::post('/patient/on-art/3-5months/agegroup-gender', [PatientController::class, 'get3To5MonthsOnArtPatientTotalsByAgeGroupGender']);
+        Route::post('/patient/on-art/6months/agegroup-gender', [PatientController::class, 'get6MonthsOnArtPatientTotalsByAgeGroupGender']);
+
         /*ART Cohort Retention*/
         Route::post('/cohort/children/category', [CohortController::class, 'getCohortChildrenByCategory']);
         Route::post('/cohort/adolescents/category', [CohortController::class, 'getCohortAdolescentsByCategory']);
@@ -118,6 +122,7 @@ Route::group(['middleware' => ['json.response', 'cors']], function () {
 
         /*Multi-Month Dispensing*/
         Route::post('/visit/on-mmd/agegroup-gender', [VisitController::class, 'getOnMultiMonthDispensingTotalsByAgeGroupGender']);
+        Route::post('/visit/overall-mmd/agegroup-gender', [VisitController::class, 'getOverallMultiMonthDispensingTotalsByAgeGroupGender']);
 
         /*PMTCT-EID-HEI-POS-HCA*/
         Route::post('/pmtct/cascades/10-14/category', [PmtctController::class, 'getPmtctCascadesByAgeGroupGender']);
