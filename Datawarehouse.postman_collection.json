@@ -3695,6 +3695,97 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "ViralLoad",
+					"item": [
+						{
+							"name": "Get Viral Load Testing Children By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/vl/children/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"vl",
+										"children",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Viral Load Testing Adolescents By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/vl/adolescents/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"vl",
+										"adolescents",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
