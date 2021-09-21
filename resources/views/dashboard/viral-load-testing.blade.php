@@ -15,7 +15,7 @@
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 p-3">
           <div class="chart-wrap">
-            <canvas id="adultsTargetedRoutineVLCascadesChart" width="900" height="450" class="dashboard-chart" data-api-resource="{{ $chart_config['adults_targeted_routine_vl_cascades_chart'] }}"></canvas>
+            <canvas id="adolescentsTargetedRoutineVLCascadesChart" width="900" height="450" class="dashboard-chart" data-api-resource="{{ $chart_config['adolescents_targeted_routine_vl_cascades_chart'] }}"></canvas>
           </div>
         </div>
       </div>
