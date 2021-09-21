@@ -49,17 +49,40 @@ class TestController extends BaseController
           '50+ M' => 0,
         ],
         'category' => [
-          'New in Care' => 0,
-          'New in Care with bCD4' => 0,
-          'New in Care with bCD4<200 (Eligible for CRAG)' => 0,
-          'No. with CRAG Test' => 0,
-          'No. with Positive CRAG Test Result' => 0,
-          'No. on Fluconazole' => 0
+          'cd4_testing' => [
+            'New in Care' => 0,
+            'New in Care with bCD4' => 0,
+            'New in Care with bCD4<200 (Eligible for CRAG)' => 0,
+            'No. with CRAG Test' => 0,
+            'No. with Positive CRAG Test Result' => 0,
+            'No. on Fluconazole' => 0
+          ],
+          'index_testing' => [
+            'Cases offered index testing' => 0,
+            'Cases accepted index testing' => 0,
+            'Contacts elicited' => 0,
+            'Contacts tested [Key Population]' => 0,
+            'Contacts tested [New Negative]' => 0,
+            'Contacts tested [New Positive]' => 0,
+            'Contacts not tested' => 0
+          ],
+          'index_ft_testing_point' => [
+            'FT [Tested]' => 0,
+            'FT [HIV-]' => 0,
+            'FT [HIV+]' => 0,
+            'FT [Yield]' => 0,
+          ],
+          'index_pns_testing_point' => [
+            'PNS [Tested]' => 0,
+            'PNS [HIV-]' => 0,
+            'PNS [HIV+]' => 0,
+            'PNS [Yield]' => 0,
+          ]
         ],
         'gender' => [
           'F' => 0,
           'M' => 0
-        ],
+        ]
       ];
   }
   public function getCD4TestsChildrenByCategory(Request $request)
@@ -72,7 +95,7 @@ class TestController extends BaseController
       'sub_county' => $request->subcounty,
       'age_group' => ['0 - 9 yrs (Children)']
     ];
-    $default_results = $this->default_results[$group_by_index];
+    $default_results = $this->default_results[$group_by_index]['cd4_testing'];
 
     $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
@@ -114,7 +137,7 @@ class TestController extends BaseController
       'sub_county' => $request->subcounty,
       'age_group' => ['10 - 19 yrs (Adolescents)']
     ];
-    $default_results = $this->default_results[$group_by_index];
+    $default_results = $this->default_results[$group_by_index]['cd4_testing'];
 
     $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
@@ -156,7 +179,7 @@ class TestController extends BaseController
       'sub_county' => $request->subcounty,
       'age_group' => ['20+ yrs (Adults)']
     ];
-    $default_results = $this->default_results[$group_by_index];
+    $default_results = $this->default_results[$group_by_index]['cd4_testing'];
 
     $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
@@ -198,7 +221,7 @@ class TestController extends BaseController
       'sub_county' => $request->subcounty,
       'age_group' => []
     ];
-    $default_results = $this->default_results[$group_by_index];
+    $default_results = $this->default_results[$group_by_index]['cd4_testing'];
 
     $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
@@ -234,100 +257,201 @@ class TestController extends BaseController
   {
     $from = $request->from;
     $to = $request->to;
-    $group_by_index = 'age_group_gender';
+    $group_by_index = 'category';
     $filters = [
       'facility' => $request->facility,
-      'sub_county' => $request->subcounty
+      'sub_county' => $request->subcounty,
+      'is_child' => [true]
     ];
+    $default_results = $this->default_results[$group_by_index]['index_testing'];
 
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
 
-    return response()->json($results);
+    $offered_test_results = $this->arrayGroupBy($results, 'is_offered_test');
+    $offered_test_results = $this->arrayCount($offered_test_results);
+    $default_results['Cases offered index testing'] = (isset($offered_test_results['1']) ? $offered_test_results['1'] : 0);
+
+    $accepted_test_results = $this->arrayGroupBy($results, 'is_accepted_test');
+    $accepted_test_results = $this->arrayCount($accepted_test_results);
+    $default_results['Cases accepted index testing'] = (isset($accepted_test_results['1']) ? $accepted_test_results['1'] : 0);
+
+    $contact_elicited_results = $this->arrayGroupBy($results, 'is_contact_elicited');
+    $contact_elicited_results = $this->arrayCount($contact_elicited_results);
+    $default_results['Contacts elicited'] = (isset($contact_elicited_results['1']) ? $contact_elicited_results['1'] : 0);
+
+    $contact_tested_kp_results = $this->arrayGroupBy($results, 'is_contact_tested_kp');
+    $contact_tested_kp_results = $this->arrayCount($contact_tested_kp_results);
+    $default_results['Contacts tested [Key Population]'] = (isset($contact_tested_kp_results['1']) ? $contact_tested_kp_results['1'] : 0);
+
+    $contact_tested_new_neg_results = $this->arrayGroupBy($results, 'is_contact_new_negative');
+    $contact_tested_new_neg_results = $this->arrayCount($contact_tested_new_neg_results);
+    $default_results['Contacts tested [New Negative]'] = (isset($contact_tested_new_neg_results['1']) ? $contact_tested_new_neg_results['1'] : 0);
+
+    $contact_tested_new_pos_results = $this->arrayGroupBy($results, 'is_contact_new_positive');
+    $contact_tested_new_pos_results = $this->arrayCount($contact_tested_new_pos_results);
+    $default_results['Contacts tested [New Positive]'] = (isset($contact_tested_new_pos_results['1']) ? $contact_tested_new_pos_results['1'] : 0);
+
+    $contact_not_tested_results = $this->arrayGroupBy($results, 'is_contact_not_tested');
+    $contact_not_tested_results = $this->arrayCount($contact_not_tested_results);
+    $default_results['Contacts not tested'] = (isset($contact_not_tested_results['1']) ? $contact_not_tested_results['1'] : 0);
+
+    return response()->json($default_results);
   }
 
   public function getIndexTestingAdultsByCategory(Request $request)
   {
     $from = $request->from;
     $to = $request->to;
-    $group_by_index = 'age_group_gender';
+    $group_by_index = 'category';
     $filters = [
       'facility' => $request->facility,
-      'sub_county' => $request->subcounty
+      'sub_county' => $request->subcounty,
+      'is_adult' => [true]
     ];
+    $default_results = $this->default_results[$group_by_index]['index_testing'];
 
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
 
-    return response()->json($results);
+    $offered_test_results = $this->arrayGroupBy($results, 'is_offered_test');
+    $offered_test_results = $this->arrayCount($offered_test_results);
+    $default_results['Cases offered index testing'] = (isset($offered_test_results['1']) ? $offered_test_results['1'] : 0);
+
+    $accepted_test_results = $this->arrayGroupBy($results, 'is_accepted_test');
+    $accepted_test_results = $this->arrayCount($accepted_test_results);
+    $default_results['Cases accepted index testing'] = (isset($accepted_test_results['1']) ? $accepted_test_results['1'] : 0);
+
+    $contact_elicited_results = $this->arrayGroupBy($results, 'is_contact_elicited');
+    $contact_elicited_results = $this->arrayCount($contact_elicited_results);
+    $default_results['Contacts elicited'] = (isset($contact_elicited_results['1']) ? $contact_elicited_results['1'] : 0);
+
+    $contact_tested_kp_results = $this->arrayGroupBy($results, 'is_contact_tested_kp');
+    $contact_tested_kp_results = $this->arrayCount($contact_tested_kp_results);
+    $default_results['Contacts tested [Key Population]'] = (isset($contact_tested_kp_results['1']) ? $contact_tested_kp_results['1'] : 0);
+
+    $contact_tested_new_neg_results = $this->arrayGroupBy($results, 'is_contact_new_negative');
+    $contact_tested_new_neg_results = $this->arrayCount($contact_tested_new_neg_results);
+    $default_results['Contacts tested [New Negative]'] = (isset($contact_tested_new_neg_results['1']) ? $contact_tested_new_neg_results['1'] : 0);
+
+    $contact_tested_new_pos_results = $this->arrayGroupBy($results, 'is_contact_new_positive');
+    $contact_tested_new_pos_results = $this->arrayCount($contact_tested_new_pos_results);
+    $default_results['Contacts tested [New Positive]'] = (isset($contact_tested_new_pos_results['1']) ? $contact_tested_new_pos_results['1'] : 0);
+
+    $contact_not_tested_results = $this->arrayGroupBy($results, 'is_contact_not_tested');
+    $contact_not_tested_results = $this->arrayCount($contact_not_tested_results);
+    $default_results['Contacts not tested'] = (isset($contact_not_tested_results['1']) ? $contact_not_tested_results['1'] : 0);
+
+    return response()->json($default_results);
   }
 
   public function getIndexTestingTotalsByCategory(Request $request)
   {
     $from = $request->from;
     $to = $request->to;
-    $group_by_index = 'age_group_gender';
+    $group_by_index = 'category';
     $filters = [
       'facility' => $request->facility,
       'sub_county' => $request->subcounty
     ];
+    $default_results = $this->default_results[$group_by_index]['index_testing'];
 
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
 
-    return response()->json($results);
+    $offered_test_results = $this->arrayGroupBy($results, 'is_offered_test');
+    $offered_test_results = $this->arrayCount($offered_test_results);
+    $default_results['Cases offered index testing'] = (isset($offered_test_results['1']) ? $offered_test_results['1'] : 0);
+
+    $accepted_test_results = $this->arrayGroupBy($results, 'is_accepted_test');
+    $accepted_test_results = $this->arrayCount($accepted_test_results);
+    $default_results['Cases accepted index testing'] = (isset($accepted_test_results['1']) ? $accepted_test_results['1'] : 0);
+
+    $contact_elicited_results = $this->arrayGroupBy($results, 'is_contact_elicited');
+    $contact_elicited_results = $this->arrayCount($contact_elicited_results);
+    $default_results['Contacts elicited'] = (isset($contact_elicited_results['1']) ? $contact_elicited_results['1'] : 0);
+
+    $contact_tested_kp_results = $this->arrayGroupBy($results, 'is_contact_tested_kp');
+    $contact_tested_kp_results = $this->arrayCount($contact_tested_kp_results);
+    $default_results['Contacts tested [Key Population]'] = (isset($contact_tested_kp_results['1']) ? $contact_tested_kp_results['1'] : 0);
+
+    $contact_tested_new_neg_results = $this->arrayGroupBy($results, 'is_contact_new_negative');
+    $contact_tested_new_neg_results = $this->arrayCount($contact_tested_new_neg_results);
+    $default_results['Contacts tested [New Negative]'] = (isset($contact_tested_new_neg_results['1']) ? $contact_tested_new_neg_results['1'] : 0);
+
+    $contact_tested_new_pos_results = $this->arrayGroupBy($results, 'is_contact_new_positive');
+    $contact_tested_new_pos_results = $this->arrayCount($contact_tested_new_pos_results);
+    $default_results['Contacts tested [New Positive]'] = (isset($contact_tested_new_pos_results['1']) ? $contact_tested_new_pos_results['1'] : 0);
+
+    $contact_not_tested_results = $this->arrayGroupBy($results, 'is_contact_not_tested');
+    $contact_not_tested_results = $this->arrayCount($contact_not_tested_results);
+    $default_results['Contacts not tested'] = (isset($contact_not_tested_results['1']) ? $contact_not_tested_results['1'] : 0);
+
+    return response()->json($default_results);
   }
 
   public function getIndexTestingFtByCategory(Request $request)
   {
     $from = $request->from;
     $to = $request->to;
-    $group_by_index = 'age_group_gender';
+    $group_by_index = 'category';
     $filters = [
       'facility' => $request->facility,
-      'sub_county' => $request->subcounty
+      'sub_county' => $request->subcounty,
+      'is_ft_testing_point' => [true]
     ];
+    $default_results = $this->default_results[$group_by_index]['index_ft_testing_point'];
 
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
 
-    return response()->json($results);
+    $offered_test_results = $this->arrayGroupBy($results, 'is_accepted_test');
+    $offered_test_results = $this->arrayCount($offered_test_results);
+    $default_results['FT [Tested]'] = (isset($offered_test_results['1']) ? $offered_test_results['1'] : 0);
+
+    $accepted_test_results = $this->arrayGroupBy($results, 'is_tested_negative');
+    $accepted_test_results = $this->arrayCount($accepted_test_results);
+    $default_results['FT [HIV-]'] = (isset($accepted_test_results['1']) ? $accepted_test_results['1'] : 0);
+
+    $contact_elicited_results = $this->arrayGroupBy($results, 'is_tested_positive');
+    $contact_elicited_results = $this->arrayCount($contact_elicited_results);
+    $default_results['FT [HIV+]'] = (isset($contact_elicited_results['1']) ? $contact_elicited_results['1'] : 0);
+
+    $default_results['FT [Yield]'] = ($default_results['FT [Tested]'] > 0 ? round(($default_results['FT [HIV+]'] / $default_results['FT [Tested]']), 2) : 0);
+
+    return response()->json($default_results);
   }
 
   public function getIndexTestingPnsByCategory(Request $request)
   {
     $from = $request->from;
     $to = $request->to;
-    $group_by_index = 'age_group_gender';
+    $group_by_index = 'category';
     $filters = [
       'facility' => $request->facility,
-      'sub_county' => $request->subcounty
+      'sub_county' => $request->subcounty,
+      'is_pns_testing_point' => [true]
     ];
+    $default_results = $this->default_results[$group_by_index]['index_pns_testing_point'];
 
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
 
-    return response()->json($results);
+    $offered_test_results = $this->arrayGroupBy($results, 'is_accepted_test');
+    $offered_test_results = $this->arrayCount($offered_test_results);
+    $default_results['PNS [Tested]'] = (isset($offered_test_results['1']) ? $offered_test_results['1'] : 0);
+
+    $accepted_test_results = $this->arrayGroupBy($results, 'is_tested_negative');
+    $accepted_test_results = $this->arrayCount($accepted_test_results);
+    $default_results['PNS [HIV-]'] = (isset($accepted_test_results['1']) ? $accepted_test_results['1'] : 0);
+
+    $contact_elicited_results = $this->arrayGroupBy($results, 'is_tested_positive');
+    $contact_elicited_results = $this->arrayCount($contact_elicited_results);
+    $default_results['PNS [HIV+]'] = (isset($contact_elicited_results['1']) ? $contact_elicited_results['1'] : 0);
+
+    $default_results['PNS [Yield]'] = ($default_results['PNS [Tested]'] > 0 ? round(($default_results['PNS [HIV+]'] / $default_results['PNS [Tested]']), 2) : 0);
+
+    return response()->json($default_results);
   }
 
   public function getHivTestingChildrenByAgeGroup(Request $request)
