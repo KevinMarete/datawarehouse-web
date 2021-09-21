@@ -26,6 +26,19 @@ class Hts extends Model
     'is_crag_test',
     'is_crag_test_positive',
     'is_fluconazole',
+    'is_offered_test',
+    'is_accepted_test',
+    'is_contact_elicited',
+    'is_contact_tested_kp',
+    'is_contact_new_negative',
+    'is_contact_new_positive',
+    'is_contact_not_tested',
+    'is_ft_testing_point',
+    'is_pns_testing_point',
+    'is_tested_negative',
+    'is_tested_positive',
+    'is_child',
+    'is_adult',
     'start_regimen',
     'start_regimen_date',
     'sub_county'
@@ -47,6 +60,19 @@ class Hts extends Model
     'is_crag_test',
     'is_crag_test_positive',
     'is_fluconazole',
+    'is_offered_test',
+    'is_accepted_test',
+    'is_contact_elicited',
+    'is_contact_tested_kp',
+    'is_contact_new_negative',
+    'is_contact_new_positive',
+    'is_contact_not_tested',
+    'is_ft_testing_point',
+    'is_pns_testing_point',
+    'is_tested_negative',
+    'is_tested_positive',
+    'is_child',
+    'is_adult',
     'patient_id',
     'start_regimen',
     'start_regimen_date',
@@ -175,6 +201,71 @@ class Hts extends Model
   public function getIsFluconazoleAttribute()
   {
     return false;
+  }
+
+  public function getIsOfferedTestAttribute()
+  {
+    return false;
+  }
+
+  public function getIsAcceptedTestAttribute()
+  {
+    return false;
+  }
+
+  public function getIsContactElicitedAttribute()
+  {
+    return false;
+  }
+
+  public function getIsContactTestedKpAttribute()
+  {
+    return false;
+  }
+
+  public function getIsContactNewNegativeAttribute()
+  {
+    return false;
+  }
+
+  public function getIsContactNewPositiveAttribute()
+  {
+    return false;
+  }
+
+  public function getIsContactNotTestedAttribute()
+  {
+    return false;
+  }
+
+  public function getIsFtTestingPointAttribute()
+  {
+    return false;
+  }
+
+  public function getIsPnsTestingPointAttribute()
+  {
+    return false;
+  }
+
+  public function getIsTestedNegativeAttribute()
+  {
+    return false;
+  }
+
+  public function getIsTestedPositiveAttribute()
+  {
+    return false;
+  }
+
+  public function getIsChildAttribute()
+  {
+    return ($this->age < 15 ? true : false);
+  }
+
+  public function getIsAdultAttribute()
+  {
+    return ($this->age >= 15 ? true : false);
   }
 
   public function getStartRegimenDateAttribute()
