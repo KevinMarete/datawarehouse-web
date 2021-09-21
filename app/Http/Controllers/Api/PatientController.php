@@ -362,4 +362,85 @@ class PatientController extends BaseController
 
     return response()->json($results);
   }
+
+  /**
+   * Display all new patients 3 months on art by age group gender
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function get3MonthsOnArtPatientTotalsByAgeGroupGender(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
+
+    $results = Patient::whereDate('start_regimen_date', '>=', $from)->whereDate('start_regimen_date', '<', $to)->whereRaw('datediff(?, start_regimen_date) < ?', [$to, 90])->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  /**
+   * Display all new patients 3-5 months on art by age group gender
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function get3To5MonthsOnArtPatientTotalsByAgeGroupGender(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
+
+    $results = Patient::whereDate('start_regimen_date', '>=', $from)->whereDate('start_regimen_date', '<', $to)->whereRaw('datediff(?, start_regimen_date) >= ?', [$to, 90])->whereRaw('datediff(?, start_regimen_date) < ?', [$to, 180])->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  /**
+   * Display all new patients 6 months on art by age group gender
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function get6MonthsOnArtPatientTotalsByAgeGroupGender(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
+
+    $results = Patient::whereDate('start_regimen_date', '>=', $from)->whereDate('start_regimen_date', '<', $to)->whereRaw('datediff(?, start_regimen_date) >= ?', [$to, 180])->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
 }
