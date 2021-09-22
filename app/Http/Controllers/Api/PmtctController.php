@@ -47,6 +47,50 @@ class PmtctController extends BaseController
           '50+ F' => 0,
           '50+ M' => 0,
         ],
+        'category' => [
+          'pmtct_cascades' => [
+            'No. of New Pref Women [ANC]' => 0,
+            'No. with known HIV Status' => 0,
+            'KPs' => 0,
+            'No. of Newly Tested' => 0,
+            'Newly Tested HIV+' => 0,
+            'Total HIV+' => 0,
+            'Total on HAART' => 0,
+          ],
+          'pmtct_infants_cascades' => [
+            'No. of New Pref Women [ANC]' => 0,
+            'No. with known HIV Status' => 0,
+            'KPs' => 0,
+            'No. of Newly Tested' => 0,
+            'Newly Tested HIV+' => 0,
+            'Total HIV+' => 0,
+            'Total on HAART' => 0,
+            'Infants Issued ARV Prophylaxis' => 0
+          ],
+          'eid_cascades' => [
+            'Samples collected by age (0 - <=12months)' => 0,
+            'Positive by age (0 - <= 12 months)' => 0,
+            'Positive, confirmed initated ART by age (0 - <= 12 months)' => 0
+          ],
+          'hei_cascades' => [
+            'Samples collected by age (0 - <=12months)' => 0,
+            'Positive by age (0 - <= 12 months)' => 0,
+            'Positive, confirmed initated ART by age (0 - <= 12 months)' => 0,
+            'Samples collected by age (2 - <=12months)' => 0,
+            'Positive by age (2 - <= 12 months)' => 0,
+            'Positive, confirmed initated ART by age (2 - <= 12 months)' => 0
+          ],
+          'hca_cascades' => [
+            'HIV-ve in FollowUp' => 0,
+            'HIV+ve' => 0,
+            'To' => 0,
+            'LTFU' => 0,
+            'Dead' => 0
+          ],
+          'hca_dead_outcomes' => [
+            'Dead [known HIV status]' => 0
+          ]
+        ],
         'gender' => [
           'F' => 0,
           'M' => 0
