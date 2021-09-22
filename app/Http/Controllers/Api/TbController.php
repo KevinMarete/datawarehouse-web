@@ -47,6 +47,51 @@ class TbController extends BaseController
           '50+ F' => 0,
           '50+ M' => 0,
         ],
+        'category' => [
+          'cascades' => [
+            'No. of New & Relapsed TB Cases' => 0,
+            'No. with known HIV status' => 0,
+            'KPs' => 0,
+            'No. Newly Tested' => 0,
+            'Newly Tested HIV+' => 0,
+            'Total HIV+' => 0,
+            'Total on HAART' => 0
+          ],
+          'testing_point' => [
+            'Newly Tested' => 0,
+            'New HIV+' => 0
+          ],
+          'outcomes' => [
+            'Total in Cohort [TB/HIV+]' => 0,
+            'Total with TB Outcomes' => 0,
+            'Cured' => 0,
+            'Treatment Complete' => 0,
+            'Treatment Failure' => 0,
+            'Died' => 0,
+            'LTFU' => 0,
+            'Not Evaluated (TO)' => 0
+          ],
+          'prevention' => [
+            'Current on ART' => 0,
+            'Screened for TB' => 0,
+            'Screened Negative' => 0,
+            'Expected to Complete IPT' => 0,
+            'Complete IPT' => 0
+          ],
+          'treatment' => [
+            'Current on ART' => 0,
+            'Screened for TB' => 0,
+            'Screened Positive' => 0,
+            'Specimen sent for Bacteriologic Diagnosis' => 0,
+            'Diagnosis with TB' => 0,
+            'Started on TB Treatment' => 0
+          ],
+          'diagnosis' => [
+            'GeneXpert' => 0,
+            'Chest Xray' => 0,
+            'Smear Microscopy' => 0
+          ]
+        ],
         'gender' => [
           'F' => 0,
           'M' => 0
