@@ -86,6 +86,48 @@ class TestController extends BaseController
             'Routine [Not Suppressed]' => 0,
             'Targeted [Suppressed]' => 0,
             'Targeted [Not Suppressed]' => 0,
+          ],
+          'hiv_testing' => [
+            'Tested for HIV' => 0,
+            'HIV +ve' => 0,
+            'Total Linked' => 0
+          ],
+          'hiv_testing_gender' => [
+            'Male' => 0,
+            'Female' => 0
+          ],
+          'hiv_testing_points' => [
+            'FT'=> 0,
+            'KP' => 0,
+            'Mobile/Outreach(KP)' => 0,
+            'Mobile/Outreach(GP)' => 0,
+            'STI' => 0,
+            'Post 1st ANC Visit' => 0,
+            'ANC1' => 0,
+            'PNC' => 0,
+            'Emergency' => 0,
+            'VMMC' => 0,
+            'VCT' => 0,
+            'Malnutrition' => 0,
+            'CWC' => 0,
+            'FP' => 0,
+            'TB' => 0,
+            'PNS' => 0,
+            'Inpatient' => 0,
+            'OPD' => 0
+          ],
+          'hiv_datim' => [
+            'STI' => 0,
+            'Emergency' => 0,
+            'VMMC' => 0,
+            'Malnutrition' => 0,
+            'Pediatric' => 0,
+            'Inpatient' => 0,
+            'TB' => 0,
+            'VCT' => 0,
+            'ANC1' => 0,
+            'Other PITC' => 0,
+            'Index Testing' => 0
           ]
         ],
         'gender' => [
