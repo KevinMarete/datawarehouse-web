@@ -4,7 +4,7 @@ return [
   'charts' => [
     '10_24_pmtct_cascades_chart' => [
       'title' => 'PMTCT Cascades (10-14 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -18,7 +18,7 @@ return [
     ],
     '15_19_pmtct_cascades_chart' => [
       'title' => 'PMTCT Cascades (15-19 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -32,7 +32,7 @@ return [
     ],
     '20_24_pmtct_cascades_chart' => [
       'title' => 'PMTCT Cascades (20-24 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -46,7 +46,7 @@ return [
     ],
     '15_24_youths_pmtct_cascades_chart' => [
       'title' => 'PMTCT Cascades (Youths 15-24 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -60,7 +60,7 @@ return [
     ],
     'over_25_pmtct_cascades_chart' => [
       'title' => 'PMTCT Cascades (25+ Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -74,7 +74,7 @@ return [
     ],
     'totals_pmtct_cascades_chart' => [
       'title' => 'PMTCT Cascades (Totals)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -88,7 +88,7 @@ return [
     ],
     'pmtct_eid_pmtct_by_12_chart' => [
       'title' => 'PMTCT EID & PMTCT By 12 Months of Age',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -102,7 +102,7 @@ return [
     ],
     'pmtct_eid_pmtct_by_age_chart' => [
       'title' => 'PMTCT EID & PMTCT By Age at Sample Collection',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
