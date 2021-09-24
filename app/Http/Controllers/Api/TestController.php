@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Hts;
-use App\Models\Visit;
 use App\Http\Controllers\Api\BaseController;
 use Illuminate\Http\Request;
 
@@ -21,6 +20,20 @@ class TestController extends BaseController
           '10 - 19 yrs (Adolescents)' => 0,
           '0 - 9 yrs (Children)' => 0,
           'Total' => 0
+        ],
+        'age_group_large' => [
+          '<1 yrs' => 0,
+          '1-4 yrs' => 0,
+          '5-9 yrs' => 0,
+          '10-14 yrs' => 0,
+          '15-19 yrs' => 0,
+          '20-24 yrs' => 0,
+          '25-29 yrs' => 0,
+          '30-34 yrs' => 0,
+          '35-39 yrs' => 0,
+          '40-44 yrs' => 0,
+          '45-49 yrs' => 0,
+          '50+ yrs' => 0,
         ],
         'age_group_gender' => [
           '<1 F' => 0,
@@ -97,7 +110,7 @@ class TestController extends BaseController
             'Female' => 0
           ],
           'hiv_testing_points' => [
-            'FT'=> 0,
+            'FT' => 0,
             'KP' => 0,
             'Mobile/Outreach(KP)' => 0,
             'Mobile/Outreach(GP)' => 0,
@@ -506,348 +519,7 @@ class TestController extends BaseController
     return response()->json($default_results);
   }
 
-  public function getHivTestingChildrenByAgeGroup(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingAdolescentsByAgeGroup(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingYouthsByAgeGroup(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingAdultsByAgeGroup(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingTotalsByAgeGroup(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingOverallByGender(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingPositiveOverallByGender(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingPositiveTotals(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingPositiveLinkedTotals(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-
-  public function getHivTestingPositiveMales(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingPositiveLinkedMales(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingPositiveFemales(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingPositiveLinkedFemales(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingModalitiesByTesting(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingPositiveModalitiesByTesting(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingModalitiesByDatim(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getHivTestingPositiveModalitiesByDatim(Request $request)
-  {
-    $from = $request->from;
-    $to = $request->to;
-    $group_by_index = 'age_group_gender';
-    $filters = [
-      'facility' => $request->facility,
-      'sub_county' => $request->subcounty
-    ];
-
-    $results = Visit::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->whereRaw('datediff(next_appointment_date, visit_date) > ?', [30])->get()->toArray();
-
-    $results = $this->arrayFilterBy($results, $filters);
-    $results = $this->arrayGroupBy($results, $group_by_index);
-    $results = $this->arrayCount($results);
-    $results = array_merge($this->default_results[$group_by_index], $results);
-
-    return response()->json($results);
-  }
-
-  public function getVlTestingChildrenByCategory(Request $request)
+  public function getHivTestingChildrenByCategory(Request $request)
   {
     $from = $request->from;
     $to = $request->to;
@@ -857,43 +529,28 @@ class TestController extends BaseController
       'sub_county' => $request->subcounty,
       'age_group' => ['0 - 9 yrs (Children)']
     ];
-    $default_results = $this->default_results[$group_by_index]['vl_testing'];
+
+    $default_results = $this->default_results[$group_by_index]['hiv_testing'];
 
     $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
 
-    $vl_results = $this->arrayGroupBy($results, 'is_vl');
-    $vl_results = $this->arrayCount($vl_results);
-    $default_results['VL Done [Last 12 Months]'] = (isset($vl_results['1']) ? $vl_results['1'] : 0);
+    $tested_results = $this->arrayGroupBy($results, 'is_accepted_test');
+    $tested_results = $this->arrayCount($tested_results);
+    $default_results['Tested for HIV'] = (isset($tested_results['1']) ? $tested_results['1'] : 0);
 
-    $vl_routine_results = $this->arrayGroupBy($results, 'is_vl_routine');
-    $vl_routine_results = $this->arrayCount($vl_routine_results);
-    $default_results['VL Done [Routine]'] = (isset($vl_routine_results['1']) ? $vl_routine_results['1'] : 0);
+    $tested_positive_results = $this->arrayGroupBy($results, 'is_tested_positive');
+    $tested_positive_results = $this->arrayCount($tested_positive_results);
+    $default_results['HIV +ve'] = (isset($tested_positive_results['1']) ? $tested_positive_results['1'] : 0);
 
-    $vl_targeted_results = $this->arrayGroupBy($results, 'is_vl_targeted');
-    $vl_targeted_results = $this->arrayCount($vl_targeted_results);
-    $default_results['VL Done [Targeted]'] = (isset($vl_targeted_results['1']) ? $vl_targeted_results['1'] : 0);
-
-    $vl_routine_suppressed_results = $this->arrayGroupBy($results, 'is_vl_routine_suppressed');
-    $vl_routine_suppressed_results = $this->arrayCount($vl_routine_suppressed_results);
-    $default_results['Routine [Suppressed]'] = (isset($vl_routine_suppressed_results['1']) ? $vl_routine_suppressed_results['1'] : 0);
-
-    $vl_routine_not_suppressed_results = $this->arrayGroupBy($results, 'is_vl_routine_not_suppressed');
-    $vl_routine_not_suppressed_results = $this->arrayCount($vl_routine_not_suppressed_results);
-    $default_results['Routine [Not Suppressed]'] = (isset($vl_routine_not_suppressed_results['1']) ? $vl_routine_not_suppressed_results['1'] : 0);
-
-    $vl_targeted_suppressed_results = $this->arrayGroupBy($results, 'is_vl_targeted_suppressed');
-    $vl_targeted_suppressed_results = $this->arrayCount($vl_targeted_suppressed_results);
-    $default_results['Targeted [Suppressed]'] = (isset($vl_targeted_suppressed_results['1']) ? $vl_targeted_suppressed_results['1'] : 0);
-
-    $vl_targeted_not_suppressed_results = $this->arrayGroupBy($results, 'is_vl_targeted_not_suppressed');
-    $vl_targeted_not_suppressed_results = $this->arrayCount($vl_targeted_not_suppressed_results);
-    $default_results['Targeted [Not Suppressed]'] = (isset($vl_targeted_not_suppressed_results['1']) ? $vl_targeted_not_suppressed_results['1'] : 0);
+    $linked_results = $this->arrayGroupBy($results, 'is_linked');
+    $linked_results = $this->arrayCount($linked_results);
+    $default_results['Total Linked'] = (isset($linked_results['1']) ? $linked_results['1'] : 0);
 
     return response()->json($default_results);
   }
 
-  public function getVlTestingAdolescentsByCategory(Request $request)
+  public function getHivTestingAdolescentsByCategory(Request $request)
   {
     $from = $request->from;
     $to = $request->to;
@@ -903,39 +560,456 @@ class TestController extends BaseController
       'sub_county' => $request->subcounty,
       'age_group' => ['10 - 19 yrs (Adolescents)']
     ];
-    $default_results = $this->default_results[$group_by_index]['vl_testing'];
+
+    $default_results = $this->default_results[$group_by_index]['hiv_testing'];
 
     $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
     $results = $this->arrayFilterBy($results, $filters);
 
-    $vl_results = $this->arrayGroupBy($results, 'is_vl');
-    $vl_results = $this->arrayCount($vl_results);
-    $default_results['VL Done [Last 12 Months]'] = (isset($vl_results['1']) ? $vl_results['1'] : 0);
+    $tested_results = $this->arrayGroupBy($results, 'is_accepted_test');
+    $tested_results = $this->arrayCount($tested_results);
+    $default_results['Tested for HIV'] = (isset($tested_results['1']) ? $tested_results['1'] : 0);
 
-    $vl_routine_results = $this->arrayGroupBy($results, 'is_vl_routine');
-    $vl_routine_results = $this->arrayCount($vl_routine_results);
-    $default_results['VL Done [Routine]'] = (isset($vl_routine_results['1']) ? $vl_routine_results['1'] : 0);
+    $tested_positive_results = $this->arrayGroupBy($results, 'is_tested_positive');
+    $tested_positive_results = $this->arrayCount($tested_positive_results);
+    $default_results['HIV +ve'] = (isset($tested_positive_results['1']) ? $tested_positive_results['1'] : 0);
 
-    $vl_targeted_results = $this->arrayGroupBy($results, 'is_vl_targeted');
-    $vl_targeted_results = $this->arrayCount($vl_targeted_results);
-    $default_results['VL Done [Targeted]'] = (isset($vl_targeted_results['1']) ? $vl_targeted_results['1'] : 0);
-
-    $vl_routine_suppressed_results = $this->arrayGroupBy($results, 'is_vl_routine_suppressed');
-    $vl_routine_suppressed_results = $this->arrayCount($vl_routine_suppressed_results);
-    $default_results['Routine [Suppressed]'] = (isset($vl_routine_suppressed_results['1']) ? $vl_routine_suppressed_results['1'] : 0);
-
-    $vl_routine_not_suppressed_results = $this->arrayGroupBy($results, 'is_vl_routine_not_suppressed');
-    $vl_routine_not_suppressed_results = $this->arrayCount($vl_routine_not_suppressed_results);
-    $default_results['Routine [Not Suppressed]'] = (isset($vl_routine_not_suppressed_results['1']) ? $vl_routine_not_suppressed_results['1'] : 0);
-
-    $vl_targeted_suppressed_results = $this->arrayGroupBy($results, 'is_vl_targeted_suppressed');
-    $vl_targeted_suppressed_results = $this->arrayCount($vl_targeted_suppressed_results);
-    $default_results['Targeted [Suppressed]'] = (isset($vl_targeted_suppressed_results['1']) ? $vl_targeted_suppressed_results['1'] : 0);
-
-    $vl_targeted_not_suppressed_results = $this->arrayGroupBy($results, 'is_vl_targeted_not_suppressed');
-    $vl_targeted_not_suppressed_results = $this->arrayCount($vl_targeted_not_suppressed_results);
-    $default_results['Targeted [Not Suppressed]'] = (isset($vl_targeted_not_suppressed_results['1']) ? $vl_targeted_not_suppressed_results['1'] : 0);
+    $linked_results = $this->arrayGroupBy($results, 'is_linked');
+    $linked_results = $this->arrayCount($linked_results);
+    $default_results['Total Linked'] = (isset($linked_results['1']) ? $linked_results['1'] : 0);
 
     return response()->json($default_results);
   }
+
+  public function getHivTestingYouthsByCategory(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'category';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'age_group' => ['15 - 24 yrs (Youths)']
+    ];
+
+    $default_results = $this->default_results[$group_by_index]['hiv_testing'];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+    $results = $this->arrayFilterBy($results, $filters);
+
+    $tested_results = $this->arrayGroupBy($results, 'is_accepted_test');
+    $tested_results = $this->arrayCount($tested_results);
+    $default_results['Tested for HIV'] = (isset($tested_results['1']) ? $tested_results['1'] : 0);
+
+    $tested_positive_results = $this->arrayGroupBy($results, 'is_tested_positive');
+    $tested_positive_results = $this->arrayCount($tested_positive_results);
+    $default_results['HIV +ve'] = (isset($tested_positive_results['1']) ? $tested_positive_results['1'] : 0);
+
+    $linked_results = $this->arrayGroupBy($results, 'is_linked');
+    $linked_results = $this->arrayCount($linked_results);
+    $default_results['Total Linked'] = (isset($linked_results['1']) ? $linked_results['1'] : 0);
+
+    return response()->json($default_results);
+  }
+
+  public function getHivTestingAdultsByCategory(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'category';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'age_group' => ['20+ yrs (Adults)']
+    ];
+
+    $default_results = $this->default_results[$group_by_index]['hiv_testing'];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+    $results = $this->arrayFilterBy($results, $filters);
+
+    $tested_results = $this->arrayGroupBy($results, 'is_accepted_test');
+    $tested_results = $this->arrayCount($tested_results);
+    $default_results['Tested for HIV'] = (isset($tested_results['1']) ? $tested_results['1'] : 0);
+
+    $tested_positive_results = $this->arrayGroupBy($results, 'is_tested_positive');
+    $tested_positive_results = $this->arrayCount($tested_positive_results);
+    $default_results['HIV +ve'] = (isset($tested_positive_results['1']) ? $tested_positive_results['1'] : 0);
+
+    $linked_results = $this->arrayGroupBy($results, 'is_linked');
+    $linked_results = $this->arrayCount($linked_results);
+    $default_results['Total Linked'] = (isset($linked_results['1']) ? $linked_results['1'] : 0);
+
+    return response()->json($default_results);
+  }
+
+  public function getHivTestingTotalsByCategory(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'category';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
+
+    $default_results = $this->default_results[$group_by_index]['hiv_testing'];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+    $results = $this->arrayFilterBy($results, $filters);
+
+    $tested_results = $this->arrayGroupBy($results, 'is_accepted_test');
+    $tested_results = $this->arrayCount($tested_results);
+    $default_results['Tested for HIV'] = (isset($tested_results['1']) ? $tested_results['1'] : 0);
+
+    $tested_positive_results = $this->arrayGroupBy($results, 'is_tested_positive');
+    $tested_positive_results = $this->arrayCount($tested_positive_results);
+    $default_results['HIV +ve'] = (isset($tested_positive_results['1']) ? $tested_positive_results['1'] : 0);
+
+    $linked_results = $this->arrayGroupBy($results, 'is_linked');
+    $linked_results = $this->arrayCount($linked_results);
+    $default_results['Total Linked'] = (isset($linked_results['1']) ? $linked_results['1'] : 0);
+
+    return response()->json($default_results);
+  }
+
+  public function getHivTestingOverallByCategory(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'category';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+    ];
+
+    $default_results = $this->default_results[$group_by_index]['hiv_testing_gender'];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+    $results = $this->arrayFilterBy($results, $filters);
+
+    $male_results = $this->arrayGroupBy($results, 'gender');
+    $male_results = $this->arrayCount($male_results);
+    $default_results['Male'] = (isset($male_results['M']) ? $male_results['M'] : 0);
+
+    $female_results = $this->arrayGroupBy($results, 'gender');
+    $female_results = $this->arrayCount($female_results);
+    $default_results['Female'] = (isset($female_results['F']) ? $female_results['F'] : 0);
+
+    return response()->json($default_results);
+  }
+
+  public function getHivTestingPositiveOverallByCategory(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'category';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_positive' => [true]
+    ];
+
+    $default_results = $this->default_results[$group_by_index]['hiv_testing_gender'];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+    $results = $this->arrayFilterBy($results, $filters);
+
+    $male_results = $this->arrayGroupBy($results, 'gender');
+    $male_results = $this->arrayCount($male_results);
+    $default_results['Male'] = (isset($male_results['M']) ? $male_results['M'] : 0);
+
+    $female_results = $this->arrayGroupBy($results, 'gender');
+    $female_results = $this->arrayCount($female_results);
+    $default_results['Female'] = (isset($female_results['F']) ? $female_results['F'] : 0);
+
+    return response()->json($default_results);
+  }
+
+  public function getHivTestingTotalsByAgeGroupLarge(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_large';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_accepted_test' => [true]
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingPositiveTotalsByAgeGroupLarge(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_large';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_accepted_test' => [true],
+      'is_positive' => [true]
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingPositiveLinkedTotalsByAgeGroupLarge(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_large';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_accepted_test' => [true],
+      'is_positive' => [true],
+      'is_linked' => [true],
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingMalesByAgeGroupLarge(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_large';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_accepted_test' => [true],
+      'gender' => ['M']
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingPositiveMalesByAgeGroupLarge(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_large';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_accepted_test' => [true],
+      'is_positive' => [true],
+      'gender' => ['M']
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingPositiveLinkedMalesByAgeGroupLarge(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_large';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_accepted_test' => [true],
+      'is_positive' => [true],
+      'is_linked' => [true],
+      'gender' => ['M']
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingFemalesByAgeGroupLarge(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_large';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_accepted_test' => [true],
+      'gender' => ['F']
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingPositiveFemalesByAgeGroupLarge(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_large';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_accepted_test' => [true],
+      'is_positive' => [true],
+      'gender' => ['F']
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingPositiveLinkedFemalesByAgeGroupLarge(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_large';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_accepted_test' => [true],
+      'is_positive' => [true],
+      'is_linked' => [true],
+      'gender' => ['F']
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingModalitiesByCategory(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'hiv_testing_points';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, 'testing_point');
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results['category'][$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingPositiveModalitiesByCategory(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'hiv_testing_points';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_positive' => [true]
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, 'testing_point');
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results['category'][$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingDatimModalitiesByCategory(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'hiv_datim';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, 'datim');
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results['category'][$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
+  public function getHivTestingPositiveDatimModalitiesByCategory(Request $request)
+  {
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'hiv_datim';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty,
+      'is_positive' => [true]
+    ];
+
+    $results = Hts::whereDate('visit_date', '>=', $from)->whereDate('visit_date', '<', $to)->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, 'datim');
+    $results = $this->arrayCount($results);
+    $results = array_merge($this->default_results['category'][$group_by_index], $results);
+
+    return response()->json($results);
+  }
+
 }
