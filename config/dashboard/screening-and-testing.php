@@ -9,7 +9,7 @@ return [
       'datasets' => [
         [
           'label' => 'Tests',
-          'dataUrl' => 'testing/hiv/children/agegroup',
+          'dataUrl' => 'testing/hiv/children/category',
           'data' => [],
           'backgroundColor' => ['blue', 'orange'],
         ],
@@ -22,7 +22,7 @@ return [
       'datasets' => [
         [
           'label' => 'Tests',
-          'dataUrl' => 'testing/hiv/adolescents/agegroup',
+          'dataUrl' => 'testing/hiv/adolescents/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -36,7 +36,7 @@ return [
       'datasets' => [
         [
           'label' => 'Tests',
-          'dataUrl' => 'testing/hiv/youths/agegroup',
+          'dataUrl' => 'testing/hiv/youths/category',
           'data' => [],
           'backgroundColor' => ['blue', 'orange'],
         ],
@@ -49,7 +49,7 @@ return [
       'datasets' => [
         [
           'label' => 'Tests',
-          'dataUrl' => 'testing/hiv/adults/agegroup',
+          'dataUrl' => 'testing/hiv/adults/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -63,7 +63,7 @@ return [
       'datasets' => [
         [
           'label' => 'Tests',
-          'dataUrl' => 'testing/hiv/totals/agegroup',
+          'dataUrl' => 'testing/hiv/totals/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -76,7 +76,7 @@ return [
       'labels' => [],
       'datasets' => [
         [
-          'dataUrl' => 'testing/hiv/overall/gender',
+          'dataUrl' => 'testing/hiv/overall/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -89,7 +89,7 @@ return [
       'labels' => [],
       'datasets' => [
         [
-          'dataUrl' => 'testing/hiv+/overall/gender',
+          'dataUrl' => 'testing/hiv+/overall/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -101,8 +101,16 @@ return [
       'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
-        [
-          'dataUrl' => 'testing/hiv/hiv+/totals',
+        [ 
+          'label' => 'Total Tested for HIV',
+          'dataUrl' => 'testing/hiv/totals/agegrouplarge',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'blue',
+        ],
+        [ 
+          'label' => 'Total Tested HIV+',
+          'dataUrl' => 'testing/hiv+/totals/agegrouplarge',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -114,8 +122,16 @@ return [
       'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
-        [
-          'dataUrl' => 'testing/hiv+/linked/totals',
+        [ 
+          'label' => 'Total Tested HIV+',
+          'dataUrl' => 'testing/hiv+/totals/agegrouplarge',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'orange',
+        ],
+        [ 
+          'label' => 'Total Tested HIV+ Linked',
+          'dataUrl' => 'testing/linked/totals/agegrouplarge',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -128,7 +144,15 @@ return [
       'labels' => [],
       'datasets' => [
         [
-          'dataUrl' => 'testing/hiv/hiv+/males',
+          'label' => 'Males Tested for HIV',
+          'dataUrl' => 'testing/hiv/males/agegrouplarge',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'blue',
+        ],
+        [ 
+          'label' => 'Males Tested HIV+',
+          'dataUrl' => 'testing/hiv+/males/agegrouplarge',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -140,8 +164,16 @@ return [
       'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
-        [
-          'dataUrl' => 'testing/hiv+/linked/males',
+        [ 
+          'label' => 'Males Tested HIV+',
+          'dataUrl' => 'testing/hiv+/males/agegrouplarge',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'orange',
+        ],
+        [ 
+          'label' => 'Males Tested HIV+ Linked',
+          'dataUrl' => 'testing/linked/males/agegrouplarge',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -153,8 +185,16 @@ return [
       'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
-        [
-          'dataUrl' => 'testing/hiv/hiv+/females',
+        [ 
+          'label' => 'Females Tested for HIV',
+          'dataUrl' => 'testing/hiv/females/agegrouplarge',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'blue',
+        ],
+        [ 
+          'label' => 'Females Tested HIV+',
+          'dataUrl' => 'testing/hiv+/females/agegrouplarge',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -167,7 +207,15 @@ return [
       'labels' => [],
       'datasets' => [
         [
-          'dataUrl' => 'testing/hiv+/linked/females',
+          'label' => 'Females Tested HIV+',
+          'dataUrl' => 'testing/hiv+/females/agegrouplarge',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'orange',
+        ],
+        [
+          'label' => 'Females Tested HIV+ Linked',
+          'dataUrl' => 'testing/linked/females/agegrouplarge',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -180,7 +228,15 @@ return [
       'labels' => [],
       'datasets' => [
         [
-          'dataUrl' => 'testing/hiv/modalities/testing',
+          'label' => 'Tested for HIV',
+          'dataUrl' => 'testing/hiv/modalities/testing/category',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'orange',
+        ],
+        [ 
+          'label' => 'Tested HIV+',
+          'dataUrl' => 'testing/hiv+/modalities/testing/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -193,7 +249,7 @@ return [
       'labels' => [],
       'datasets' => [
         [
-          'dataUrl' => 'testing/hiv+/modalities/testing',
+          'dataUrl' => 'testing/hiv+/modalities/testing/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -204,9 +260,17 @@ return [
       'title' => 'HIV Testing & Positivity By Different Testing Modalities (DATIM Modalities)',
       'type' => 'horizontalBar',
       'labels' => [],
-      'datasets' => [
+      'datasets' => [ 
         [
-          'dataUrl' => 'testing/hiv/modalities/datim',
+          'label' => 'Tested for HIV By DATIM Modalities',
+          'dataUrl' => 'testing/hiv/modalities/datim/category',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'orange',
+        ],
+        [ 
+          'label' => 'Tested HIV+ By DATIM Modalities',
+          'dataUrl' => 'testing/hiv+/modalities/datim/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
@@ -219,7 +283,7 @@ return [
       'labels' => [],
       'datasets' => [
         [
-          'dataUrl' => 'testing/hiv+/modalities/datim',
+          'dataUrl' => 'testing/hiv+/modalities/datim/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'orange',
