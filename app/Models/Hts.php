@@ -14,6 +14,7 @@ class Hts extends Model
   protected $appends = [
     'age',
     'age_group',
+    'age_group_large',
     'age_group_gender',
     'county',
     'current_status',
@@ -46,6 +47,9 @@ class Hts extends Model
     'is_vl_routine_not_suppressed',
     'is_vl_targeted_suppressed',
     'is_vl_targeted_not_suppressed',
+    'is_linked',
+    'testing_point',
+    'datim',
     'start_regimen',
     'start_regimen_date',
     'sub_county'
@@ -54,6 +58,7 @@ class Hts extends Model
   protected $visible = [
     'age',
     'age_group',
+    'age_group_large',
     'age_group_gender',
     'current_regimen',
     'county',
@@ -87,6 +92,9 @@ class Hts extends Model
     'is_vl_routine_not_suppressed',
     'is_vl_targeted_suppressed',
     'is_vl_targeted_not_suppressed',
+    'is_linked',
+    'testing_point',
+    'datim',
     'patient_id',
     'start_regimen',
     'start_regimen_date',
@@ -104,7 +112,7 @@ class Hts extends Model
   {
     return (isset($this->patient->dob) ? Carbon::parse($this->patient->dob)->age : 0);
   }
-
+  
   public function getAgeGroupAttribute()
   {
     if ($this->age > 0 && $this->age < 10) {
@@ -115,6 +123,38 @@ class Hts extends Model
       $age_group = "20+ yrs (Adults)";
     }
     return $age_group;
+  }
+
+  public function getAgeGroupLargeAttribute()
+  {
+    $age = $this->age;
+
+    if ($age < 1) {
+      $age_group_large = "<1 yrs";
+    } elseif ($age >= 1 && $age < 5) {
+      $age_group_large = "1-4 yrs";
+    } elseif ($age >= 5 && $age < 10) {
+      $age_group_large = "5-9 yrs";
+    } elseif ($age >= 10 && $age < 15) {
+      $age_group_large = "10-14 yrs";
+    } elseif ($age >= 15 && $age < 20) {
+      $age_group_large = "15-19 yrs";
+    } elseif ($age >= 20 && $age < 25) {
+      $age_group_large = "20-24 yrs";
+    } elseif ($age >= 25 && $age < 30) {
+      $age_group_large = "25-29 yrs";
+    } elseif ($age >= 30 && $age < 35) {
+      $age_group_large = "30-34 yrs";
+    } elseif ($age >= 35 && $age < 40) {
+      $age_group_large = "35-39 yrs";
+    } elseif ($age >= 40 && $age < 45) {
+      $age_group_large = "40-44 yrs";
+    } elseif ($age >= 45 && $age < 50) {
+      $age_group_large = "45-49 yrs";
+    } else {
+      $age_group_large = "50+ yrs";
+    }
+    return $age_group_large;
   }
 
   public function getAgeGroupGenderAttribute()
@@ -305,19 +345,31 @@ class Hts extends Model
   public function getIsVlRoutineNotSuppressedAttribute()
   {
     (($this->is_vl_routine && $this->attributes['test_result'] >= 200) ? true : false);
-
   }
 
   public function getIsVlTargetedSuppressedAttribute()
   {
     (($this->is_vl_targeted && $this->attributes['test_result'] < 200) ? true : false);
-
   }
 
   public function getIsVlTargetedNotSuppressedAttribute()
   {
     (($this->is_vl_targeted && $this->attributes['test_result'] >= 200) ? true : false);
+  }
 
+  public function getIsLinkedAttribute()
+  {
+    return false;
+  }
+
+  public function getTestingPointAttribute()
+  {
+    return false;
+  }
+
+  public function getDatimAttribute()
+  {
+    return false;
   }
 
   public function getStartRegimenDateAttribute()
