@@ -125,49 +125,56 @@ Route::group(['middleware' => ['json.response', 'cors']], function () {
         Route::post('/visit/overall-mmd/agegroup-gender', [VisitController::class, 'getOverallMultiMonthDispensingTotalsByAgeGroupGender']);
 
         /*PMTCT-EID-HEI-POS-HCA*/
-        Route::post('/pmtct/cascades/10-14/category', [PmtctController::class, 'getPmtctCascadesByAgeGroupGender']);
-        Route::post('/pmtct/cascades/15-19/category', [PmtctController::class, 'getPmtctCascadesByAgeGroupGender']);
-        Route::post('/pmtct/cascades/20-24/category', [PmtctController::class, 'getPmtctCascadesByAgeGroupGender']);
-        Route::post('/pmtct/cascades/15-24/category', [PmtctController::class, 'getPmtctCascadesByAgeGroupGender']);
-        Route::post('/pmtct/cascades/over25/category', [PmtctController::class, 'getPmtctCascadesByAgeGroupGender']);
-        Route::post('/pmtct/cascades/totals/category', [PmtctController::class, 'getPmtctCascadesByAgeGroupGender']);
-        Route::post('/pmtct/cascades/by12months/category', [PmtctController::class, 'getPmtctCascadesByAgeGroupGender']);
-        Route::post('/pmtct/cascades/atSample/category', [PmtctController::class, 'getPmtctCascadesByAgeGroupGender']);
-        Route::post('/pmtct/hca/12months/category', [PmtctController::class, 'getPmtctHcaByAgeGroupGender']);
-        Route::post('/pmtct/hca/24months/category', [PmtctController::class, 'getPmtctHcaByAgeGroupGender']);
-        Route::post('/pmtct/hca/dead/category', [PmtctController::class, 'getPmtctHcaByAgeGroupGender']);
+        Route::post('/pmtct/cascades/10-14/category', [PmtctController::class, 'getPmtctCascades10to14ByCategory']);
+        Route::post('/pmtct/cascades/15-19/category', [PmtctController::class, 'getPmtctCascades15to19ByCategory']);
+        Route::post('/pmtct/cascades/20-24/category', [PmtctController::class, 'getPmtctCascades20to24ByCategory']);
+        Route::post('/pmtct/cascades/15-24/category', [PmtctController::class, 'getPmtctCascades15to24ByCategory']);
+        Route::post('/pmtct/cascades/over25/category', [PmtctController::class, 'getPmtctCascadesOver25ByCategory']);
+        Route::post('/pmtct/cascades/totals/category', [PmtctController::class, 'getPmtctCascadesTotalsByCategory']);
+        Route::post('/pmtct/cascades/by12months/category', [PmtctController::class, 'getPmtctCascades12MonthsByCategory']);
+        Route::post('/pmtct/cascades/atSample/category', [PmtctController::class, 'getPmtctCascadesAtSampleByCategory']);
+        Route::post('/pmtct/hca/12months/category', [PmtctController::class, 'getPmtctHca12MonthsByCategory']);
+        Route::post('/pmtct/hca/24months/category', [PmtctController::class, 'getPmtctHca24MonthsByCategory']);
+        Route::post('/pmtct/hca/dead/category', [PmtctController::class, 'getPmtctHcaDeadByCategory']);
 
         /*Screening and Testing*/
         Route::post('/patient/tested/positive/gender', [PatientController::class, 'getTestedPostivePatientTotalsByGender']);
         Route::post('/patient/tested/positive/agegroup-gender', [PatientController::class, 'getTestedPostivePatientTotalsByAgeGroupGender']);
-        Route::post('/testing/hiv/children/agegroup', [TestController::class, 'getHivTestingChildrenByAgeGroup']);
-        Route::post('/testing/hiv/adolescents/agegroup', [TestController::class, 'getHivTestingAdolescentsByAgeGroup']);
-        Route::post('/testing/hiv/youths/agegroup', [TestController::class, 'getHivTestingYouthsByAgeGroup']);
-        Route::post('/testing/hiv/adults/agegroup', [TestController::class, 'getHivTestingAdultsByAgeGroup']);
-        Route::post('/testing/hiv/totals/agegroup', [TestController::class, 'getHivTestingTotalsByAgeGroup']);
-        Route::post('/testing/hiv/overall/gender', [TestController::class, 'getHivTestingOverallByGender']);
-        Route::post('/testing/hiv+/overall/gender', [TestController::class, 'getHivTestingPositiveOverallByGender']);
-        Route::post('/testing/hiv/hiv+/totals', [TestController::class, 'getHivTestingPositiveTotals']);
-        Route::post('/testing/hiv+/linked/totals', [TestController::class, 'getHivTestingPositiveLinkedTotals']);
-        Route::post('/testing/hiv/hiv+/males', [TestController::class, 'getHivTestingPositiveMales']);
-        Route::post('/testing/hiv+/linked/males', [TestController::class, 'getHivTestingPositiveLinkedMales']);
-        Route::post('/testing/hiv/hiv+/females', [TestController::class, 'getHivTestingPositiveFemales']);
-        Route::post('/testing/hiv+/linked/females', [TestController::class, 'getHivTestingPositiveLinkedFemales']);
-        Route::post('/testing/hiv/modalities/testing', [TestController::class, 'getHivTestingModalitiesByTesting']);
-        Route::post('/testing/hiv+/modalities/testing', [TestController::class, 'getHivTestingPositiveModalitiesByTesting']);
-        Route::post('/testing/hiv/modalities/datim', [TestController::class, 'getHivTestingModalitiesByDatim']);
-        Route::post('/testing/hiv+/modalities/datim', [TestController::class, 'getHivTestingPositiveModalitiesByDatim']);
+
+        Route::post('/testing/hiv/children/category', [TestController::class, 'getHivTestingChildrenByCategory']);
+        Route::post('/testing/hiv/adolescents/category', [TestController::class, 'getHivTestingAdolescentsByCategory']);
+        Route::post('/testing/hiv/youths/category', [TestController::class, 'getHivTestingYouthsByCategory']);
+        Route::post('/testing/hiv/adults/category', [TestController::class, 'getHivTestingAdultsByCategory']);
+        Route::post('/testing/hiv/totals/category', [TestController::class, 'getHivTestingTotalsByCategory']);
+        Route::post('/testing/hiv/overall/category', [TestController::class, 'getHivTestingOverallByCategory']);
+        Route::post('/testing/hiv+/overall/category', [TestController::class, 'getHivTestingPositiveOverallByCategory']);
+        Route::post('/testing/hiv/totals/agegrouplarge', [TestController::class, 'getHivTestingTotalsByAgeGroupLarge']);
+        Route::post('/testing/hiv+/totals/agegrouplarge', [TestController::class, 'getHivTestingPositiveTotalsByAgeGroupLarge']);
+        Route::post('/testing/linked/totals/agegrouplarge', [TestController::class, 'getHivTestingPositiveLinkedTotalsByAgeGroupLarge']);
+        Route::post('/testing/hiv/males/agegrouplarge', [TestController::class, 'getHivTestingMalesByAgeGroupLarge']);
+        Route::post('/testing/hiv+/males/agegrouplarge', [TestController::class, 'getHivTestingPositiveMalesByAgeGroupLarge']);
+        Route::post('/testing/linked/males/agegrouplarge', [TestController::class, 'getHivTestingPositiveLinkedMalesByAgeGroupLarge']);
+        Route::post('/testing/hiv/females/agegrouplarge', [TestController::class, 'getHivTestingFemalesByAgeGroupLarge']);
+        Route::post('/testing/hiv+/females/agegrouplarge', [TestController::class, 'getHivTestingPositiveFemalesByAgeGroupLarge']);
+        Route::post('/testing/linked/females/agegrouplarge', [TestController::class, 'getHivTestingPositiveLinkedFemalesByAgeGroupLarge']);
+        Route::post('/testing/hiv/modalities/testing/category', [TestController::class, 'getHivTestingModalitiesByCategory']);
+        Route::post('/testing/hiv+/modalities/testing/category', [TestController::class, 'getHivTestingPositiveModalitiesByCategory']);
+        Route::post('/testing/hiv/modalities/datim/category', [TestController::class, 'getHivTestingDatimModalitiesByCategory']);
+        Route::post('/testing/hiv+/modalities/datim/category', [TestController::class, 'getHivTestingPositiveDatimModalitiesByCategory']);
+
 
         /*TB Prevention and Treatment*/
-        Route::post('/tb/cascades/totals/overall', [TbController::class, 'getTbCascadesTotalsByOverall']);
-        Route::post('/tb/cascades/testing-points/overall', [TbController::class, 'getTbCascadesTestingPointsByOverall']);
-        Route::post('/tb/cascades/children/age', [TbController::class, 'getTbCascadesChildrenByAge']);
-        Route::post('/tb/cascades/adults/age', [TbController::class, 'getTbCascadesAdultsByAge']);
-        Route::post('/tb/cascades/children/gender', [TbController::class, 'getTbCascadesChildrenByGender']);
-        Route::post('/tb/cascades/adults/gender', [TbController::class, 'getTbCascadesAdultsByGender']);
-        Route::post('/tb/outcomes/overall', [TbController::class, 'getTbOutcomesByOverall']);
-        Route::post('/tb/outcomes/age', [TbController::class, 'getTbOutcomesByAge']);
-        Route::post('/tb/outcomes/gender', [TbController::class, 'getTbOutcomesByGender']);
+        Route::post('/tb/cascades/totals/category', [TbController::class, 'getTbCascadesTotalsByCategory']);
+        Route::post('/tb/cascades/testing-points/category', [TbController::class, 'getTbCascadesTestingPointsByCategory']);
+        Route::post('/tb/cascades/children/category', [TbController::class, 'getTbCascadesChildrenByCategory']);
+        Route::post('/tb/cascades/adults/category', [TbController::class, 'getTbCascadesAdultsByCategory']);
+        Route::post('/tb/cascades/females/category', [TbController::class, 'getTbCascadesFemalesByCategory']);
+        Route::post('/tb/cascades/males/category', [TbController::class, 'getTbCascadesMalesByCategory']);
+        Route::post('/tb/outcomes/totals/category', [TbController::class, 'getTbTotalsOutcomesByCategory']);
+        Route::post('/tb/outcomes/children/category', [TbController::class, 'getTbChildrenOutcomesByCategory']);
+        Route::post('/tb/outcomes/adults/category', [TbController::class, 'getTbAdultsOutcomesByCategory']);
+        Route::post('/tb/outcomes/females/category', [TbController::class, 'getTbFemalesOutcomesByCategory']);
+        Route::post('/tb/outcomes/males/category', [TbController::class, 'getTbMalesOutcomesByCategory']);
         Route::post('/tb/prevention/children/category', [TbController::class, 'getTbPreventionChildrenByCategory']);
         Route::post('/tb/prevention/adults/category', [TbController::class, 'getTbPreventionAdultsByCategory']);
         Route::post('/tb/prevention/totals/category', [TbController::class, 'getTbPreventionTotalsByCategory']);
