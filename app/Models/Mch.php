@@ -14,21 +14,20 @@ class Mch extends Model
   protected $appends = [
     'age',
     'age_group',
+    'age_group_large',
     'age_group_gender',
     'county',
     'current_status',
     'facility',
     'gender',
-    'is_new_ipt',
-    'is_adult',
-    'is_child',
-    'current_art_ever_on_ipt',
-    'expected_to_complete_ipt',
-    'completed_ipt',
-    'not_complete_reason_not_completed',
-    'not_complete_reason_discontinued_developed_tb',
-    'not_complete_reason_ltfu',
-    'not_complete_reason_to',
+    'is_new_pregnant',
+    'is_known_status',
+    'is_kp',
+    'is_new_tested',
+    'is_tested_positive',
+    'is_infant',
+    'eid_sample_collection_period',
+    'hei_sample_collection_period',
     'start_regimen',
     'start_regimen_date',
     'sub_county'
@@ -37,6 +36,7 @@ class Mch extends Model
   protected $visible = [
     'age',
     'age_group',
+    'age_group_large',
     'age_group_gender',
     'current_regimen',
     'county',
@@ -44,16 +44,14 @@ class Mch extends Model
     'enroll_date',
     'facility',
     'gender',
-    'is_new_ipt',
-    'is_adult',
-    'is_child',
-    'current_art_ever_on_ipt',
-    'expected_to_complete_ipt',
-    'completed_ipt',
-    'not_complete_reason_not_completed',
-    'not_complete_reason_discontinued_developed_tb',
-    'not_complete_reason_ltfu',
-    'not_complete_reason_to',
+    'is_new_pregnant',
+    'is_known_status',
+    'is_kp',
+    'is_new_tested',
+    'is_tested_positive',
+    'is_infant',
+    'eid_sample_collection_period',
+    'hei_sample_collection_period',
     'patient_id',
     'start_regimen',
     'start_regimen_date',
@@ -78,10 +76,44 @@ class Mch extends Model
       $age_group = "0 - 9 yrs (Children)";
     } elseif ($this->age >= 10 && $this->age < 20) {
       $age_group = "10 - 19 yrs (Adolescents)";
+    } elseif ($this->age >= 15 && $this->age < 25) {
+      $age_group = "15 - 24 yrs (Youths)";
     } else {
-      $age_group = "20+ yrs (Adults)";
+      $age_group = "25+ yrs (Adults)";
     }
     return $age_group;
+  }
+
+  public function getAgeGroupLargeAttribute()
+  {
+    $age = $this->age;
+
+    if ($age < 1) {
+      $age_group_large = "<1 yrs";
+    } elseif ($age >= 1 && $age < 5) {
+      $age_group_large = "1-4 yrs";
+    } elseif ($age >= 5 && $age < 10) {
+      $age_group_large = "5-9 yrs";
+    } elseif ($age >= 10 && $age < 15) {
+      $age_group_large = "10-14 yrs";
+    } elseif ($age >= 15 && $age < 20) {
+      $age_group_large = "15-19 yrs";
+    } elseif ($age >= 20 && $age < 25) {
+      $age_group_large = "20-24 yrs";
+    } elseif ($age >= 25 && $age < 30) {
+      $age_group_large = "25-29 yrs";
+    } elseif ($age >= 30 && $age < 35) {
+      $age_group_large = "30-34 yrs";
+    } elseif ($age >= 35 && $age < 40) {
+      $age_group_large = "35-39 yrs";
+    } elseif ($age >= 40 && $age < 45) {
+      $age_group_large = "40-44 yrs";
+    } elseif ($age >= 45 && $age < 50) {
+      $age_group_large = "45-49 yrs";
+    } else {
+      $age_group_large = "50+ yrs";
+    }
+    return $age_group_large;
   }
 
   public function getAgeGroupGenderAttribute()
@@ -137,54 +169,64 @@ class Mch extends Model
     return $this->patient->attributes['Gender'];
   }
 
-  public function getIsNewIptAttribute()
+  public function getIsNewPregnantAttribute()
   {
     return false;
   }
 
-  public function getIsAdultAttribute()
-  {
-    return ($this->age >= 15 ? true : false);
-  }
-
-  public function getIsChildAttribute()
-  {
-    return ($this->age < 15 ? true : false);
-  }
-
-  public function getCurrentArtEverOnIptAttribute()
+  public function getIsKnownStatusAttribute()
   {
     return false;
   }
 
-  public function getExpectedToCompleteIptAttribute()
+  public function getIsKpAttribute()
   {
     return false;
   }
 
-  public function getCompletedIptAttribute()
+  public function getIsNewTestedAttribute()
   {
     return false;
   }
 
-  public function getNotCompleteReasonNotCompletedAttribute()
+  public function getIsTestedPositiveAttribute()
   {
     return false;
   }
 
-  public function getNotCompleteReasonDiscontinuedDevelopedTbAttribute()
-  {
-    return false;
-  }
-  
-  public function getNotCompleteReasonLtfuAttribute()
+  public function getIsInfantAttribute()
   {
     return false;
   }
 
-  public function getNotCompleteReasonToAttribute()
+  public function getEidSampleCollectionPeriodAttribute()
   {
-    return false;
+    $hiv_test_date = Carbon::parse($this->hiv_test_date);
+    $birth_date = Carbon::parse($this->patient->dob);
+    $period = $hiv_test_date->diffInDays($birth_date);
+
+    if ($period > 0 && $period < 366) {
+      $eid_sample_collection_period = "0-12 Months";
+    } else {
+      $eid_sample_collection_period = "Over 12 Months";
+    }
+    return $eid_sample_collection_period;
+  }
+
+  public function getHeiSampleCollectionPeriodAttribute()
+  {
+    $hiv_test_date = Carbon::parse($this->hiv_test_date);
+    $birth_date = Carbon::parse($this->patient->dob);
+    $period = $hiv_test_date->diffInDays($birth_date);
+
+    if ($period > 0 && $period < 61) {
+      $hei_sample_collection_period = "0-2 Months";
+    } elseif ($period >= 61  && $this->age < 366) {
+      $hei_sample_collection_period = "2-12 Months";
+    } else {
+      $hei_sample_collection_period = "Over 12 Months";
+    }
+    return $hei_sample_collection_period;
   }
 
   public function getStartRegimenDateAttribute()
