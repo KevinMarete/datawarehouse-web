@@ -3791,7 +3791,7 @@
 					"name": "Hiv",
 					"item": [
 						{
-							"name": "Get HIV Testing Children By AgeGroup",
+							"name": "Get HIV Testing Children By Category",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -3811,7 +3811,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/children/agegroup",
+									"raw": "{{host}}{{port}}/api/testing/hiv/children/category",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -3820,7 +3820,7 @@
 										"testing",
 										"hiv",
 										"children",
-										"agegroup"
+										"category"
 									],
 									"query": [
 										{
@@ -3834,7 +3834,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Testing Adolescents By AgeGroup",
+							"name": "Get HIV Testing Adolescents By Category",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -3854,7 +3854,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/adolescents/agegroup",
+									"raw": "{{host}}{{port}}/api/testing/hiv/adolescents/category",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -3863,7 +3863,7 @@
 										"testing",
 										"hiv",
 										"adolescents",
-										"agegroup"
+										"category"
 									],
 									"query": [
 										{
@@ -3877,7 +3877,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Testing Youths By AgeGroup",
+							"name": "Get HIV Testing Youths By Category",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -3897,7 +3897,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/youths/agegroup",
+									"raw": "{{host}}{{port}}/api/testing/hiv/youths/category",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -3906,7 +3906,7 @@
 										"testing",
 										"hiv",
 										"youths",
-										"agegroup"
+										"category"
 									],
 									"query": [
 										{
@@ -3920,7 +3920,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Testing Adults By AgeGroup",
+							"name": "Get HIV Testing Adults By Category",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -3940,7 +3940,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/adults/agegroup",
+									"raw": "{{host}}{{port}}/api/testing/hiv/adults/category",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -3949,7 +3949,7 @@
 										"testing",
 										"hiv",
 										"adults",
-										"agegroup"
+										"category"
 									],
 									"query": [
 										{
@@ -3963,7 +3963,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Testing Totals By AgeGroup",
+							"name": "Get HIV Testing Totals By Category",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -3983,7 +3983,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/totals/agegroup",
+									"raw": "{{host}}{{port}}/api/testing/hiv/totals/category",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -3992,7 +3992,7 @@
 										"testing",
 										"hiv",
 										"totals",
-										"agegroup"
+										"category"
 									],
 									"query": [
 										{
@@ -4006,7 +4006,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Testing Overall By Gender",
+							"name": "Get HIV Testing Overall By Category",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4026,7 +4026,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/overall/gender",
+									"raw": "{{host}}{{port}}/api/testing/hiv/overall/category",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -4035,7 +4035,7 @@
 										"testing",
 										"hiv",
 										"overall",
-										"gender"
+										"category"
 									],
 									"query": [
 										{
@@ -4049,7 +4049,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Positive Testing Overall By Gender",
+							"name": "Get HIV Positive Testing Overall By Category",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4069,7 +4069,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv+/overall/gender",
+									"raw": "{{host}}{{port}}/api/testing/hiv+/overall/category",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -4078,7 +4078,7 @@
 										"testing",
 										"hiv+",
 										"overall",
-										"gender"
+										"category"
 									],
 									"query": [
 										{
@@ -4092,7 +4092,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Testing vs HIV Positive Testing By Totals",
+							"name": "Get HIV Testing Totals By AgeGroupLarge",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4112,7 +4112,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/hiv+/totals",
+									"raw": "{{host}}{{port}}/api/testing/hiv/totals/agegrouplarge",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -4120,8 +4120,8 @@
 										"api",
 										"testing",
 										"hiv",
-										"hiv+",
-										"totals"
+										"totals",
+										"agegrouplarge"
 									],
 									"query": [
 										{
@@ -4135,7 +4135,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Positive Testing vs Linked By Totals",
+							"name": "Get HIV Positive Testing Totals By AgeGroupLarge",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4155,7 +4155,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv+/linked/totals",
+									"raw": "{{host}}{{port}}/api/testing/hiv+/totals/agegrouplarge",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -4163,8 +4163,51 @@
 										"api",
 										"testing",
 										"hiv+",
+										"totals",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Positive Linked Totals By AgeGroupLarge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/linked/totals/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
 										"linked",
-										"totals"
+										"totals",
+										"agegrouplarge"
 									],
 									"query": [
 										{
@@ -4178,7 +4221,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Testing vs HIV Positive Testing By Males",
+							"name": "Get HIV Testing Males By AgeGroupLarge",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4198,7 +4241,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/hiv+/males",
+									"raw": "{{host}}{{port}}/api/testing/hiv/males/agegrouplarge",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -4206,8 +4249,8 @@
 										"api",
 										"testing",
 										"hiv",
-										"hiv+",
-										"males"
+										"males",
+										"agegrouplarge"
 									],
 									"query": [
 										{
@@ -4221,7 +4264,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Positive Testing vs Linked By Males",
+							"name": "Get HIV Testing Positive Males By AgeGroupLarge",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4241,7 +4284,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv+/linked/males",
+									"raw": "{{host}}{{port}}/api/testing/hiv+/males/agegrouplarge",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -4249,8 +4292,51 @@
 										"api",
 										"testing",
 										"hiv+",
+										"males",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Positive Linked Males By AgeGroupLarge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/linked/males/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
 										"linked",
-										"males"
+										"males",
+										"agegrouplarge"
 									],
 									"query": [
 										{
@@ -4264,7 +4350,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Testing vs HIV Positive Testing By Females",
+							"name": "Get HIV Testing Females By AgeGroupLarge",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4284,7 +4370,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/hiv+/females",
+									"raw": "{{host}}{{port}}/api/testing/hiv/females/agegrouplarge",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -4292,8 +4378,8 @@
 										"api",
 										"testing",
 										"hiv",
-										"hiv+",
-										"females"
+										"females",
+										"agegrouplarge"
 									],
 									"query": [
 										{
@@ -4307,7 +4393,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Testing vs HIV Positive Testing By Females",
+							"name": "Get HIV Testing Positive Females By AgeGroupLarge",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4327,93 +4413,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/hiv+/females",
-									"host": [
-										"{{host}}{{port}}"
-									],
-									"path": [
-										"api",
-										"testing",
-										"hiv",
-										"hiv+",
-										"females"
-									],
-									"query": [
-										{
-											"key": "",
-											"value": "",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get HIV Testing Modalities By Testing",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{token}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
-								},
-								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/modalities/testing",
-									"host": [
-										"{{host}}{{port}}"
-									],
-									"path": [
-										"api",
-										"testing",
-										"hiv",
-										"modalities",
-										"testing"
-									],
-									"query": [
-										{
-											"key": "",
-											"value": "",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get HIV Positive Testing Modalities By Testing",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{token}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
-								},
-								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv+/modalities/testing",
+									"raw": "{{host}}{{port}}/api/testing/hiv+/females/agegrouplarge",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -4421,8 +4421,8 @@
 										"api",
 										"testing",
 										"hiv+",
-										"modalities",
-										"testing"
+										"females",
+										"agegrouplarge"
 									],
 									"query": [
 										{
@@ -4436,7 +4436,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Testing Modalities By Datim",
+							"name": "Get HIV Testing Positive Linked Females By AgeGroupLarge",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4456,7 +4456,50 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv/modalities/datim",
+									"raw": "{{host}}{{port}}/api/testing/linked/females/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"linked",
+										"females",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Modalities By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/modalities/testing/category",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -4465,7 +4508,8 @@
 										"testing",
 										"hiv",
 										"modalities",
-										"datim"
+										"testing",
+										"category"
 									],
 									"query": [
 										{
@@ -4479,7 +4523,7 @@
 							"response": []
 						},
 						{
-							"name": "Get HIV Positive Testing Modalities By Datim",
+							"name": "Get HIV Positive Testing Modalities By Category",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4499,7 +4543,7 @@
 									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 								},
 								"url": {
-									"raw": "{{host}}{{port}}/api/testing/hiv+/modalities/datim",
+									"raw": "{{host}}{{port}}/api/testing/hiv+/modalities/testing/category",
 									"host": [
 										"{{host}}{{port}}"
 									],
@@ -4508,7 +4552,96 @@
 										"testing",
 										"hiv+",
 										"modalities",
-										"datim"
+										"testing",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Datim Modalities By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/modalities/datim/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"modalities",
+										"datim",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Positive Testing Datim Modalities By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv+/modalities/datim/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv+",
+										"modalities",
+										"datim",
+										"category"
 									],
 									"query": [
 										{
@@ -5617,7 +5750,7 @@
 			"name": "Tb",
 			"item": [
 				{
-					"name": "Get TB Overall Totals By Category",
+					"name": "Get TB Totals Cascades By Category",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -5637,7 +5770,7 @@
 							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/tb/cascades/totals/overall",
+							"raw": "{{host}}{{port}}/api/tb/cascades/totals/category",
 							"host": [
 								"{{host}}{{port}}"
 							],
@@ -5646,7 +5779,7 @@
 								"tb",
 								"cascades",
 								"totals",
-								"overall"
+								"category"
 							],
 							"query": [
 								{
@@ -5680,7 +5813,7 @@
 							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/tb/cascades/testing-points/overall",
+							"raw": "{{host}}{{port}}/api/tb/cascades/testing-points/category",
 							"host": [
 								"{{host}}{{port}}"
 							],
@@ -5689,7 +5822,7 @@
 								"tb",
 								"cascades",
 								"testing-points",
-								"overall"
+								"category"
 							],
 							"query": [
 								{
@@ -5723,7 +5856,7 @@
 							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/tb/cascades/children/age",
+							"raw": "{{host}}{{port}}/api/tb/cascades/children/category",
 							"host": [
 								"{{host}}{{port}}"
 							],
@@ -5732,7 +5865,7 @@
 								"tb",
 								"cascades",
 								"children",
-								"age"
+								"category"
 							],
 							"query": [
 								{
@@ -5766,7 +5899,7 @@
 							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/tb/cascades/adults/age",
+							"raw": "{{host}}{{port}}/api/tb/cascades/adults/category",
 							"host": [
 								"{{host}}{{port}}"
 							],
@@ -5775,7 +5908,7 @@
 								"tb",
 								"cascades",
 								"adults",
-								"age"
+								"category"
 							],
 							"query": [
 								{
@@ -5789,7 +5922,7 @@
 					"response": []
 				},
 				{
-					"name": "Get TB Children Cascades By Gender",
+					"name": "Get TB Females Cascades By Category",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -5809,7 +5942,7 @@
 							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/tb/cascades/children/gender",
+							"raw": "{{host}}{{port}}/api/tb/cascades/females/category",
 							"host": [
 								"{{host}}{{port}}"
 							],
@@ -5817,8 +5950,137 @@
 								"api",
 								"tb",
 								"cascades",
+								"females",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Males Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/cascades/males/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"cascades",
+								"males",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Totals Outcomes By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/outcomes/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"outcomes",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Children Outcomes By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/outcomes/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"outcomes",
 								"children",
-								"gender"
+								"category"
 							],
 							"query": [
 								{
@@ -5832,7 +6094,7 @@
 					"response": []
 				},
 				{
-					"name": "Get TB Adults Cascades By Gender",
+					"name": "Get TB Adults Outcomes By Category",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -5852,16 +6114,16 @@
 							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/tb/cascades/adults/gender",
+							"raw": "{{host}}{{port}}/api/tb/outcomes/adults/category",
 							"host": [
 								"{{host}}{{port}}"
 							],
 							"path": [
 								"api",
 								"tb",
-								"cascades",
+								"outcomes",
 								"adults",
-								"gender"
+								"category"
 							],
 							"query": [
 								{
@@ -5875,7 +6137,7 @@
 					"response": []
 				},
 				{
-					"name": "Get TB Totals Outcomes By Overall",
+					"name": "Get TB Females Outcomes By Category",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -5895,7 +6157,7 @@
 							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/tb/outcomes/overall",
+							"raw": "{{host}}{{port}}/api/tb/outcomes/females/category",
 							"host": [
 								"{{host}}{{port}}"
 							],
@@ -5903,7 +6165,8 @@
 								"api",
 								"tb",
 								"outcomes",
-								"overall"
+								"females",
+								"category"
 							],
 							"query": [
 								{
@@ -5917,7 +6180,7 @@
 					"response": []
 				},
 				{
-					"name": "Get TB Outcomes By Age",
+					"name": "Get TB Males Outcomes By Category",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -5937,7 +6200,7 @@
 							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
 						},
 						"url": {
-							"raw": "{{host}}{{port}}/api/tb/outcomes/age",
+							"raw": "{{host}}{{port}}/api/tb/outcomes/males/category",
 							"host": [
 								"{{host}}{{port}}"
 							],
@@ -5945,49 +6208,8 @@
 								"api",
 								"tb",
 								"outcomes",
-								"age"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get TB Outcomes By Gender",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
-						},
-						"url": {
-							"raw": "{{host}}{{port}}/api/tb/outcomes/gender",
-							"host": [
-								"{{host}}{{port}}"
-							],
-							"path": [
-								"api",
-								"tb",
-								"outcomes",
-								"gender"
+								"males",
+								"category"
 							],
 							"query": [
 								{
