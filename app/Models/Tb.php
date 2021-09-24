@@ -19,16 +19,25 @@ class Tb extends Model
     'current_status',
     'facility',
     'gender',
-    'is_new_ipt',
-    'is_adult',
+    'is_new',
+    'is_relapsed',
+    'is_known_hiv_status',
+    'is_kp',
+    'is_new_tested',
+    'is_new_positive',
+    'is_positive',
+    'is_on_haart',
+    'has_tb',
+    'tb_status',
+    'treatment_outcome',
+    'is_screened',
+    'is_diagnosed',
+    'start_tb_treatment_date',
+    'is_genexpert',
+    'is_chest_xray',
+    'is_smear_microscopy',
     'is_child',
-    'current_art_ever_on_ipt',
-    'expected_to_complete_ipt',
-    'completed_ipt',
-    'not_complete_reason_not_completed',
-    'not_complete_reason_discontinued_developed_tb',
-    'not_complete_reason_ltfu',
-    'not_complete_reason_to',
+    'is_adult',
     'start_regimen',
     'start_regimen_date',
     'sub_county'
@@ -44,16 +53,25 @@ class Tb extends Model
     'enroll_date',
     'facility',
     'gender',
-    'is_new_ipt',
-    'is_adult',
+    'is_new',
+    'is_relapsed',
+    'is_known_hiv_status',
+    'is_kp',
+    'is_new_tested',
+    'is_new_positive',
+    'is_positive',
+    'is_on_haart',
+    'has_tb',
+    'tb_status',
+    'treatment_outcome',
+    'is_screened',
+    'is_diagnosed',
+    'start_tb_treatment_date',
+    'is_genexpert',
+    'is_chest_xray',
+    'is_smear_microscopy',
     'is_child',
-    'current_art_ever_on_ipt',
-    'expected_to_complete_ipt',
-    'completed_ipt',
-    'not_complete_reason_not_completed',
-    'not_complete_reason_discontinued_developed_tb',
-    'not_complete_reason_ltfu',
-    'not_complete_reason_to',
+    'is_adult',
     'patient_id',
     'start_regimen',
     'start_regimen_date',
@@ -137,14 +155,89 @@ class Tb extends Model
     return $this->patient->attributes['Gender'];
   }
 
-  public function getIsNewIptAttribute()
+  public function getIsNewAttribute()
   {
     return false;
   }
 
-  public function getIsAdultAttribute()
+  public function getIsRelapsedAttribute()
   {
-    return ($this->age >= 15 ? true : false);
+    return false;
+  }
+
+  public function getIsKnownHivStatusAttribute()
+  {
+    return false;
+  }
+
+  public function getIsKpAttribute()
+  {
+    return false;
+  }
+
+  public function getIsNewTestedAttribute()
+  {
+    return false;
+  }
+
+  public function getIsNewPositiveAttribute()
+  {
+    return false;
+  }
+
+  public function getIsPositiveAttribute()
+  {
+    return false;
+  }
+
+  public function getIsOnHaartAttribute()
+  {
+    return false;
+  }
+
+  public function getHasTbAttribute()
+  {
+    return false;
+  }
+
+  public function getTbStatusAttribute()
+  {
+    return false;
+  }
+
+  public function getTreatmentOutcomeAttribute()
+  {
+    return false;
+  }
+
+  public function getIsScreenedAttribute()
+  {
+    return false;
+  }
+
+  public function getIsDiagnosedAttribute()
+  {
+    return false;
+  }
+
+  public function getStartTbTreatmentDateAttribute()
+  {
+    return false;
+  }
+
+  public function getIsGenexpertAttribute()
+  {
+    return false;
+  }
+
+  public function getIsChestXrayAttribute()
+  {
+    return false;
+  }
+
+  public function getIsSmearMicroscopyAttribute()
+  {
+    return false;
   }
 
   public function getIsChildAttribute()
@@ -152,39 +245,9 @@ class Tb extends Model
     return ($this->age < 15 ? true : false);
   }
 
-  public function getCurrentArtEverOnIptAttribute()
+  public function getIsAdultAttribute()
   {
-    return false;
-  }
-
-  public function getExpectedToCompleteIptAttribute()
-  {
-    return false;
-  }
-
-  public function getCompletedIptAttribute()
-  {
-    return false;
-  }
-
-  public function getNotCompleteReasonNotCompletedAttribute()
-  {
-    return false;
-  }
-
-  public function getNotCompleteReasonDiscontinuedDevelopedTbAttribute()
-  {
-    return false;
-  }
-  
-  public function getNotCompleteReasonLtfuAttribute()
-  {
-    return false;
-  }
-
-  public function getNotCompleteReasonToAttribute()
-  {
-    return false;
+    return ($this->age >= 15 ? true : false);
   }
 
   public function getStartRegimenDateAttribute()
