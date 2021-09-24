@@ -2,7 +2,7 @@
 composer update
 php artisan key:generate
 php artisan config:clear
-php artisan migrate
+php artisan migrate:refresh
 php artisan passport:install
 if [ -f .env ] 
 then

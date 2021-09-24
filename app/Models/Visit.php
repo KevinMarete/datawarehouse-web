@@ -5,19 +5,17 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Patient extends Model
+class Visit extends Model
 {
-  protected $table = 'etl_art_master_list';
+  protected $table = 'etl_patient_hiv_followup';
 
   protected $maps = [
-    'ART_Status' => 'current_status',
-    'Enrollment_Date' => 'enrollment_date',
     'Facility' => 'facility',
     'Gender' => 'gender',
     'location' => 'county',
     'Start_regimen' => 'start_regimen',
     'Start_regimen_date' => 'start_regimen_date',
-    'sub_location' => 'sub_county'
+    'sub_location' => 'sub_county',
   ];
 
   protected $appends = [
@@ -25,10 +23,9 @@ class Patient extends Model
     'age_group',
     'age_group_gender',
     'county',
-    'current_status',
-    'enrollment_date',
     'facility',
     'gender',
+    'next_visit_days',
     'start_regimen',
     'start_regimen_date',
     'sub_county'
@@ -38,23 +35,21 @@ class Patient extends Model
     'age',
     'age_group',
     'age_group_gender',
-    'county',
     'current_regimen',
-    'current_regimen_date',
-    'current_status',
-    'enrollment_date',
+    'county',
     'facility',
     'gender',
-    'hiv_test_date',
+    'next_appointment_date',
+    'next_visit_days',
+    'patient_id',
     'start_regimen',
     'start_regimen_date',
-    'sub_county'
+    'sub_county',
+    'visit_date',
   ];
 
   protected $hidden = [
-    'ART_Status',
     'Gender',
-    'Enrollment_Date',
     'Facility',
     'location',
     'Start_regimen',
@@ -62,16 +57,21 @@ class Patient extends Model
     'sub_location'
   ];
 
+  public function patient()
+  {
+    return $this->belongsTo('App\Models\Patient', 'patient_id', 'patient_id');
+  }
+
   public function getAgeAttribute()
   {
-    return Carbon::parse($this->DOB)->age;
+    return Carbon::parse($this->patient->DOB)->age;
   }
 
   public function getAgeGroupAttribute()
   {
-    if ($this->age > 0 && $this->age < 10) {
+    if ($this->patient->age > 0 && $this->patient->age < 10) {
       $age_group = "0 - 9 yrs (Children)";
-    } elseif ($this->age >= 10 && $this->age < 20) {
+    } elseif ($this->patient->age >= 10 && $this->patient->age < 20) {
       $age_group = "10 - 19 yrs (Adolescents)";
     } else {
       $age_group = "20+ yrs (Adults)";
@@ -81,8 +81,8 @@ class Patient extends Model
 
   public function getAgeGroupGenderAttribute()
   {
-    $age = $this->age;
-    $gender = $this->gender;
+    $age = $this->patient->age;
+    $gender = $this->patient->gender;
 
     if ($age < 1) {
       $age_group_gender = "<1 " . $gender;
@@ -114,41 +114,39 @@ class Patient extends Model
 
   public function getCountyAttribute()
   {
-    return strtoupper($this->attributes['location']);
-  }
-
-  public function getCurrentStatusAttribute()
-  {
-    return strtolower($this->attributes['ART_Status']);
-  }
-
-  public function getEnrollmentDateAttribute()
-  {
-    return $this->attributes['Enrollment_Date'];
+    return strtoupper($this->patient->attributes['location']);
   }
 
   public function getFacilityAttribute()
   {
-    return strtoupper($this->attributes['Facility']);
+    return strtoupper($this->patient->attributes['Facility']);
   }
 
   public function getGenderAttribute()
   {
-    return $this->attributes['Gender'];
+    return $this->patient->attributes['Gender'];
+  }
+
+  public function getNextVisitDaysAttribute()
+  {
+    $visit_date = Carbon::parse($this->visit_date);
+    $next_visit_date = Carbon::parse($this->next_appointment_date);
+
+    return $next_visit_date->diffInDays($visit_date);
   }
 
   public function getStartRegimenDateAttribute()
   {
-    return $this->attributes['Start_regimen_date'];
+    return $this->patient->attributes['Start_regimen_date'];
   }
 
   public function getStartRegimenAttribute()
   {
-    return $this->attributes['Start_regimen'];
+    return $this->patient->attributes['Start_regimen'];
   }
 
   public function getSubCountyAttribute()
   {
-    return strtoupper($this->attributes['sub_location']);
+    return strtoupper($this->patient->attributes['sub_location']);
   }
 }

@@ -46,6 +46,10 @@ Rename `.env.example` to `.env` then edit it with your custom settings. You will
 
     $ ./scripts/dev_build.sh
 
+#### Rebuild server
+
+    $ ./scripts/dev_build.sh
+
 #### Start server
 
     $ ./scripts/dev_start.sh

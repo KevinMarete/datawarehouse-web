@@ -5,19 +5,12 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Patient extends Model
+class PatientDemographics extends Model
 {
-  protected $table = 'etl_art_master_list';
+  protected $table = 'etl_patient_demographics';
 
   protected $maps = [
-    'ART_Status' => 'current_status',
-    'Enrollment_Date' => 'enrollment_date',
-    'Facility' => 'facility',
-    'Gender' => 'gender',
-    'location' => 'county',
-    'Start_regimen' => 'start_regimen',
-    'Start_regimen_date' => 'start_regimen_date',
-    'sub_location' => 'sub_county'
+    'Gender' => 'gender'
   ];
 
   protected $appends = [
@@ -25,12 +18,8 @@ class Patient extends Model
     'age_group',
     'age_group_gender',
     'county',
-    'current_status',
-    'enrollment_date',
     'facility',
     'gender',
-    'start_regimen',
-    'start_regimen_date',
     'sub_county'
   ];
 
@@ -39,27 +28,13 @@ class Patient extends Model
     'age_group',
     'age_group_gender',
     'county',
-    'current_regimen',
-    'current_regimen_date',
-    'current_status',
-    'enrollment_date',
     'facility',
     'gender',
-    'hiv_test_date',
-    'start_regimen',
-    'start_regimen_date',
     'sub_county'
   ];
 
   protected $hidden = [
-    'ART_Status',
-    'Gender',
-    'Enrollment_Date',
-    'Facility',
-    'location',
-    'Start_regimen',
-    'Start_regimen_date',
-    'sub_location'
+    'Gender'
   ];
 
   public function getAgeAttribute()
@@ -114,22 +89,12 @@ class Patient extends Model
 
   public function getCountyAttribute()
   {
-    return strtoupper($this->attributes['location']);
-  }
-
-  public function getCurrentStatusAttribute()
-  {
-    return strtolower($this->attributes['ART_Status']);
-  }
-
-  public function getEnrollmentDateAttribute()
-  {
-    return $this->attributes['Enrollment_Date'];
+    return null;
   }
 
   public function getFacilityAttribute()
   {
-    return strtoupper($this->attributes['Facility']);
+    return null;
   }
 
   public function getGenderAttribute()
@@ -137,18 +102,8 @@ class Patient extends Model
     return $this->attributes['Gender'];
   }
 
-  public function getStartRegimenDateAttribute()
-  {
-    return $this->attributes['Start_regimen_date'];
-  }
-
-  public function getStartRegimenAttribute()
-  {
-    return $this->attributes['Start_regimen'];
-  }
-
   public function getSubCountyAttribute()
   {
-    return strtoupper($this->attributes['sub_location']);
+    return null;
   }
 }

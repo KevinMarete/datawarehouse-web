@@ -2862,6 +2862,8 @@ section {
 .header__navbar .header3-sub-list {
     position: absolute;
     min-width: 260px;
+    max-height: 300px; /* Marete Changes*/
+    overflow-y: auto; /* Marete Changes*/
     background: #fff;
     -webkit-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);

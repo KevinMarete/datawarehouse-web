@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Patient;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\BaseController;
 use Illuminate\Http\Request;
 
-class PatientController extends Controller
+class PatientController extends BaseController
 {
 
   protected $default_results;
@@ -364,52 +364,83 @@ class PatientController extends Controller
   }
 
   /**
-   * Filter Array Elements based on filters
+   * Display all new patients 3 months on art by age group gender
    *
-   * @param  Array  $array
-   * @param  Array  $filters
-   * @return Array
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
    */
-  private function arrayFilterBy($array, $filters)
+  public function get3MonthsOnArtPatientTotalsByAgeGroupGender(Request $request)
   {
-    $results = [];
-    if (sizeof($filters['facility']) == 0 && sizeof($filters['sub_county']) == 0) {
-      return $array;
-    }
-    $results = array_filter($array, function ($value) use ($filters) {
-      return (in_array($value['facility'], $filters['facility']) || in_array($value['sub_county'], $filters['sub_county']));
-    });
-    return $results;
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
+
+    $results = Patient::whereDate('start_regimen_date', '>=', $from)->whereDate('start_regimen_date', '<', $to)->whereRaw('datediff(?, start_regimen_date) < ?', [$to, 90])->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
   }
 
   /**
-   * Group Array Elements based on key
+   * Display all new patients 3-5 months on art by age group gender
    *
-   * @param  Array  $array
-   * @param  string  $key
-   * @return Array
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
    */
-  private function arrayGroupBy($array, $key)
+  public function get3To5MonthsOnArtPatientTotalsByAgeGroupGender(Request $request)
   {
-    $results = [];
-    foreach ($array as $val) {
-      $results[$val[$key]][] = $val;
-    }
-    return $results;
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
+
+    $results = Patient::whereDate('start_regimen_date', '>=', $from)->whereDate('start_regimen_date', '<', $to)->whereRaw('datediff(?, start_regimen_date) >= ?', [$to, 90])->whereRaw('datediff(?, start_regimen_date) < ?', [$to, 180])->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
   }
 
   /**
-   * Count Array Elements
+   * Display all new patients 6 months on art by age group gender
    *
-   * @param  Array  $array
-   * @return Array
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
    */
-  private function arrayCount($array)
+  public function get6MonthsOnArtPatientTotalsByAgeGroupGender(Request $request)
   {
-    $response = [];
-    foreach ($array as $index => $val) {
-      $response[$index] = count($val);
-    }
-    return $response;
+    $from = $request->from;
+    $to = $request->to;
+    $group_by_index = 'age_group_gender';
+    $filters = [
+      'facility' => $request->facility,
+      'sub_county' => $request->subcounty
+    ];
+
+    $results = Patient::whereDate('start_regimen_date', '>=', $from)->whereDate('start_regimen_date', '<', $to)->whereRaw('datediff(?, start_regimen_date) >= ?', [$to, 180])->get()->toArray();
+
+    $results = $this->arrayFilterBy($results, $filters);
+    $results = $this->arrayGroupBy($results, $group_by_index);
+    $results = $this->arrayCount($results);
+
+    $results = array_merge($this->default_results[$group_by_index], $results);
+
+    return response()->json($results);
   }
 }

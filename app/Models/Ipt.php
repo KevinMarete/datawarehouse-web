@@ -5,20 +5,11 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Patient extends Model
+class Ipt extends Model
 {
-  protected $table = 'etl_art_master_list';
+  protected $table = 'etl_ipt_follow_up';
 
-  protected $maps = [
-    'ART_Status' => 'current_status',
-    'Enrollment_Date' => 'enrollment_date',
-    'Facility' => 'facility',
-    'Gender' => 'gender',
-    'location' => 'county',
-    'Start_regimen' => 'start_regimen',
-    'Start_regimen_date' => 'start_regimen_date',
-    'sub_location' => 'sub_county'
-  ];
+  protected $maps = [];
 
   protected $appends = [
     'age',
@@ -26,9 +17,18 @@ class Patient extends Model
     'age_group_gender',
     'county',
     'current_status',
-    'enrollment_date',
     'facility',
     'gender',
+    'is_new_ipt',
+    'is_adult',
+    'is_child',
+    'current_art_ever_on_ipt',
+    'expected_to_complete_ipt',
+    'completed_ipt',
+    'not_complete_reason_not_completed',
+    'not_complete_reason_discontinued_developed_tb',
+    'not_complete_reason_ltfu',
+    'not_complete_reason_to',
     'start_regimen',
     'start_regimen_date',
     'sub_county'
@@ -38,33 +38,38 @@ class Patient extends Model
     'age',
     'age_group',
     'age_group_gender',
-    'county',
     'current_regimen',
-    'current_regimen_date',
+    'county',
     'current_status',
-    'enrollment_date',
+    'enroll_date',
     'facility',
     'gender',
-    'hiv_test_date',
+    'is_new_ipt',
+    'is_adult',
+    'is_child',
+    'current_art_ever_on_ipt',
+    'expected_to_complete_ipt',
+    'completed_ipt',
+    'not_complete_reason_not_completed',
+    'not_complete_reason_discontinued_developed_tb',
+    'not_complete_reason_ltfu',
+    'not_complete_reason_to',
+    'patient_id',
     'start_regimen',
     'start_regimen_date',
     'sub_county'
   ];
 
-  protected $hidden = [
-    'ART_Status',
-    'Gender',
-    'Enrollment_Date',
-    'Facility',
-    'location',
-    'Start_regimen',
-    'Start_regimen_date',
-    'sub_location'
-  ];
+  protected $hidden = [];
+
+  public function patient()
+  {
+    return $this->belongsTo('App\Models\Patient', 'patient_id', 'patient_id');
+  }
 
   public function getAgeAttribute()
   {
-    return Carbon::parse($this->DOB)->age;
+    return Carbon::parse($this->patient->dob)->age;
   }
 
   public function getAgeGroupAttribute()
@@ -114,41 +119,86 @@ class Patient extends Model
 
   public function getCountyAttribute()
   {
-    return strtoupper($this->attributes['location']);
+    return strtoupper($this->patient->attributes['location']);
   }
 
   public function getCurrentStatusAttribute()
   {
-    return strtolower($this->attributes['ART_Status']);
-  }
-
-  public function getEnrollmentDateAttribute()
-  {
-    return $this->attributes['Enrollment_Date'];
+    return strtoupper($this->patient->attributes['ART_Status']);
   }
 
   public function getFacilityAttribute()
   {
-    return strtoupper($this->attributes['Facility']);
+    return strtoupper($this->patient->attributes['Facility']);
   }
 
   public function getGenderAttribute()
   {
-    return $this->attributes['Gender'];
+    return $this->patient->attributes['Gender'];
+  }
+
+  public function getIsNewIptAttribute()
+  {
+    return false;
+  }
+
+  public function getIsAdultAttribute()
+  {
+    return ($this->age >= 15 ? true : false);
+  }
+
+  public function getIsChildAttribute()
+  {
+    return ($this->age < 15 ? true : false);
+  }
+
+  public function getCurrentArtEverOnIptAttribute()
+  {
+    return false;
+  }
+
+  public function getExpectedToCompleteIptAttribute()
+  {
+    return false;
+  }
+
+  public function getCompletedIptAttribute()
+  {
+    return false;
+  }
+
+  public function getNotCompleteReasonNotCompletedAttribute()
+  {
+    return false;
+  }
+
+  public function getNotCompleteReasonDiscontinuedDevelopedTbAttribute()
+  {
+    return false;
+  }
+  
+  public function getNotCompleteReasonLtfuAttribute()
+  {
+    return false;
+  }
+
+  public function getNotCompleteReasonToAttribute()
+  {
+    return false;
   }
 
   public function getStartRegimenDateAttribute()
   {
-    return $this->attributes['Start_regimen_date'];
+    return $this->patient->attributes['Start_regimen_date'];
   }
 
   public function getStartRegimenAttribute()
   {
-    return $this->attributes['Start_regimen'];
+    return $this->patient->attributes['Start_regimen'];
   }
 
   public function getSubCountyAttribute()
   {
-    return strtoupper($this->attributes['sub_location']);
+    return strtoupper($this->patient->attributes['sub_location']);
   }
 }

@@ -1731,6 +1731,315 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get Current OnArt Patient Less than 3 Months By AgeGroup and Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\"WESTLANDS\"]\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/patient/on-art/3months/agegroup-gender",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"on-art",
+								"3months",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current OnArt Patient Between 3 and 5 Months By AgeGroup and Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\"WESTLANDS\"]\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/patient/on-art/3-5months/agegroup-gender",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"on-art",
+								"3-5months",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current OnArt Patient 6 Months and More By AgeGroup and Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": [\"WESTLANDS\"]\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/patient/on-art/6months/agegroup-gender",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"on-art",
+								"6months",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Program",
+			"item": [
+				{
+					"name": "All Program Activities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}{{port}}/api/program",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"program"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Program Activity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}{{port}}/api/program/1",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"program",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Program Activity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ref\": \"\",\n    \"activity_date\": \"\",\n    \"activity\": \"\",\n    \"sub_activity\": \"\",\n    \"no_of_pax\": \"\",\n    \"sub_county\": \"\",\n    \"facility\": \"\",\n    \"received_by\": \"\",\n    \"cost_kes\": \"\",\n    \"cost_usd\": \"\",\n    \"program_area\": \"\",\n    \"funding_stream\": \"\",\n    \"expenditure_analysis\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/program",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"program"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program Activity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ref\": \"\",\n    \"activity_date\": \"\",\n    \"activity\": \"\",\n    \"sub_activity\": \"\",\n    \"no_of_pax\": \"\",\n    \"sub_county\": \"\",\n    \"facility\": \"\",\n    \"received_by\": \"\",\n    \"cost_kes\": \"\",\n    \"cost_usd\": \"\",\n    \"program_area\": \"\",\n    \"funding_stream\": \"\",\n    \"expenditure_analysis\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/program/1",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"program",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program Activity",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}{{port}}/api/program/1",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"program",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -2722,6 +3031,3583 @@
 							""
 						]
 					}
+				}
+			]
+		},
+		{
+			"name": "Visit",
+			"item": [
+				{
+					"name": "Get OnMMD Patient Visit Totals By AgeGroup Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/visit/on-mmd/agegroup-gender",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"visit",
+								"on-mmd",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Overall MMD Patient Visit Totals By AgeGroup Gender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-02-01\",\n    \"to\": \"2021-03-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/visit/overall-mmd/agegroup-gender",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"visit",
+								"overall-mmd",
+								"agegroup-gender"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cohort",
+			"item": [
+				{
+					"name": "Get Cohort Children By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/cohort/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"cohort",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cohort Adolescents By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/cohort/adolescents/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"cohort",
+								"adolescents",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cohort Adults By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/cohort/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"cohort",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cohort Totals By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/cohort/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"cohort",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "CD4",
+					"item": [
+						{
+							"name": "Get Testing CD4 Children By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/cd4/children/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"cd4",
+										"children",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Testing CD4 Adolescents By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/cd4/adolescents/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"cd4",
+										"adolescents",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Testing CD4 Adults By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/cd4/adults/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"cd4",
+										"adults",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Testing CD4 Totals By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/cd4/totals/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"cd4",
+										"totals",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Index",
+					"item": [
+						{
+							"name": "Get Index Testing Children By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/index/children/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"index",
+										"children",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Index Testing Adults By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/index/adults/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"index",
+										"adults",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Index Testing Totals By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/index/totals/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"index",
+										"totals",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get FT Testing Points By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/index/ft/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"index",
+										"ft",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get PNS Testing Points By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/index/pns/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"index",
+										"pns",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ViralLoad",
+					"item": [
+						{
+							"name": "Get Viral Load Testing Children By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/vl/children/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"vl",
+										"children",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Viral Load Testing Adolescents By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/vl/adolescents/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"vl",
+										"adolescents",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Hiv",
+					"item": [
+						{
+							"name": "Get HIV Testing Children By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/children/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"children",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Adolescents By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/adolescents/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"adolescents",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Youths By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/youths/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"youths",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Adults By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/adults/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"adults",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Totals By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/totals/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"totals",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Overall By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/overall/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"overall",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Positive Testing Overall By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv+/overall/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv+",
+										"overall",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Totals By AgeGroupLarge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/totals/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"totals",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Positive Testing Totals By AgeGroupLarge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv+/totals/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv+",
+										"totals",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Positive Linked Totals By AgeGroupLarge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/linked/totals/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"linked",
+										"totals",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Males By AgeGroupLarge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/males/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"males",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Positive Males By AgeGroupLarge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv+/males/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv+",
+										"males",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Positive Linked Males By AgeGroupLarge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/linked/males/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"linked",
+										"males",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Females By AgeGroupLarge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/females/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"females",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Positive Females By AgeGroupLarge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv+/females/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv+",
+										"females",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Positive Linked Females By AgeGroupLarge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/linked/females/agegrouplarge",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"linked",
+										"females",
+										"agegrouplarge"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Modalities By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/modalities/testing/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"modalities",
+										"testing",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Positive Testing Modalities By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv+/modalities/testing/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv+",
+										"modalities",
+										"testing",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Testing Datim Modalities By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv/modalities/datim/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv",
+										"modalities",
+										"datim",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get HIV Positive Testing Datim Modalities By Category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/testing/hiv+/modalities/datim/category",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"testing",
+										"hiv+",
+										"modalities",
+										"datim",
+										"category"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CervicalScreening",
+			"item": [
+				{
+					"name": "Get Cervial Screening By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/screening/cervical/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"screening",
+								"cervical",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cervial Screening By Visit Type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/screening/cervical/visit-type",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"screening",
+								"cervical",
+								"visit-type"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IptOutcomes",
+			"item": [
+				{
+					"name": "Get IPT New Children By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/new/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"new",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT New Adults By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/new/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"new",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT New Totals By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/new/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"new",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Current Children By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/current/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"current",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Current Adults By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/current/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"current",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Current Totals By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/current/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"current",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Outcomes Totals By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/outcomes/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"outcomes",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Outcomes Adults By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/outcomes/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"outcomes",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Outcomes Children By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/outcomes/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"outcomes",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Not Completing Totals By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/not-completing/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"not-completing",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Not Completing Adults By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/not-completing/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"not-completing",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IPT Not Completing Children By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/ipt/not-completing/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ipt",
+								"not-completing",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pmtct",
+			"item": [
+				{
+					"name": "Get PMTCT 10-14 Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/pmtct/cascades/10-14/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"pmtct",
+								"cascades",
+								"10-14",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PMTCT 15-19 Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/pmtct/cascades/15-19/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"pmtct",
+								"cascades",
+								"15-19",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PMTCT 20-24 Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/pmtct/cascades/20-24/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"pmtct",
+								"cascades",
+								"20-24",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PMTCT 15-24 Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/pmtct/cascades/15-24/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"pmtct",
+								"cascades",
+								"15-24",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PMTCT Over 25 Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/pmtct/cascades/over25/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"pmtct",
+								"cascades",
+								"over25",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PMTCT Totals Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/pmtct/cascades/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"pmtct",
+								"cascades",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PMTCT EID By 12 Months Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/pmtct/cascades/by12months/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"pmtct",
+								"cascades",
+								"by12months",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PMTCT EID At Sample Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/pmtct/cascades/atSample/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"pmtct",
+								"cascades",
+								"atSample",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PMTCT HCA By 12 Months Outcomes By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/pmtct/hca/12months/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"pmtct",
+								"hca",
+								"12months",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PMTCT HCA By 24 Months Outcomes By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/pmtct/hca/24months/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"pmtct",
+								"hca",
+								"24months",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PMTCT HCA Dead Outcomes By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/pmtct/hca/dead/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"pmtct",
+								"hca",
+								"dead",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tb",
+			"item": [
+				{
+					"name": "Get TB Totals Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/cascades/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"cascades",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Overall Testing Points By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/cascades/testing-points/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"cascades",
+								"testing-points",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Children Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/cascades/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"cascades",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Adults Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/cascades/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"cascades",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Females Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/cascades/females/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"cascades",
+								"females",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Males Cascades By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/cascades/males/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"cascades",
+								"males",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Totals Outcomes By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/outcomes/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"outcomes",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Children Outcomes By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/outcomes/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"outcomes",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Adults Outcomes By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/outcomes/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"outcomes",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Females Outcomes By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/outcomes/females/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"outcomes",
+								"females",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Males Outcomes By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/outcomes/males/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"outcomes",
+								"males",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Children Prevention By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/prevention/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"prevention",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Adults Prevention By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/prevention/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"prevention",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Totals Prevention By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/prevention/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"prevention",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Children Treatment By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/treatment/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"treatment",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Adults Treatment By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/treatment/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"treatment",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Totals Treatment By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/treatment/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"treatment",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Children Bacteriologic Diagnosis By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/bacteriologic-diagnosis/children/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"bacteriologic-diagnosis",
+								"children",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Adults Bacteriologic Diagnosis By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/bacteriologic-diagnosis/adults/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"bacteriologic-diagnosis",
+								"adults",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TB Totals Bacteriologic Diagnosis By Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2020-02-01\",\n    \"to\": \"2020-06-01\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/tb/bacteriologic-diagnosis/totals/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"tb",
+								"bacteriologic-diagnosis",
+								"totals",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
