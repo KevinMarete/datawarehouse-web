@@ -16,21 +16,14 @@ class Hei extends Model
     'age_group',
     'age_group_gender',
     'county',
-    'current_status',
     'facility',
     'gender',
-    'is_new_ipt',
-    'is_adult',
-    'is_child',
-    'current_art_ever_on_ipt',
-    'expected_to_complete_ipt',
-    'completed_ipt',
-    'not_complete_reason_not_completed',
-    'not_complete_reason_discontinued_developed_tb',
-    'not_complete_reason_ltfu',
-    'not_complete_reason_to',
-    'start_regimen',
-    'start_regimen_date',
+    'is_negative',
+    'is_positive',
+    'is_known_status',
+    'is_to',
+    'is_ltfu',
+    'is_dead',
     'sub_county'
   ];
 
@@ -39,24 +32,15 @@ class Hei extends Model
     'age_group',
     'age_group_gender',
     'current_regimen',
-    'county',
-    'current_status',
-    'enroll_date',
     'facility',
     'gender',
-    'is_new_ipt',
-    'is_adult',
-    'is_child',
-    'current_art_ever_on_ipt',
-    'expected_to_complete_ipt',
-    'completed_ipt',
-    'not_complete_reason_not_completed',
-    'not_complete_reason_discontinued_developed_tb',
-    'not_complete_reason_ltfu',
-    'not_complete_reason_to',
+    'is_negative',
+    'is_positive',
+    'is_known_status',
+    'is_to',
+    'is_ltfu',
+    'is_dead',
     'patient_id',
-    'start_regimen',
-    'start_regimen_date',
     'sub_county'
   ];
 
@@ -64,7 +48,7 @@ class Hei extends Model
 
   public function patient()
   {
-    return $this->belongsTo('App\Models\Patient', 'patient_id', 'patient_id');
+    return $this->belongsTo('App\Models\PatientDemographics', 'patient_id', 'patient_id');
   }
 
   public function getAgeAttribute()
@@ -119,17 +103,12 @@ class Hei extends Model
 
   public function getCountyAttribute()
   {
-    return strtoupper($this->patient->attributes['location']);
-  }
-
-  public function getCurrentStatusAttribute()
-  {
-    return strtoupper($this->patient->attributes['ART_Status']);
+    return strtoupper($this->patient->attributes['county']);
   }
 
   public function getFacilityAttribute()
   {
-    return strtoupper($this->patient->attributes['Facility']);
+    return strtoupper($this->patient->facility);
   }
 
   public function getGenderAttribute()
@@ -137,68 +116,38 @@ class Hei extends Model
     return $this->patient->attributes['Gender'];
   }
 
-  public function getIsNewIptAttribute()
+  public function getIsNegativeAttribute()
   {
     return false;
   }
 
-  public function getIsAdultAttribute()
-  {
-    return ($this->age >= 15 ? true : false);
-  }
-
-  public function getIsChildAttribute()
-  {
-    return ($this->age < 15 ? true : false);
-  }
-
-  public function getCurrentArtEverOnIptAttribute()
+  public function getIsPositiveAttribute()
   {
     return false;
   }
 
-  public function getExpectedToCompleteIptAttribute()
+  public function getIsKnownStatusAttribute()
   {
     return false;
   }
 
-  public function getCompletedIptAttribute()
+  public function getIsToAttribute()
   {
     return false;
   }
 
-  public function getNotCompleteReasonNotCompletedAttribute()
+  public function getIsLtfuAttribute()
   {
     return false;
   }
 
-  public function getNotCompleteReasonDiscontinuedDevelopedTbAttribute()
+  public function getIsDeadAttribute()
   {
     return false;
-  }
-  
-  public function getNotCompleteReasonLtfuAttribute()
-  {
-    return false;
-  }
-
-  public function getNotCompleteReasonToAttribute()
-  {
-    return false;
-  }
-
-  public function getStartRegimenDateAttribute()
-  {
-    return $this->patient->attributes['Start_regimen_date'];
-  }
-
-  public function getStartRegimenAttribute()
-  {
-    return $this->patient->attributes['Start_regimen'];
   }
 
   public function getSubCountyAttribute()
   {
-    return strtoupper($this->patient->attributes['sub_location']);
+    return strtoupper($this->patient->sub_county);
   }
 }
