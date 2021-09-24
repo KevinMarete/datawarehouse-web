@@ -4,12 +4,12 @@ return [
   'charts' => [
     'totals_tb_hiv_overall_cascades_chart' => [
       'title' => 'TB/HIV Cascades By Overall (Totals)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'tb/cascades/totals/overall',
+          'dataUrl' => 'tb/cascades/totals/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'blue'
@@ -23,7 +23,7 @@ return [
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'tb/cascades/testing-points/overall',
+          'dataUrl' => 'tb/cascades/testing-points/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'green'
@@ -32,12 +32,12 @@ return [
     ],
     'children_tb_hiv_age_cascades_chart' => [
       'title' => 'TB/HIV Cascades By Age (Children < 15 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'tb/cascades/children/age',
+          'dataUrl' => 'tb/cascades/children/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'yellow'
@@ -46,12 +46,12 @@ return [
     ],
     'adults_tb_hiv_age_cascades_chart' => [
       'title' => 'TB/HIV Cascades By Age (Adults 15+ Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'tb/cascades/adults/age',
+          'dataUrl' => 'tb/cascades/adults/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'blue'
@@ -59,13 +59,13 @@ return [
       ]
     ],
     'children_tb_hiv_gender_cascades_chart' => [
-      'title' => 'TB/HIV Cascades By Gender (Children < 15 Years)',
-      'type' => 'bar',
+      'title' => 'TB/HIV Cascades By Gender (Females)',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'tb/cascades/children/gender',
+          'dataUrl' => 'tb/cascades/females/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'yellow'
@@ -73,13 +73,13 @@ return [
       ]
     ],
     'adults_tb_hiv_gender_cascades_chart' => [
-      'title' => 'TB/HIV Cascades By Gender (Adults 15+ Years)',
-      'type' => 'bar',
+      'title' => 'TB/HIV Cascades By Gender (Males)',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'tb/cascades/adults/gender',
+          'dataUrl' => 'tb/cascades/males/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'blue'
@@ -88,40 +88,68 @@ return [
     ],
     'overall_tb_treatment_outcomes_chart' => [
       'title' => 'TB Treatment Outcomes for HIV+ TB Cases Starting Treatment 1 Year Ealier By Overall',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'tb/outcomes/overall',
+          'dataUrl' => 'tb/outcomes/totals/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'blue'
         ]
       ]
     ],
-    'age_tb_treatment_outcomes_chart' => [
-      'title' => 'TB Treatment Outcomes for HIV+ TB Cases Starting Treatment 1 Year Ealier By Age',
-      'type' => 'bar',
+    'children_tb_treatment_outcomes_chart' => [
+      'title' => 'TB Treatment Outcomes for HIV+ TB Cases Starting Treatment 1 Year Ealier By Age (Children <15 Years)',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'tb/outcomes/age',
+          'dataUrl' => 'tb/outcomes/children/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'yellow'
         ]
       ]
     ],
-    'gender_tb_treatment_outcomes_chart' => [
-      'title' => 'TB Treatment Outcomes for HIV+ TB Cases Starting Treatment 1 Year Ealier By Gender',
-      'type' => 'bar',
+    'adults_tb_treatment_outcomes_chart' => [
+      'title' => 'TB Treatment Outcomes for HIV+ TB Cases Starting Treatment 1 Year Ealier By Age (Adults 15+ Years)',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
           'label' => 'Totals',
-          'dataUrl' => 'tb/outcomes/gender',
+          'dataUrl' => 'tb/outcomes/adults/category',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'yellow'
+        ]
+      ]
+    ],
+    'females_tb_treatment_outcomes_chart' => [
+      'title' => 'TB Treatment Outcomes for HIV+ TB Cases Starting Treatment 1 Year Ealier By Gender (Females)',
+      'type' => 'horizontalBar',
+      'labels' => [],
+      'datasets' => [
+        [
+          'label' => 'Totals',
+          'dataUrl' => 'tb/outcomes/females/category',
+          'data' => [],
+          'borderColor' => 'transparent',
+          'backgroundColor' => 'blue'
+        ]
+      ]
+    ],
+    'males_tb_treatment_outcomes_chart' => [
+      'title' => 'TB Treatment Outcomes for HIV+ TB Cases Starting Treatment 1 Year Ealier By Gender (Males)',
+      'type' => 'horizontalBar',
+      'labels' => [],
+      'datasets' => [
+        [
+          'label' => 'Totals',
+          'dataUrl' => 'tb/outcomes/males/category',
           'data' => [],
           'borderColor' => 'transparent',
           'backgroundColor' => 'blue'
@@ -130,7 +158,7 @@ return [
     ],
     'children_tb_prevention_chart' => [
       'title' => 'TB Prevention (Children < 15 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -144,7 +172,7 @@ return [
     ],
     'adults_tb_prevention_chart' => [
       'title' => 'TB Prevention (Adults 15+ Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -158,7 +186,7 @@ return [
     ],
     'totals_tb_prevention_chart' => [
       'title' => 'TB Prevention (Totals)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -172,7 +200,7 @@ return [
     ],
     'children_tb_treatment_chart' => [
       'title' => 'TB Treatment (Children < 15 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -186,7 +214,7 @@ return [
     ],
     'adults_tb_treatment_chart' => [
       'title' => 'TB Treatment (Adults 15+ Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -200,7 +228,7 @@ return [
     ],
     'totals_tb_treatment_chart' => [
       'title' => 'TB Treatment (Totals)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -214,7 +242,7 @@ return [
     ],
     'children_bacteriologic_diagnosis_chart' => [
       'title' => 'Bacteriologic Diagnosis (Children < 15 Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -228,7 +256,7 @@ return [
     ],
     'adults_bacteriologic_diagnosis_chart' => [
       'title' => 'Bacteriologic Diagnosis (Adults 15+ Years)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
@@ -242,7 +270,7 @@ return [
     ],
     'totals_bacteriologic_diagnosis_chart' => [
       'title' => 'Bacteriologic Diagnosis (Totals)',
-      'type' => 'bar',
+      'type' => 'horizontalBar',
       'labels' => [],
       'datasets' => [
         [
