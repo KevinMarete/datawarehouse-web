@@ -188,5 +188,11 @@ Route::group(['middleware' => ['json.response', 'cors']], function () {
         /*Viral Load Testing*/
         Route::post('testing/vl/children/category', [TestController::class, 'getVlTestingChildrenByCategory']);
         Route::post('testing/vl/adolescents/category', [TestController::class, 'getVlTestingAdolescentsByCategory']);
+
+        /*Program Management*/
+        Route::post('program/cost/sub-county/category', [ProgramController::class, 'getProgramCostSubCountyByCategory']);
+        Route::post('program/cost/program-area/category', [ProgramController::class, 'getProgramCostProgramAreaByCategory']);
+        Route::post('program/cost/funding-stream/category', [ProgramController::class, 'getProgramCostFundingStreamByCategory']);
+        Route::post('program/cost/expenditure-analysis/category', [ProgramController::class, 'getProgramCostExpenditureAnalysisByCategory']);
     });
 });
