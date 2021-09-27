@@ -6610,6 +6610,183 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Program",
+			"item": [
+				{
+					"name": "Get Program Total Cost By Sub County Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-09-01\",\n    \"to\": \"2021-09-30\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/program/cost/sub-county/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"program",
+								"cost",
+								"sub-county",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Program Total Cost By Program Area Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-09-01\",\n    \"to\": \"2021-09-30\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/program/cost/program-area/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"program",
+								"cost",
+								"program-area",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Program Total Cost By Funding Stream Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-09-01\",\n    \"to\": \"2021-09-30\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/program/cost/funding-stream/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"program",
+								"cost",
+								"funding-stream",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Program Total Cost By Expenditure Analysis Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2021-09-01\",\n    \"to\": \"2021-09-30\",\n    \"facility\": [],\n    \"subcounty\": []\n}"
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/program/cost/expenditure-analysis/category",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"program",
+								"cost",
+								"expenditure-analysis",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
