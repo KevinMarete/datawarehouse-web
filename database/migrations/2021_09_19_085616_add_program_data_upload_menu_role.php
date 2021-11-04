@@ -12,7 +12,7 @@ class AddProgramDataUploadMenuRole extends Migration
      */
     public function up()
     {
-        $menu = DB::table('tbl_menu')->where('name', 'Program Data Upload')->first();
+        $menu = DB::table('tbl_menu')->where('name', 'Data Upload')->first();
         $admin_role = DB::table('tbl_role')->where('name', 'admin')->first();
         $user_role = DB::table('tbl_role')->where('name', 'user')->first();
 
@@ -31,7 +31,7 @@ class AddProgramDataUploadMenuRole extends Migration
      */
     public function down()
     {
-        $menu = DB::table('tbl_menu')->where('name', 'Program Data Upload')->first();
+        $menu = DB::table('tbl_menu')->where('name', 'Data Upload')->first();
         $admin_role = DB::table('tbl_role')->where('name', 'admin')->first();
         $user_role = DB::table('tbl_role')->where('name', 'user')->first();
 
